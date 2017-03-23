@@ -1,0 +1,18 @@
+{
+    "backgroundColor": "#FFFFFF",
+    "shadowColor": "#CCCCCCDD",
+    "items": [
+              {
+              "className": "MainMapViewController",
+              "normalImageName": "home_normal",
+              "highlightedImageName": "home_pressed",
+              "title":"首页"
+              },
+              {
+              "className": "MineMainViewController",
+              "normalImageName": "carshow_normal",
+              "highlightedImageName": "carshow_pressed",
+              "title":"我的"
+              }
+              ]
+}
