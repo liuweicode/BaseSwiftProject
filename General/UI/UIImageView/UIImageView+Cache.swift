@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 import SDWebImage
 
-typealias CacheImageCompletedBlock = (_ image: UIImage?, _ error: NSError?) -> Void
-typealias CacheImageProgressBlock  = (_ receivedSize: Int, _ expectedSize: Int) -> Void
 
 public enum LoadImageAnimationType: Int {
     case animationNone
@@ -44,7 +42,7 @@ extension UIImageView {
         }
     }
     
-    public func cacheWith(_ urlString: String, block: @escaping SDWebImageCompletionBlock)
+    public func cacheWith(_ urlString: String, block: @escaping SDExternalCompletionBlock)
     {
         #if DEBUG
             ANT_LOG_INFO("请求图片:\(urlString)")
@@ -52,10 +50,7 @@ extension UIImageView {
         
         if let url = URL(string: urlString)
         {
-            self.sd_setImage(with: url, completed: { (image, error, type, url) in
-                block(image, error, type, url)
-            })
-            //self.sd_setImage(with: url, completed: block)
+            self.sd_setImage(with: url, completed: block)
         }else{
             block(nil, NSError(domain: "url is null", code: 0, userInfo: nil), SDImageCacheType.none, nil)
         }

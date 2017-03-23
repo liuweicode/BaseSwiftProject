@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE0F33B41D210697002FFDFB"
+               BlueprintIdentifier = "FE6090C01E82867C0042229D"
                BuildableName = "BaseSwiftProject.app"
                BlueprintName = "BaseSwiftProject"
                ReferencedContainer = "container:BaseSwiftProject.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FE0F33B41D210697002FFDFB"
+            BlueprintIdentifier = "FE6090C01E82867C0042229D"
             BuildableName = "BaseSwiftProject.app"
             BlueprintName = "BaseSwiftProject"
             ReferencedContainer = "container:BaseSwiftProject.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FE0F33B41D210697002FFDFB"
+            BlueprintIdentifier = "FE6090C01E82867C0042229D"
             BuildableName = "BaseSwiftProject.app"
             BlueprintName = "BaseSwiftProject"
             ReferencedContainer = "container:BaseSwiftProject.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FE0F33B41D210697002FFDFB"
+            BlueprintIdentifier = "FE6090C01E82867C0042229D"
             BuildableName = "BaseSwiftProject.app"
             BlueprintName = "BaseSwiftProject"
             ReferencedContainer = "container:BaseSwiftProject.xcodeproj">

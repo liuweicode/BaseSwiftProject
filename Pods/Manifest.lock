@@ -1,0 +1,47 @@
+PODS:
+  - Alamofire (4.4.0)
+  - IQKeyboardManagerSwift (4.0.8)
+  - JZNavigationExtension (1.5.0.1)
+  - MJRefresh (3.1.12)
+  - RSKImageCropper (1.6.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - SnapKit (3.2.0)
+  - SVProgressHUD (2.1.2)
+  - SwiftDate (4.0.13)
+  - SwiftyJSON (3.1.4)
+  - TTTAttributedLabel (2.0.0)
+  - VCTransitionsLibrary (1.5.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.4.0)
+  - IQKeyboardManagerSwift (~> 4.0.8)
+  - JZNavigationExtension (~> 1.5.0.1)
+  - MJRefresh (~> 3.1.12)
+  - RSKImageCropper (~> 1.6.0)
+  - SDWebImage (~> 4.0.0)
+  - SnapKit (~> 3.2.0)
+  - SVProgressHUD (~> 2.1.2)
+  - SwiftDate (~> 4.0.13)
+  - SwiftyJSON (~> 3.1.4)
+  - TTTAttributedLabel (~> 2.0.0)
+  - VCTransitionsLibrary (~> 1.5.0)
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
+  JZNavigationExtension: 7b95d2b1c48846b8bedcb40d767448f14cb9a0b7
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  RSKImageCropper: 6903235c7a8a79acb1e1f3490e2c911b858f8208
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  SwiftDate: 8ec416bb1b5129d1f35e8efaed720421f41d42df
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
+  VCTransitionsLibrary: d61fd9b7b6721942f0d583bcc0e7f8c31ec9271b
+
+PODFILE CHECKSUM: c5614ef57fc2126ab68f75a7e10ec4619354b389
+
+COCOAPODS: 1.2.0

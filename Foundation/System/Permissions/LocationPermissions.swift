@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 enum CheckLocationPermissionType {
     case whenInUse
@@ -101,12 +102,7 @@ class LocationPermissions: NSObject, CLLocationManagerDelegate {
                     completeHandle?(true)
                 }
             case .notDetermined:
-                ANT_LOG_INFO("notDetermined")
-//                if _checkType == .whenInUse {
-//                    self.getLocationManager().requestWhenInUseAuthorization()
-//                }else{
-//                    self.getLocationManager().requestAlwaysAuthorization()
-//                }
+                ANT_LOG_INFO("notDetermined will never be executed")
             }
     }
 

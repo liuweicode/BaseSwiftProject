@@ -12,8 +12,6 @@ class UserCenter: NSObject {
 
     fileprivate static var _currentUser: AppUser?
     
-    public static var currentCoordinate: CLLocationCoordinate2D?
-    
     /**
      保存当前登录用户
      
