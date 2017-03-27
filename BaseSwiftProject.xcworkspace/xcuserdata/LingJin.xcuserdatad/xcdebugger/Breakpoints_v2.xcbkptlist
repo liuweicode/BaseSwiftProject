@@ -41,28 +41,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512298654.035697"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "logRequestJsonInfo(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkClient.swift"
-            timestampString = "512297505.411216"
+            timestampString = "512300883.993509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "doOperationData(_:dataResponse:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkClient.swift"
-            timestampString = "512298654.035697"
+            timestampString = "512300883.993509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "375"
-            endingLineNumber = "375"
+            startingLineNumber = "376"
+            endingLineNumber = "376"
             landmarkName = "doCommonResponse(dataResponse:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,7 +90,7 @@
                   moduleName = "BaseSwiftProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/Classes/Login/Controllers/LoginViewController.swift"
-                  timestampString = "512298695.630795"
+                  timestampString = "512301762.436311"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "226"
@@ -121,7 +105,7 @@
                   moduleName = "BaseSwiftProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/Classes/Login/Controllers/LoginViewController.swift"
-                  timestampString = "512298695.631929"
+                  timestampString = "512301762.437406"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "227"
@@ -218,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512298654.035697"
+            timestampString = "512300355.901494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "setRequestDataBody(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512298654.035697"
+            timestampString = "512300355.901494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "setRequestDataBody(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,7 +250,7 @@
                   moduleName = "BaseSwiftProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/General/System/Network/NetworkHandler.swift"
-                  timestampString = "512298695.96044"
+                  timestampString = "512301762.667352"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
@@ -281,7 +265,7 @@
                   moduleName = "BaseSwiftProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/General/System/Network/NetworkHandler.swift"
-                  timestampString = "512298695.962199"
+                  timestampString = "512301762.668606"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "46"
@@ -298,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkClient.swift"
-            timestampString = "512297016.780614"
+            timestampString = "512300883.993509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "195"
+            endingLineNumber = "195"
             landmarkName = "GET()"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,13 +298,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkClient.swift"
-            timestampString = "512297288.734463"
+            timestampString = "512300883.993509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "GET()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "General/System/Network/NetworkHandler.swift"
+            timestampString = "512300840.451742"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "adapt(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "General/System/Network/NetworkHandler.swift"
+            timestampString = "512301210.282099"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "logRequestJsonInfo(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BaseSwiftProject.NetworkHandler.(logRequestJsonInfo in _ADE024B3EA138D82B5F5109AB087ED93) (Foundation.URLRequest) -&gt; ()"
+                  moduleName = "BaseSwiftProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/General/System/Network/NetworkHandler.swift"
+                  timestampString = "512301762.830128"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "1140">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BaseSwiftProject.NetworkHandler.(logRequestJsonInfo in _ADE024B3EA138D82B5F5109AB087ED93) (Foundation.URLRequest) -&gt; ()"
+                  moduleName = "BaseSwiftProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/General/System/Network/NetworkHandler.swift"
+                  timestampString = "512301762.831486"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "1172">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

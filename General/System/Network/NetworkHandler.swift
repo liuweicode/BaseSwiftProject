@@ -212,14 +212,30 @@ class NetworkHandler: RequestAdapter, RequestRetrier
             
             var requestParamDicts: Any = ""
             
-            if let bodyData = urlRequest.httpBody, let key = NetworkCipher.shared.aes_key, let iv = NetworkCipher.shared.aes_iv
+            if let bodyData = urlRequest.httpBody
             {
-                if let decodedData = FSOpenSSL.aes_decrypt(bodyData, key: key, iv: iv)
+                if isEncrypt
                 {
+                    if let key = NetworkCipher.shared.aes_key, let iv = NetworkCipher.shared.aes_iv
+                    {
+                        if let decodedData = FSOpenSSL.aes_decrypt(bodyData, key: key, iv: iv)
+                        {
+                            do{
+                                requestParamDicts = try JSONSerialization.jsonObject(with: decodedData, options: .allowFragments)
+                            } catch {
+                                requestParamDicts = "\(decodedData.count) bytes"
+                            }
+                        }else{
+                            requestParamDicts = "解密失败"
+                        }
+                    }else{
+                        requestParamDicts = "没有加解密密钥"
+                    }
+                }else{
                     do{
-                        requestParamDicts = try JSONSerialization.jsonObject(with: decodedData, options: .allowFragments)
+                        requestParamDicts = try JSONSerialization.jsonObject(with: bodyData, options: .allowFragments)
                     } catch {
-                        requestParamDicts = "\(decodedData.count) bytes"
+                        requestParamDicts = "\(bodyData.count) bytes"
                     }
                 }
             }

@@ -13,25 +13,13 @@ import UIKit
 // API接口
 func API(service action:String, notEncrypt notencrypt: Bool = false, isPrintSql printSql:Bool = false) -> String
 {
-    var api = NetworkURLConfig.shared.apiPathOfRelativeString(action)
-    
-    // 打印sql语句
-    if printSql
-    {
-        api +=  "&__sql__=1"
-    }
-    // 不加密
-    if notencrypt {
-        api += "&encrypt=no"
-    }
-    
-    return  api
+    return NetworkURLConfig.shared.apiPathOfRelativeString(action, notencrypt, printSql)
 }
 
 class NetworkURLConfig: NSObject {
     
     // https / http
-    var API_PROTOCPL: String!
+    var API_SCHEME: String!
     // 主机地址
     var API_HOST: String!
     // 接口地址
@@ -68,8 +56,37 @@ class NetworkURLConfig: NSObject {
     }
     
     // API接口地址
-    func apiPathOfRelativeString(_ path:String) -> String {
-        return API_PROTOCPL + API_HOST + API_METHOD_PATH + path + "&client=ios"
+    func apiPathOfRelativeString(_ service:String, _ notencrypt: Bool = false, _ printSql:Bool = false) -> String {
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = API_SCHEME
+        urlComponents.host = API_HOST
+        urlComponents.path = API_METHOD_PATH;
+        
+        var queryItems = [URLQueryItem]()
+        
+        let serviceQuery = URLQueryItem(name: "service", value: service)
+        queryItems.append(serviceQuery)
+        
+        let clientQuery = URLQueryItem(name: "client", value: "ios")
+        queryItems.append(clientQuery)
+        
+        // 打印sql语句
+        if printSql
+        {
+            let printSqlQuery = URLQueryItem(name: "__sql__", value: "1")
+            queryItems.append(printSqlQuery)
+        }
+        // 不加密
+        if notencrypt
+        {
+            let printSqlQuery = URLQueryItem(name: "encrypt", value: "no")
+            queryItems.append(printSqlQuery)
+        }
+        
+        urlComponents.queryItems = queryItems
+        
+        return SAFE_STRING(urlComponents.url?.absoluteString)
     }
     
     // 切换到开发环境
@@ -77,11 +94,11 @@ class NetworkURLConfig: NSObject {
     {
         ANT_LOG_INFO("开发环境")
         // 协议
-        API_PROTOCPL = "http://"
+        API_SCHEME = "http"
         // 主机地址
         API_HOST = "192.168.199.228"
         // 接口地址
-        API_METHOD_PATH = "/jichongchong/Public/v1/index.php?service="
+        API_METHOD_PATH = "/jichongchong/Public/v1/index.php"
         
         // 帮助与支持
         html_help_doc = "http://192.168.199.228/jichongchong/Public/v1/help.php"
@@ -97,11 +114,11 @@ class NetworkURLConfig: NSObject {
     {
         ANT_LOG_INFO("SIT环境")
         // 协议
-        API_PROTOCPL = "http://"
+        API_SCHEME = "http"
         // 主机地址
         API_HOST = "api.jcc.linkim.com.cn"
         // 接口地址
-        API_METHOD_PATH = "/Public/v1/index.php?service="
+        API_METHOD_PATH = "/Public/v1/index.php"
         
         // 帮助与支持
         html_help_doc = "http://api.jcc.linkim.com.cn/Public/v1/help.php"
@@ -116,11 +133,11 @@ class NetworkURLConfig: NSObject {
     {
         ANT_LOG_INFO("UAT环境")
         // 协议
-        API_PROTOCPL = "http://"
+        API_SCHEME = "http"
         // 主机地址
         API_HOST = "api.jcc.linkim.com.cn"
         // 接口地址
-        API_METHOD_PATH = "/Public/v1/index.php?service="
+        API_METHOD_PATH = "/Public/v1/index.php"
         
         // 帮助与支持
         html_help_doc = "http://api.jcc.linkim.com.cn/Public/v1/help.php"
@@ -135,11 +152,11 @@ class NetworkURLConfig: NSObject {
     {
         ANT_LOG_INFO("生产环境")
         // 协议
-        API_PROTOCPL = "http://"
+        API_SCHEME = "http"
         // 主机地址
         API_HOST = "api.jcc.linkim.com.cn"
         // 接口地址
-        API_METHOD_PATH = "/Public/v1/index.php?service="
+        API_METHOD_PATH = "/Public/v1/index.php"
         
         // 帮助与支持
         html_help_doc = "http://api.jcc.linkim.com.cn/Public/v1/help.php"

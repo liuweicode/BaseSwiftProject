@@ -145,6 +145,7 @@ class NetworkClient : NSObject {
     fileprivate func POST() -> Request? {
         
         let networkHandler = NetworkHandler()
+        networkHandler.isEncrypt = isEncrypted()
         let manager = SessionManager.myDefaultSessionManager
         manager.adapter = networkHandler
         manager.retrier = networkHandler
@@ -186,12 +187,13 @@ class NetworkClient : NSObject {
     fileprivate func GET() -> Request? {
         
         let networkHandler = NetworkHandler()
+        networkHandler.isEncrypt = isEncrypted()
         let manager = SessionManager.myDefaultSessionManager
         manager.adapter = networkHandler
         manager.retrier = networkHandler
         
         let url = URL(string: self.message.requestUrl!)!
-        let urlComponents = NSURLComponents(url: url, resolvingAgainstBaseURL: false)
+        var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
         if let jsonParam: [String : Any] = self.message.requestData as? [String : Any]
         {
             var queryItems = [URLQueryItem]()
@@ -205,7 +207,6 @@ class NetworkClient : NSObject {
             }else{
                 urlComponents?.queryItems! += queryItems
             }
-            
         }
         
         var urlRequest = URLRequest(url: urlComponents!.url!)
@@ -410,7 +411,6 @@ extension NetworkClient
     {
         if let responseData = dataResponse.data, responseData.count > 0
         {
-            
             if isEncrypted()
             {
                 // 如果是字符串，说明已经报错了
