@@ -174,7 +174,6 @@ class NetworkHandler: RequestAdapter, RequestRetrier
         }
     }
     
-    
     fileprivate func setRequestHTTPHeaders( _ urlRequest: inout URLRequest)
     {
         // 时间戳
@@ -189,50 +188,6 @@ class NetworkHandler: RequestAdapter, RequestRetrier
         urlRequest.setValue(signature, forHTTPHeaderField: "X-LJ-SIGN");
         urlRequest.setValue("application/octet-stream", forHTTPHeaderField: "Content-Type");
     }
-    
-    /*
-    fileprivate func setRequestBody( _ urlRequest: inout URLRequest)
-    {
-        switch self.requestBodyType {
-        case .json: // 一般Post请求
-            setRequestJsonBody(&urlRequest)
-        case .data: // 上传文件，图片等数据
-            setRequestDataBody(&urlRequest)
-        }
-    }
- 
-    
-    fileprivate func setRequestJsonBody( _ urlRequest: inout URLRequest)
-    {
-        guard let originBody = urlRequest.httpBody, let key = NetworkCipher.shared.aes_key, let iv = NetworkCipher.shared.aes_iv else {
-            return
-        }
-        /*
-         
-         guard let bodyStr = String(bytes: originBody, encoding: String.Encoding.utf8) else {
-         return
-         }
-         
-         var params = [String:String]()
-         bodyStr.components(separatedBy: "&").enumerated().forEach({ (offset, ele) in
-         let kv = ele.components(separatedBy: "=")
-         if kv.count == 2
-         {
-         params[kv[0]] = kv[1]
-         }
-         })
-         
-         guard let paramData:Data = try? JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions.prettyPrinted) else {
-         return
-         }
-         */
-        
-        if let body = FSOpenSSL.aes_encrypt(originBody, key: key, iv: iv)
-        {
-            urlRequest.httpBody = body
-        }
-    }
-    */
     
     fileprivate func setRequestDataBody( _ urlRequest: inout URLRequest, _ aes_key: String, _ aes_iv: String)
     {
