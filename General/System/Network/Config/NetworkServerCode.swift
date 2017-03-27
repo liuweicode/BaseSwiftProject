@@ -21,3 +21,6 @@ enum NetworkResponseCode: Int
     case logged_in_on_another_device = 406;  // 表示已在其他设备授权 请重新授权
     case encryption_key_invalid = 407; // 服务器当前Session中aes_key|aes_iv没有 说明失效了
 }
+
+
+let NETWORK_RESPONSE_STATUS_CODE = 401 

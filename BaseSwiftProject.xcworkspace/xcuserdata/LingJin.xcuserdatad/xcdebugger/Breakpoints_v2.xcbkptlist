@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512293334.615898"
+            timestampString = "512298654.035697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "adapt(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512293334.615898"
+            timestampString = "512298654.035697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "refreshTokens(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512293334.615898"
+            timestampString = "512298654.035697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "logRequestJsonInfo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkClient.swift"
-            timestampString = "512297505.411216"
+            timestampString = "512298654.035697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "367"
-            endingLineNumber = "367"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
             landmarkName = "doCommonResponse(dataResponse:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,7 +106,7 @@
                   moduleName = "BaseSwiftProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/Classes/Login/Controllers/LoginViewController.swift"
-                  timestampString = "512297506.594739"
+                  timestampString = "512298695.630795"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "226"
@@ -121,7 +121,7 @@
                   moduleName = "BaseSwiftProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/Classes/Login/Controllers/LoginViewController.swift"
-                  timestampString = "512297506.595875"
+                  timestampString = "512298695.631929"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "227"
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512293334.615898"
+            timestampString = "512298654.035697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "refreshTokens(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512293334.615898"
+            timestampString = "512298654.035697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "adapt(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512293334.615898"
+            timestampString = "512298654.035697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "adapt(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512293334.615898"
+            timestampString = "512298654.035697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "setRequestDataBody(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512293334.615898"
+            timestampString = "512298654.035697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "setRequestDataBody(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512293334.615898"
+            timestampString = "512298654.035697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "adapt(_:)"
             landmarkType = "7">
             <Locations>
@@ -266,11 +266,11 @@
                   moduleName = "BaseSwiftProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/General/System/Network/NetworkHandler.swift"
-                  timestampString = "512297506.612654"
+                  timestampString = "512298695.96044"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
                   offsetFromSymbolStart = "28">
                </Location>
                <Location
@@ -281,11 +281,11 @@
                   moduleName = "BaseSwiftProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/General/System/Network/NetworkHandler.swift"
-                  timestampString = "512297506.613784"
+                  timestampString = "512298695.962199"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
                   offsetFromSymbolStart = "184">
                </Location>
             </Locations>

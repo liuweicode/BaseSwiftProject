@@ -194,7 +194,7 @@ extension LoginViewController
             "code": SAFE_STRING(captcha)
         ];
         
-        _ = NC_GET(self).send(params: param, url: API(service: API_USER_SIGN), successBlock: { (message) in
+        _ = NC_POST(self).send(params: param, url: API(service: API_USER_SIGN), successBlock: { (message) in
             
             ToastView.showSuccess("登录成功")
 

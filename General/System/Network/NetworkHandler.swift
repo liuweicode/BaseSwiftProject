@@ -20,9 +20,13 @@ import SwiftyJSON
 
 enum EncryptionKeyIsNull: Error {case null}
 
+// 请求重试最大次数
+let REQUEST_RETRY_MAX_COUNT = 3
+
 class NetworkHandler: RequestAdapter, RequestRetrier
 {
     var isEncrypt: Bool = true // 是否需要加密请求体数据
+    var requestRetryCount = 0
     
     private typealias RefreshCompletion = (_ succeeded: Bool, _ aes_key: String?, _ aes_iv: String?, _ token: String?) -> Void
     
@@ -68,22 +72,32 @@ class NetworkHandler: RequestAdapter, RequestRetrier
     {   
         lock.lock() ; defer { lock.unlock() }
         
+        if requestRetryCount > REQUEST_RETRY_MAX_COUNT
+        {
+            // 如果重试次数大于最大重试次数，则取消重试
+            completion(false, 0.0)
+            return
+        }
         if error is EncryptionKeyIsNull
         {
-            // 加密 key 为空，需要获取加密 key
+            // 如果错误是加密 key 为空，则需要获取加密 key
             doRefreshTokens(completion)
             return
         }
-        
-        // 401 表示加密 key 不合法 需要重新获取
-        if let response = request.task?.response as? HTTPURLResponse, response.statusCode == 401
+        // 401 表示加密 key 不合法 需要重新获取，需要与服务器一致
+        if let response = request.task?.response as? HTTPURLResponse
         {
-            #if DEBUG
-                ANT_LOG_INFO("服务器提示密钥不合法 需要重新获取")
-            #endif
-            doRefreshTokens(completion)
+            if response.statusCode == NETWORK_RESPONSE_STATUS_CODE
+            {
+                doRefreshTokens(completion)
+            }
+            else
+            {
+                completion(false, 0.0)
+            }
         }
-        else{
+        else
+        {
             completion(false, 0.0)
         }
     }
@@ -247,7 +261,11 @@ class NetworkHandler: RequestAdapter, RequestRetrier
             {
                 if let decodedData = FSOpenSSL.aes_decrypt(bodyData, key: key, iv: iv)
                 {
-                    requestParamDicts = try JSONSerialization.jsonObject(with: decodedData, options: .allowFragments)
+                    do{
+                        requestParamDicts = try JSONSerialization.jsonObject(with: decodedData, options: .allowFragments)
+                    } catch {
+                        requestParamDicts = "\(decodedData.count) bytes"
+                    }
                 }
             }
             ANT_LOG_NETWORK_REQUEST("Request URL:\(urlRequest.url!.absoluteString)\nRequest Headers:\(requestHeaderDicts)\nRequest Params：\(requestParamDicts)")

@@ -258,8 +258,16 @@ class NetworkClient : NSObject {
                 self.message.networkError = .operationError(code: code, msg:msg)
                 self.failure()
             }
-        // 未签名 | 签名错误 | 未登录 | 登录过期 | 服务器加解密key失效
-        case .unsigned, .signature_error, .not_logged_in, .login_state_expired, .encryption_key_invalid:
+        // 未签名 | 签名错误 | 服务器加解密key失效
+        case .unsigned, .signature_error, .encryption_key_invalid:
+            
+            let msg = json["msg"].stringValue
+            ANT_LOG_NETWORK_ERROR("\(msg)")
+            self.message.networkError = .serverError(ret:ret, msg:msg)
+            self.failure()
+        
+        // 未登录 | 登录过期
+        case .not_logged_in, .login_state_expired:
             
             let msg = json["msg"].stringValue
             ANT_LOG_NETWORK_ERROR("\(msg)")
