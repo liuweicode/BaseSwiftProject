@@ -10,30 +10,15 @@ import UIKit
 import SwiftyJSON
 
 // 网络数据封装
-class NetworkMessage: NSObject {
-
-    /************ 请求数据 ************/
- 
+class NetworkMessage: NSObject
+{
     // 请求地址
     var requestUrl: String?
-
-    
     // 请求参数
     var requestData: Any?
     
-//    // 请求数据 一般用在图片上传中
-//    var paramData: Data?
-//    
-//    // 请求体数据
-//    var data:Data?
-    
-    /************ 响应的数据 ************/
- 
-    //lazy var response = NetworkResponse()
-    
     // response body 数据
     private var _responseJson: JSON?
-    
     var responseJson: JSON
     {
         set{
@@ -47,9 +32,6 @@ class NetworkMessage: NSObject {
             return _responseJson!
         }
     }
-    
-    var responseData: Data?
-    
     
     // 错误
     var networkError: NetworkErrorType?

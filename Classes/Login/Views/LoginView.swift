@@ -62,6 +62,14 @@ class LoginView: BaseView {
         return loginButton
     }()
     
+    let uploadButton: UIButton = {
+        let uploadButton = UIButton.blueButton()
+        uploadButton.setTitle("上传", for: .normal)
+        uploadButton.layer.masksToBounds = true
+        uploadButton.layer.cornerRadius = 4
+        return uploadButton
+    }()
+    
     override func settingLayout() {
         
         addSubview(scrollView)
@@ -143,8 +151,14 @@ class LoginView: BaseView {
             make.height.equalTo(44)
         })
         
+        contentView.addSubview(uploadButton)
+        uploadButton.snp.makeConstraints { (make) in
+            make.left.right.height.equalTo(loginButton)
+            make.top.equalTo(loginButton.snp.bottom).offset(20)
+        }
+        
         contentView.snp.makeConstraints { (make) in
-            make.bottom.equalTo(loginButton.snp.bottom)
+            make.bottom.equalTo(uploadButton.snp.bottom)
         }
     }
     

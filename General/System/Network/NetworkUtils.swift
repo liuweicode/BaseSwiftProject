@@ -29,7 +29,8 @@ class NetworkUtils: NSObject {
     // 生成签名
     class func generateSignature(_ timestamp:String, random:String) -> String
     {
-        let token = NetworkCipher.sharedInstance.token == nil ? "NULL":NetworkCipher.sharedInstance.token!
+        
+        let token = NetworkCipher.shared.token == nil ? "NULL" : NetworkCipher.shared.token!
         
         let sourceArr:[String] = [timestamp,random,token]
         

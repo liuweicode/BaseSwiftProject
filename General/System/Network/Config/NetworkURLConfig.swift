@@ -89,8 +89,7 @@ class NetworkURLConfig: NSObject {
         html_feedback = "http://192.168.199.228/jichongchong/Public/v1/feedback.php"
         // 关于冰梨云
         html_about = "http://192.168.199.228/jichongchong/Public/v1/about.php"
-        
-        //changeApiEnvironmentToPRO()
+
     }
     
     // 切换到SIT环境

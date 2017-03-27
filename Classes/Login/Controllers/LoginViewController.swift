@@ -39,6 +39,8 @@ class LoginViewController: BaseViewController {
         rootView.obtainButton.addTarget(self, action: #selector(onSendVerificationCodeButtonClick(_:)), for: .touchUpInside)
         rootView.loginButton.addTarget(self, action: #selector(onLoginButtonClick(_:)), for: .touchUpInside)
         
+        rootView.uploadButton.addTarget(self, action: #selector(onUploadButtonClick(_:)), for: .touchUpInside)
+        
         // 检测版本更新
         //APPVersionManager.sharedInstance.checkAppHasNewVersion()
     }
@@ -61,6 +63,12 @@ class LoginViewController: BaseViewController {
     func onLoginButtonClick(_ button:UIButton)
     {
         self.doLoginRequest()
+    }
+    
+    // 登录点击事件
+    func onUploadButtonClick(_ button:UIButton)
+    {
+        self.doUploadRequest()
     }
 }
 
@@ -186,24 +194,40 @@ extension LoginViewController
             "code": SAFE_STRING(captcha)
         ];
         
-        _ = NC_POST(self).send(params: param, url: API(service: API_USER_SIGN), successBlock: { (message) in
+        _ = NC_GET(self).send(params: param, url: API(service: API_USER_SIGN), successBlock: { (message) in
             
-            ToastView.hide()
-            
-            // 保存用户信息
-            let appUser = AppUser(json: message.responseJson["data"]["responsedata"]["user_info"])
-            UserCenter.saveUser(appUser)
-            
-            if self.isPresent
-            {
-                self.dismiss(animated: true, completion: nil)
-                self.postNotification(NK_LOGIN_SUCCESS)
-            }else{
-                APPCONTROLLER.setMain()
-            }
+            ToastView.showSuccess("登录成功")
 
         }) { (message) in
             ToastView.showErrorMessage(message.networkError!)
         }
+    }
+    
+    func imageHasAlpha(_ image:UIImage) -> Bool {
+        let alpha = image.cgImage?.alphaInfo;
+        return (alpha == CGImageAlphaInfo.first ||
+            alpha == CGImageAlphaInfo.last ||
+            alpha == CGImageAlphaInfo.premultipliedFirst ||
+            alpha == CGImageAlphaInfo.premultipliedLast);
+    }
+    
+    func doUploadRequest()
+    {
+        let image = UIImage(named: "test.jpg")!
+        var imageData:Data!
+        var mimeType:String? = nil
+        if imageHasAlpha(image) {
+            imageData = UIImagePNGRepresentation(image)
+            mimeType = "png"
+        }else{
+            imageData = UIImageJPEGRepresentation(image, 0.5)
+            mimeType = "jpeg"
+        }
+        _ = NC_POST(self).send(data: imageData, url: "\(API(service:API_FILE_UPLOAD))&extension=\(SAFE_STRING(mimeType))", successBlock: { (message) in
+            let file_path = message.responseJson["data"]["responsedata"]["path"].string!
+             ToastView.showSuccess("上传成功:\(file_path)")
+        }, failBlock: { (message) in
+            ToastView.showErrorMessage(message.networkError!)
+        })
     }
 }

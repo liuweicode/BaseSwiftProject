@@ -127,56 +127,15 @@ class LogoViewController: BaseViewController {
     
     func handleTimer(_ timer:Timer)
     {
-        if UserDefaults.standard.object(forKey: "is_guide_show1") == nil
-        {
-            APPCONTROLLER.setupGuide()
-            return
-        }
+//        if UserDefaults.standard.object(forKey: "is_guide_show1") == nil
+//        {
+//            APPCONTROLLER.setupGuide()
+//            return
+//        }
         
         APPCONTROLLER.setupLogin()
         
-//        //self.requestToken()
-//        if let user = UserCenter.currentUser()
-//        {
-//            let org_ids = UserCenter.getOrganizationId()
-//            
-//            // 自动登录
-//            self.doAutoLogin(user.user_ids, auth_login_secret: user.auth_login_secret, org_ids: org_ids)
-//        }else{
-//            APPCONTROLLER.setupLogin()
-//        }
     }
     
-    //    func requestToken()
-    //    {
-    //        // session 15  API->解密-> 刷新时间
-    //        // user 10 409->auto login
-    //        _ = NC_POST(self).send(method: .post, params: nil, url: API(API_SYSTEM_GETAESKEY), successBlock: { (message) in
-    //
-    //            self.activityIndicatorView.stopAnimating()
-    //
-    //            NetworkCipher.sharedInstance.aes_key = message.responseJson["data"]["responsedata"]["aes_key"].string
-    //            NetworkCipher.sharedInstance.aes_iv = message.responseJson["data"]["responsedata"]["aes_iv"].string
-    //            NetworkCipher.sharedInstance.token = message.responseJson["data"]["responsedata"]["token"].string
-    //
-    //            if let user = UserCenter.currentUser(), let org = UserCenter.currentOrganization()
-    //            {
-    //                // 自动登录
-    //                self.doAutoLogin(user.user_ids, auth_login_secret: user.auth_login_secret, org_ids: org.org_ids)
-    //            }else{
-    //                APPCONTROLLER.setupLogin()
-    //            }
-    //
-    //        }) { (message) in
-    //            self.activityIndicatorView.stopAnimating()
-    //            ToastView.showError(message.networkError!)
-    //            self.requestBtn.isHidden = false
-    //            UIView.animate(withDuration: 0.8, animations: {
-    //                self.requestBtn.alpha = 1
-    //            })
-    //            
-    //            // 获取密钥失败
-    //            ANT_LOG_ERROR("获取密钥失败 errorcode:\(message.networkError)")
-    //        }
-    //    }
+   
 }
