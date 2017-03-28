@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE1A0859D749D1D186C5D439 /* Pods_BaseSwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */; };
 		FE501DB61E8A3057008938DA /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB51E8A3057008938DA /* ActionSheet.swift */; };
+		FE501DB91E8A5BA3008938DA /* OpenSSLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB81E8A5BA3008938DA /* OpenSSLUtil.m */; };
 		FE6090C51E82867C0042229D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6090C41E82867C0042229D /* AppDelegate.swift */; };
 		FE6090C71E82867C0042229D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6090C61E82867C0042229D /* ViewController.swift */; };
 		FE6090CA1E82867C0042229D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6090C81E82867C0042229D /* Main.storyboard */; };
@@ -161,6 +162,8 @@
 		E847BC3347EE2FEAC82D532C /* Pods-BaseSwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		F37B09E57C6C1EDF77E45A04 /* Pods-BaseSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FE501DB51E8A3057008938DA /* ActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
+		FE501DB71E8A5BA3008938DA /* OpenSSLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSSLUtil.h; sourceTree = "<group>"; };
+		FE501DB81E8A5BA3008938DA /* OpenSSLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSSLUtil.m; sourceTree = "<group>"; };
 		FE6090C11E82867C0042229D /* BaseSwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseSwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6090C41E82867C0042229D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE6090C61E82867C0042229D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -780,9 +783,7 @@
 			children = (
 				FE6091571E83A5F00042229D /* ActionSheet */,
 				FE60915A1E83A5F00042229D /* AlertView */,
-				FE60915C1E83A5F00042229D /* Button */,
 				FE60915D1E83A5F00042229D /* Component */,
-				FE6091681E83A5F00042229D /* CXCamera */,
 				FE6091691E83A5F00042229D /* CycleView */,
 				FE60916C1E83A5F00042229D /* Font */,
 				FE60916E1E83A5F00042229D /* Image */,
@@ -815,13 +816,6 @@
 				FE60915B1E83A5F00042229D /* AlertView.swift */,
 			);
 			path = AlertView;
-			sourceTree = "<group>";
-		};
-		FE60915C1E83A5F00042229D /* Button */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Button;
 			sourceTree = "<group>";
 		};
 		FE60915D1E83A5F00042229D /* Component */ = {
@@ -860,13 +854,6 @@
 				FE6091671E83A5F00042229D /* PlaceholderTextView.swift */,
 			);
 			path = TextView;
-			sourceTree = "<group>";
-		};
-		FE6091681E83A5F00042229D /* CXCamera */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CXCamera;
 			sourceTree = "<group>";
 		};
 		FE6091691E83A5F00042229D /* CycleView */ = {
@@ -1102,6 +1089,8 @@
 				FE6092061E83A5F00042229D /* LMAESCryptor.m */,
 				FE6092071E83A5F00042229D /* LMRSACryptor.h */,
 				FE6092081E83A5F00042229D /* LMRSACryptor.m */,
+				FE501DB71E8A5BA3008938DA /* OpenSSLUtil.h */,
+				FE501DB81E8A5BA3008938DA /* OpenSSLUtil.m */,
 			);
 			path = OpenSSL;
 			sourceTree = "<group>";
@@ -1734,6 +1723,7 @@
 				FE6092AA1E83C0540042229D /* LoginViewController.swift in Sources */,
 				FE60927F1E83A5F10042229D /* UserCenter.swift in Sources */,
 				FE6092D71E84EAB20042229D /* SessionManager.swift in Sources */,
+				FE501DB91E8A5BA3008938DA /* OpenSSLUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
