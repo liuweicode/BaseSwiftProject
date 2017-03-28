@@ -235,7 +235,7 @@ class AlertView: UIView {
         if titleLable.text == nil && messageLabel.text != nil
         {
             messageLabel.snp.makeConstraints( { (make) in
-                make.top.equalTo(containerView.snp.top).offset(10)
+                make.top.equalTo(containerView.snp.top).offset(15)
                 make.centerX.equalTo(containerView.snp.centerX)
                 make.left.equalTo(containerView.snp.left).offset(10)
                 make.right.equalTo(containerView.snp.right).offset(-10)
@@ -249,7 +249,7 @@ class AlertView: UIView {
         else if titleLable.text != nil && messageLabel.text == nil
         {
             titleLable.snp.makeConstraints({ (make) in
-                make.top.equalTo(containerView.snp.top).offset(10)
+                make.top.equalTo(containerView.snp.top).offset(15)
                 make.centerX.equalTo(containerView.snp.centerX)
                 make.left.equalTo(containerView.snp.left).offset(10)
                 make.right.equalTo(containerView.snp.right).offset(-10)
@@ -264,7 +264,7 @@ class AlertView: UIView {
         else if titleLable.text != nil && messageLabel.text != nil
         {
             titleLable.snp.makeConstraints({ (make) in
-                make.top.equalTo(containerView.snp.top).offset(10)
+                make.top.equalTo(containerView.snp.top).offset(15)
                 make.centerX.equalTo(containerView.snp.centerX)
                 make.left.equalTo(containerView.snp.left).offset(10)
                 make.right.equalTo(containerView.snp.right).offset(-10)

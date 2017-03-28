@@ -81,7 +81,7 @@ class LoginViewController: BaseViewController {
         
         let ok = AlertViewButtonItem(inLabel: "确定")
         
-        let alertView = AlertView(title: "测试标题", message: "测试内容", cancelButtonItem: ok, otherButtonItems: nil)
+        let alertView = AlertView(title: nil, message: "测试内容", cancelButtonItem: ok, otherButtonItems: nil)
         alertView.show()
     }
 }

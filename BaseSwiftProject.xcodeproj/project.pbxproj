@@ -65,7 +65,6 @@
 		FE6092391E83A5F00042229D /* LogConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091411E83A5F00042229D /* LogConfig.swift */; };
 		FE6092481E83A5F00042229D /* String+Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091531E83A5F00042229D /* String+Business.swift */; };
 		FE6092491E83A5F00042229D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091541E83A5F00042229D /* String+Ext.swift */; };
-		FE60924A1E83A5F00042229D /* DNActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6091591E83A5F00042229D /* DNActionSheet.m */; };
 		FE60924B1E83A5F00042229D /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60915B1E83A5F00042229D /* AlertView.swift */; };
 		FE60924C1E83A5F00042229D /* DQTapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60915F1E83A5F00042229D /* DQTapGestureRecognizer.swift */; };
 		FE60924D1E83A5F00042229D /* NSProtocolInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091601E83A5F00042229D /* NSProtocolInterceptor.swift */; };
@@ -222,8 +221,6 @@
 		FE6091411E83A5F00042229D /* LogConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogConfig.swift; sourceTree = "<group>"; };
 		FE6091531E83A5F00042229D /* String+Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Business.swift"; sourceTree = "<group>"; };
 		FE6091541E83A5F00042229D /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
-		FE6091581E83A5F00042229D /* DNActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DNActionSheet.h; sourceTree = "<group>"; };
-		FE6091591E83A5F00042229D /* DNActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DNActionSheet.m; sourceTree = "<group>"; };
 		FE60915B1E83A5F00042229D /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		FE60915F1E83A5F00042229D /* DQTapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DQTapGestureRecognizer.swift; sourceTree = "<group>"; };
 		FE6091601E83A5F00042229D /* NSProtocolInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSProtocolInterceptor.swift; sourceTree = "<group>"; };
@@ -807,8 +804,6 @@
 		FE6091571E83A5F00042229D /* ActionSheet */ = {
 			isa = PBXGroup;
 			children = (
-				FE6091581E83A5F00042229D /* DNActionSheet.h */,
-				FE6091591E83A5F00042229D /* DNActionSheet.m */,
 				FE501DB51E8A3057008938DA /* ActionSheet.swift */,
 			);
 			path = ActionSheet;
@@ -1724,7 +1719,6 @@
 				FE6092321E83A5F00042229D /* RouterPattern.swift in Sources */,
 				FE60927A1E83A5F10042229D /* BaseNavigationController.swift in Sources */,
 				FE501DB61E8A3057008938DA /* ActionSheet.swift in Sources */,
-				FE60924A1E83A5F00042229D /* DNActionSheet.m in Sources */,
 				FE6092251E83A5F00042229D /* AntTestViewController.swift in Sources */,
 				FE6092A81E83C0540042229D /* GuideView.swift in Sources */,
 				FE6092391E83A5F00042229D /* LogConfig.swift in Sources */,
