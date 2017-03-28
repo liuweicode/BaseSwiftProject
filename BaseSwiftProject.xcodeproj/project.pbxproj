@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE1A0859D749D1D186C5D439 /* Pods_BaseSwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */; };
+		FE501DB61E8A3057008938DA /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB51E8A3057008938DA /* ActionSheet.swift */; };
 		FE6090C51E82867C0042229D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6090C41E82867C0042229D /* AppDelegate.swift */; };
 		FE6090C71E82867C0042229D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6090C61E82867C0042229D /* ViewController.swift */; };
 		FE6090CA1E82867C0042229D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE6090C81E82867C0042229D /* Main.storyboard */; };
@@ -160,6 +161,7 @@
 		9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseSwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E847BC3347EE2FEAC82D532C /* Pods-BaseSwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		F37B09E57C6C1EDF77E45A04 /* Pods-BaseSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
+		FE501DB51E8A3057008938DA /* ActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		FE6090C11E82867C0042229D /* BaseSwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseSwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6090C41E82867C0042229D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE6090C61E82867C0042229D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -807,6 +809,7 @@
 			children = (
 				FE6091581E83A5F00042229D /* DNActionSheet.h */,
 				FE6091591E83A5F00042229D /* DNActionSheet.m */,
+				FE501DB51E8A3057008938DA /* ActionSheet.swift */,
 			);
 			path = ActionSheet;
 			sourceTree = "<group>";
@@ -1720,6 +1723,7 @@
 				FE6090C71E82867C0042229D /* ViewController.swift in Sources */,
 				FE6092321E83A5F00042229D /* RouterPattern.swift in Sources */,
 				FE60927A1E83A5F10042229D /* BaseNavigationController.swift in Sources */,
+				FE501DB61E8A3057008938DA /* ActionSheet.swift in Sources */,
 				FE60924A1E83A5F00042229D /* DNActionSheet.m in Sources */,
 				FE6092251E83A5F00042229D /* AntTestViewController.swift in Sources */,
 				FE6092A81E83C0540042229D /* GuideView.swift in Sources */,

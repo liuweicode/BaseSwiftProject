@@ -62,13 +62,27 @@ class LoginViewController: BaseViewController {
     // 登录点击事件
     func onLoginButtonClick(_ button:UIButton)
     {
-        self.doLoginRequest()
+        let cancel = ActionSheetButtonItem(inLabel: "取消"){
+            print("取消")
+        }
+        let confirm = ActionSheetButtonItem(inLabel: "确定") {
+            print("确定")
+        }
+        let alertView = ActionSheet(title: "标题", message: "消息", cancelButtonItem: cancel, otherButtonItems: confirm)
+        alertView.show()
+        
+        //self.doLoginRequest()
     }
     
     // 登录点击事件
     func onUploadButtonClick(_ button:UIButton)
     {
-        self.doUploadRequest()
+        //self.doUploadRequest()
+        
+        let ok = AlertViewButtonItem(inLabel: "确定")
+        
+        let alertView = AlertView(title: "测试标题", message: "测试内容", cancelButtonItem: ok, otherButtonItems: nil)
+        alertView.show()
     }
 }
 

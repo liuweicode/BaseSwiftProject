@@ -159,7 +159,7 @@ class AlertView: UIView {
     
     convenience init(title inTitle:String?,message inMessage:String?,cancelButtonItem inCancelButtonItem:AlertViewButtonItem?,otherButtonItems inOtherButtonItems:AlertViewButtonItem...) {
         self.init()
-        
+
         alertViewStyle = .normal
         cancelButtonItem = inCancelButtonItem
         otherButtonItems = inOtherButtonItems
@@ -171,6 +171,7 @@ class AlertView: UIView {
         containerView.addSubview(messageLabel)
         
         self.setButtons()
+        
     }
     
     convenience init(title inTitle:String?,message inMessage:String?,cancelButtonItem inCancelButtonItem:AlertViewButtonItem?,otherButtonItems inOtherButtonItems:[AlertViewButtonItem]?) {
@@ -231,25 +232,59 @@ class AlertView: UIView {
             make.height.greaterThanOrEqualTo(0).priority(1)
         })
         
-        titleLable.snp.makeConstraints({ (make) in
-            make.top.equalTo(containerView.snp.top).offset(titleLable.text == nil ? 0 : 10)
-            make.centerX.equalTo(containerView.snp.centerX)
-            make.left.equalTo(containerView.snp.left).offset(10)
-            make.right.equalTo(containerView.snp.right).offset(-10)
-            make.height.greaterThanOrEqualTo(0)
-        })
+        if titleLable.text == nil && messageLabel.text != nil
+        {
+            messageLabel.snp.makeConstraints( { (make) in
+                make.top.equalTo(containerView.snp.top).offset(10)
+                make.centerX.equalTo(containerView.snp.centerX)
+                make.left.equalTo(containerView.snp.left).offset(10)
+                make.right.equalTo(containerView.snp.right).offset(-10)
+                make.height.greaterThanOrEqualTo(60)
+            })
+            
+            containerView.snp.makeConstraints( { (make) in
+                make.bottom.equalTo(messageLabel.snp.bottom).offset(10)
+            })
+        }
+        else if titleLable.text != nil && messageLabel.text == nil
+        {
+            titleLable.snp.makeConstraints({ (make) in
+                make.top.equalTo(containerView.snp.top).offset(10)
+                make.centerX.equalTo(containerView.snp.centerX)
+                make.left.equalTo(containerView.snp.left).offset(10)
+                make.right.equalTo(containerView.snp.right).offset(-10)
+                make.height.greaterThanOrEqualTo(60)
+            })
+            
+            containerView.snp.makeConstraints( { (make) in
+                make.bottom.equalTo(titleLable.snp.bottom).offset(10)
+            })
         
-        messageLabel.snp.makeConstraints( { (make) in
-            make.top.equalTo(titleLable.snp.bottom).offset(messageLabel.text == nil ? 0 : 10)
-            make.centerX.equalTo(containerView.snp.centerX)
-            make.left.equalTo(containerView.snp.left).offset(10)
-            make.right.equalTo(containerView.snp.right).offset(-10)
-            make.height.greaterThanOrEqualTo(0)
-        })
-        
-        containerView.snp.makeConstraints( { (make) in
-            make.bottom.equalTo(messageLabel.snp.bottom).offset(10)
-        })
+        }
+        else if titleLable.text != nil && messageLabel.text != nil
+        {
+            titleLable.snp.makeConstraints({ (make) in
+                make.top.equalTo(containerView.snp.top).offset(10)
+                make.centerX.equalTo(containerView.snp.centerX)
+                make.left.equalTo(containerView.snp.left).offset(10)
+                make.right.equalTo(containerView.snp.right).offset(-10)
+                make.height.greaterThanOrEqualTo(0)
+            })
+            
+            messageLabel.snp.makeConstraints( { (make) in
+                make.top.equalTo(titleLable.snp.bottom).offset(10)
+                make.centerX.equalTo(containerView.snp.centerX)
+                make.left.equalTo(containerView.snp.left).offset(10)
+                make.right.equalTo(containerView.snp.right).offset(-10)
+                make.height.greaterThanOrEqualTo(30)
+            })
+            
+            containerView.snp.makeConstraints( { (make) in
+                make.bottom.equalTo(messageLabel.snp.bottom).offset(10)
+            })
+        }else{
+            
+        }
         
         lineView.snp.makeConstraints( { (make) in
             make.left.equalTo(dialogView.snp.left)
@@ -280,7 +315,6 @@ class AlertView: UIView {
                 make.top.bottom.height.equalTo(buttonContainerView)
                 make.width.equalTo(buttonContainerView.snp.width).dividedBy(buttonContainerView.subviews.count).priority(250)
             })
-            
         })
         
         dialogView.snp.makeConstraints( { (make) in
