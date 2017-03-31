@@ -10,25 +10,14 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-//enum BackendError: Error {
-//    case network(error: Error)
-//    case jsonSerialization(error: Error)
-//    case xmlSerialization(error: Error)
-//    case objectSerialization(reason: String)
-//    case encryptionKeyIsNull // 加密密钥为空
-//}
-
 enum EncryptionKeyIsNull: Error {case null}
-
-// 请求重试最大次数
-let REQUEST_RETRY_MAX_COUNT = 3
 
 class NetworkHandler: RequestAdapter, RequestRetrier
 {
     var isEncrypt: Bool = true // 是否需要加密请求体数据
-    var requestRetryCount = 0
     
     private typealias RefreshCompletion = (_ succeeded: Bool, _ aes_key: String?, _ aes_iv: String?, _ token: String?) -> Void
+    private typealias AutoLoginCompletion = (_ succeeded: Bool, _ user:AppUser?) -> Void
     
     private let sessionManager: SessionManager = {
         let configuration = URLSessionConfiguration.default
@@ -36,10 +25,13 @@ class NetworkHandler: RequestAdapter, RequestRetrier
         return SessionManager(configuration: configuration)
     }()
     
-    private let lock = NSLock()
+    private let tokenLock = NSLock()
+    private var isTokenRefreshing = false
+    private var tokenRequestsToRetry: [RequestRetryCompletion] = []
     
-    private var isRefreshing = false
-    private var requestsToRetry: [RequestRetryCompletion] = []
+    private let loginLock = NSLock()
+    private var isAutoLogining = false
+    private var loginRequestsToRetry: [RequestRetryCompletion] = []
     
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest
     {
@@ -69,15 +61,12 @@ class NetworkHandler: RequestAdapter, RequestRetrier
     }
     
     func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion)
-    {   
-        lock.lock() ; defer { lock.unlock() }
+    {
+        tokenLock.lock() ;
+        loginLock.lock() ;
+        defer { tokenLock.unlock() }
+        defer { loginLock.unlock() }
         
-        if requestRetryCount > REQUEST_RETRY_MAX_COUNT
-        {
-            // 如果重试次数大于最大重试次数，则取消重试
-            completion(false, 0.0)
-            return
-        }
         if error is EncryptionKeyIsNull
         {
             // 如果错误是加密 key 为空，则需要获取加密 key
@@ -87,9 +76,27 @@ class NetworkHandler: RequestAdapter, RequestRetrier
         // 401 表示加密 key 不合法 需要重新获取，需要与服务器一致
         if let response = request.task?.response as? HTTPURLResponse
         {
-            if response.statusCode == NETWORK_RESPONSE_STATUS_CODE
+            if response.statusCode == RSC_SIGN_ERROR || response.statusCode == RSC_ENCRYPT_KEY_IS_NULL
             {
+                // 签名错误 重新获取加解密Key
+                #if DEBUG
+                    ANT_LOG_WARN("⚠️⚠️⚠️签名错误 重新获取加解密Key")
+                #endif
                 doRefreshTokens(completion)
+            }
+            else if response.statusCode == RSC_NO_LOGIN || response.statusCode == RSC_LOGIN_EXPIRED
+            {
+                // 未登录或者登录过期 如果本地存在用户自动登录密钥 则进行自动登录
+                #if DEBUG
+                    ANT_LOG_ERROR("⚠️⚠️⚠️未登录或者登录过期 如果本地存在用户自动登录密钥 则进行自动登录")
+                #endif
+                
+                if let user = UserCenter.currentUser()
+                {
+                    doAutoLogin(user.user_ids, user.auto_login_secret, completion)
+                }else{
+                    completion(false, 0.0)
+                }
             }
             else
             {
@@ -104,32 +111,32 @@ class NetworkHandler: RequestAdapter, RequestRetrier
     
     private func doRefreshTokens(_ completion: @escaping RequestRetryCompletion)
     {
-        requestsToRetry.append(completion)
+        tokenRequestsToRetry.append(completion)
         
-        if !isRefreshing {
+        if !isTokenRefreshing {
             refreshTokens { [weak self] succeeded, aes_key, aes_iv, token in
                 guard let strongSelf = self else { return }
                 
-                strongSelf.lock.lock() ; defer { strongSelf.lock.unlock() }
+                strongSelf.tokenLock.lock() ; defer { strongSelf.tokenLock.unlock() }
                 
                 if let key = aes_key, let iv = aes_iv, let tk = token {
                     NetworkCipher.shared.set(aes_key: key, aes_iv: iv, token: tk)
                     #if DEBUG
-                        ANT_LOG_INFO("密钥获取成功:aes_key:\(key) aes_iv:\(iv) token:\(tk)")
+                        ANT_LOG_INFO("\n❤️❤️❤️密钥获取成功:\naes_key:\(key) \naes_iv:\(iv) \ntoken:\(tk)")
                     #endif
                 }
                 
-                strongSelf.requestsToRetry.forEach { $0(succeeded, 0.0) }
-                strongSelf.requestsToRetry.removeAll()
+                strongSelf.tokenRequestsToRetry.forEach { $0(succeeded, 0.0) }
+                strongSelf.tokenRequestsToRetry.removeAll()
             }
         }
     }
     
     // MARK: - Private - Refresh Tokens
     private func refreshTokens(completion: @escaping RefreshCompletion) {
-        guard !isRefreshing else { return }
+        guard !isTokenRefreshing else { return }
         
-        isRefreshing = true
+        isTokenRefreshing = true
         
         sessionManager.request(API(service: API_SYSTEM_GETAESKEY), method: .post, parameters: nil, encoding: JSONEncoding.default)
             .responseData{[weak self] (dataResponse) in
@@ -149,7 +156,7 @@ class NetworkHandler: RequestAdapter, RequestRetrier
                     return
                 }
                 
-                guard let decodedData = FSOpenSSL.rsaDecode(responseData) else
+                guard let decodedData = OpenSSLUtil.rsaDecode(responseData) else
                 {
                     completion(false, nil, nil, nil)
                     return
@@ -157,7 +164,7 @@ class NetworkHandler: RequestAdapter, RequestRetrier
                 
                 let json = JSON(data: decodedData)
                 
-                if json["ret"].intValue != NetworkResponseCode.operation_success.rawValue
+                if json["ret"].intValue != RSC_OPERATION_SUCCESS
                 {
                     completion(false, nil, nil, nil)
                     return
@@ -170,7 +177,95 @@ class NetworkHandler: RequestAdapter, RequestRetrier
                 
                 completion(true, key, iv, token)
                 
-                strongSelf.isRefreshing = false
+                strongSelf.isTokenRefreshing = false
+        }
+    }
+    
+    private func autoLogin(_ user_ids:String, _ auto_login_secret:String, _ completion: @escaping AutoLoginCompletion) {
+        guard !isAutoLogining else { return }
+        
+        isAutoLogining = true
+        
+        let param: [String : Any] = [
+            "user_ids":user_ids,
+            "auto_login_secret":auto_login_secret
+        ];
+        
+        sessionManager.request(API(service: API_USER_AUTOSIGN), method: .post, parameters: param, encoding: JSONEncoding.default)
+            .responseData{[weak self] (dataResponse) in
+                
+                guard let strongSelf = self else { return }
+                
+                // 是否有错误
+                if dataResponse.result.isFailure
+                {
+                    completion(false, nil)
+                    return
+                }
+                
+                guard let responseData = dataResponse.data, responseData.count > 0 else
+                {
+                    completion(false, nil)
+                    return
+                }
+                
+                guard let key = NetworkCipher.shared.aes_key, let iv = NetworkCipher.shared.aes_iv else{
+                    completion(false, nil)
+                    return
+                }
+                
+                guard let decodedData = OpenSSLUtil.aes_256_decrypt(responseData, key: key, iv: iv) else
+                {
+                    completion(false, nil)
+                    return
+                }
+                
+                let json = JSON(data: decodedData)
+                
+                if json["ret"].intValue != RSC_OPERATION_SUCCESS
+                {
+                    completion(false, nil)
+                    return
+                }
+                
+                let appUser = AppUser(json: json["data"]["responsedata"]["user_info"])
+                
+                if String.isBlankOrNil(sourceS: appUser.user_ids)
+                {
+                    completion(false, nil)
+                    return
+                }
+                
+                completion(true, appUser)
+                
+                strongSelf.isAutoLogining = false
+        }
+    }
+    
+    private func doAutoLogin(_ user_ids:String, _ auto_login_secret:String, _ completion: @escaping RequestRetryCompletion)
+    {
+        loginRequestsToRetry.append(completion)
+        
+        if !isAutoLogining {
+            
+            autoLogin(user_ids, auto_login_secret, {[weak self] (succeeded, appUser) in
+              
+                guard let strongSelf = self else { return }
+                
+                strongSelf.loginLock.lock() ; defer { strongSelf.loginLock.unlock() }
+                
+                if let user = appUser {
+                    
+                    UserCenter.saveUser(user)
+                    
+                    #if DEBUG
+                        ANT_LOG_INFO("\n❤️❤️❤️自动登录成功")
+                    #endif
+                }
+                
+                strongSelf.loginRequestsToRetry.forEach { $0(succeeded, 0.0) }
+                strongSelf.loginRequestsToRetry.removeAll()
+            })
         }
     }
     
@@ -195,7 +290,7 @@ class NetworkHandler: RequestAdapter, RequestRetrier
             return
         }
         
-        if let body = FSOpenSSL.aes_encrypt(originBody, key: aes_key, iv: aes_iv)
+        if let body = OpenSSLUtil.aes_256_encrypt(originBody, key: aes_key, iv: aes_iv)
         {
             urlRequest.httpBody = body
         }
@@ -218,7 +313,7 @@ class NetworkHandler: RequestAdapter, RequestRetrier
                 {
                     if let key = NetworkCipher.shared.aes_key, let iv = NetworkCipher.shared.aes_iv
                     {
-                        if let decodedData = FSOpenSSL.aes_decrypt(bodyData, key: key, iv: iv)
+                        if let decodedData = OpenSSLUtil.aes_256_decrypt(bodyData, key: key, iv: iv)
                         {
                             do{
                                 requestParamDicts = try JSONSerialization.jsonObject(with: decodedData, options: .allowFragments)

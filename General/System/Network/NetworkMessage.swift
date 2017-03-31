@@ -34,7 +34,7 @@ class NetworkMessage: NSObject
     }
     
     // 错误
-    var networkError: NetworkErrorType?
+    var networkError: BackendError?
     
     // 用户自定义数据,与网络数据无关
     var userInfo: Any?

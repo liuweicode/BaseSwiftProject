@@ -39,7 +39,7 @@ class NetworkUtils: NSObject {
         }
         let signature = sortedArr.joined(separator: "")
         
-        let sign = FSOpenSSL.sha1(from: signature)
+        let sign = OpenSSLUtil.sha1(from: signature)
         
         return sign == nil ? "NULL" : sign!
     }

@@ -80,97 +80,21 @@ class ToastView: NSObject {
         }
     }
     
-    class func showError(_ networkError: NetworkErrorType?)
+    class func showError(_ backendError: BackendError?)
     {
-        guard let error = networkError else {
+        guard let error = backendError else {
             return
         }
         DispatchQueue.main.async {
+            
             switch error
             {
-            case .httpError(let code, _):
-                SVProgressHUD.showError(withStatus: "网络错误:(\(code))")
-            case .serverError(let ret, let msg):
-                
-            
-                switch ret
-                {
-                    // 操作成功
-                    case .operation_success:
-                        print("Nothing ^_^")
-                    // 其他
-                    case .other:
-                        ToastView.showError(msg)
-                    // 请求非法
-                    case .request_invalid:
-                        //APPCONTROLLER.setupLogo()
-                        ToastView.showError(msg)
-                    // 未签名
-                    case .unsigned:
-                        APPCONTROLLER.setupLogo()
-                    // 签名错误
-                    case .signature_error:
-                        APPCONTROLLER.setupLogo()
-                    // 未登录
-                    case .not_logged_in:
-                        APPCONTROLLER.setupLogo()
-                    // 账号已被禁用
-                    case .id_forbidden:
-                        APPCONTROLLER.setupLogo()
-                    // 表示登录过期
-                    case .login_state_expired:
-                        APPCONTROLLER.setupLogo()
-                    // 表示已在其他设备授权 请重新授权
-                    case .logged_in_on_another_device:
-                        DispatchQueue.main.async {
-                            SVProgressHUD.showError(withStatus: "已在其他设备授权，请重新授权")
-                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
-                                SVProgressHUD.dismiss()
-                                APPCONTROLLER.setupLogo()
-                            }
-                        }
-                    case .encryption_key_invalid:
-                        APPCONTROLLER.setupLogo()
-                }
-                
-            case .decryptDataError(let msg):
-                
-                SVProgressHUD.showError(withStatus:msg)
-                
-            case .responseDataError(let msg):
-                
-                SVProgressHUD.showError(withStatus:msg)
-                
-            case .operationError(let code, let msg):
-                
-                SVProgressHUD.showError(withStatus:"\(code)\n\(msg)")
+            case .network(error: let err):
+                SVProgressHUD.showError(withStatus: "网络错误:(\(SAFE_STRING(err?.localizedDescription)))")
+            case .operationError(code: let code, reason: let reason):
+                SVProgressHUD.showError(withStatus: "code:\(code)\nreason:\(reason)")
             }
             
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
-                SVProgressHUD.dismiss()
-            }
-        }
-    }
-    
-    class func showErrorMessage(_ networkError: NetworkErrorType?)
-    {
-        guard let error = networkError else {
-            return
-        }
-        DispatchQueue.main.async {
-            switch error
-            {
-            case .httpError(let code, _):
-                SVProgressHUD.showError(withStatus: "网络错误:(\(code))")
-            case .serverError( _, let msg):
-                SVProgressHUD.showError(withStatus:msg)
-            case .decryptDataError(let msg):
-                SVProgressHUD.showError(withStatus:msg)
-            case .responseDataError(let msg):
-                SVProgressHUD.showError(withStatus:msg)
-            case .operationError(let code, let msg):
-                SVProgressHUD.showError(withStatus:"\(code)\n\(msg)")
-            }
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2.0) {
                 SVProgressHUD.dismiss()
             }

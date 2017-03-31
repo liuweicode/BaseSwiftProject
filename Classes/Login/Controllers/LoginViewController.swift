@@ -62,27 +62,32 @@ class LoginViewController: BaseViewController {
     // 登录点击事件
     func onLoginButtonClick(_ button:UIButton)
     {
-        let cancel = ActionSheetButtonItem(inLabel: "取消"){
-            print("取消")
-        }
-        let confirm = ActionSheetButtonItem(inLabel: "确定") {
-            print("确定")
-        }
-        let alertView = ActionSheet(title: "标题", message: "消息", cancelButtonItem: cancel, otherButtonItems: confirm)
-        alertView.show()
-        
-        //self.doLoginRequest()
+//        let cancel = ActionSheetButtonItem(inLabel: "取消"){
+//            print("取消")
+//        }
+//        let confirm = ActionSheetButtonItem(inLabel: "确定") {
+//            print("确定")
+//        }
+//        let alertView = ActionSheet(title: "标题", message: "消息", cancelButtonItem: cancel, otherButtonItems: confirm)
+//        alertView.show()
+//        
+        self.doLoginRequest()
     }
     
     // 登录点击事件
     func onUploadButtonClick(_ button:UIButton)
     {
-        //self.doUploadRequest()
+        self.doUploadRequest()
         
-        let ok = AlertViewButtonItem(inLabel: "确定")
+//        let ok = AlertViewButtonItem(inLabel: "确定")
+//        
+//        let alertView = AlertView(title: nil, message: "测试内容", cancelButtonItem: ok, otherButtonItems: nil)
+//        alertView.show()
         
-        let alertView = AlertView(title: nil, message: "测试内容", cancelButtonItem: ok, otherButtonItems: nil)
-        alertView.show()
+//        let s1 = OpenSSLUtil.sha1(from: "1")
+//        let s2 = OpenSSLUtil.sha256(from: "1")
+//        print("s1 = \(s1)")
+//        print("s2 = \(s2)")
     }
 }
 
@@ -213,7 +218,7 @@ extension LoginViewController
             ToastView.showSuccess("登录成功")
 
         }) { (message) in
-            ToastView.showErrorMessage(message.networkError!)
+            ToastView.showError(message.networkError!)
         }
     }
     
@@ -241,7 +246,7 @@ extension LoginViewController
             let file_path = message.responseJson["data"]["responsedata"]["path"].string!
              ToastView.showSuccess("上传成功:\(file_path)")
         }, failBlock: { (message) in
-            ToastView.showErrorMessage(message.networkError!)
+            ToastView.showError(message.networkError!)
         })
     }
 }

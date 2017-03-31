@@ -169,7 +169,7 @@ class NetworkClient : NSObject {
             urlRequest.httpBody = dataParam
         }
         
-        let request = manager.request(urlRequest).validate().responseData
+        let request = manager.request(urlRequest).responseData
             {[weak self] (dataResponse) in
                 
                 //debugPrint(dataResponse)
@@ -213,7 +213,7 @@ class NetworkClient : NSObject {
         urlRequest.httpMethod = "GET"
         self.message.requestUrl = urlRequest.url?.absoluteString
         
-        let request = manager.request(urlRequest).validate().responseData
+        let request = manager.request(urlRequest).responseData
             {[weak self] (dataResponse) in
                 
                 //debugPrint(dataResponse)
@@ -239,12 +239,10 @@ class NetworkClient : NSObject {
         // 设置响应数据
         self.message.responseJson = json
         
-        let ret = NetworkResponseCode(rawValue:json["ret"].intValue) ?? .other
+        let ret = json["ret"].intValue
         
-        switch ret
+        if ret == RSC_OPERATION_SUCCESS
         {
-        // 操作成功
-        case .operation_success:
             if json["data"]["state"].boolValue
             {
                 // 设置最后一次接口操作时间
@@ -256,65 +254,41 @@ class NetworkClient : NSObject {
                 // 操作失败
                 let code = json["data"]["code"].intValue
                 let msg = json["msg"].stringValue
-                self.message.networkError = .operationError(code: code, msg:msg)
+                self.message.networkError = .operationError(code: code, reason: msg)
                 self.failure()
             }
-        // 未签名 | 签名错误 | 服务器加解密key失效
-        case .unsigned, .signature_error, .encryption_key_invalid:
-            
+        }
+        else{
             let msg = json["msg"].stringValue
-            ANT_LOG_NETWORK_ERROR("\(msg)")
-            self.message.networkError = .serverError(ret:ret, msg:msg)
-            self.failure()
-        
-        // 未登录 | 登录过期
-        case .not_logged_in, .login_state_expired:
-            
-            let msg = json["msg"].stringValue
-            ANT_LOG_NETWORK_ERROR("\(msg)")
-            self.message.networkError = .serverError(ret:ret, msg:msg)
-            self.failure()
-            
-        // 表示已在其他设备授权请重新授权 | 请求非法 | 账号已被禁用 | 其他未知错误
-        case .logged_in_on_another_device, .request_invalid, .id_forbidden, .other:
-            let msg = json["msg"].stringValue
-            self.message.networkError = .serverError(ret:ret, msg:msg)
+            self.message.networkError = .operationError(code: ret, reason: msg)
             self.failure()
         }
         
-    }
-    
-    fileprivate func doAutoLogin(_ user_ids:String, auto_login_secret:String)
-    {
-        let param: [String : Any] = [
-            "user_ids":user_ids,
-            "auto_login_secret":auto_login_secret
-        ];
+//        switch ret
+//        {
+//        // 操作成功
+//        case .operation_success:
+//            
+//        // 未签名 | 签名错误 | 服务器加解密key失效
+//        case .unsigned, .signature_error, .encryption_key_invalid:
+//            
+//            
+//        
+//        // 未登录 | 登录过期
+//        case .not_logged_in, .login_state_expired:
+//            
+//            let msg = json["msg"].stringValue
+//            ANT_LOG_NETWORK_ERROR("\(msg)")
+//            self.message.networkError = .serverError(ret:ret, msg:msg)
+//            self.failure()
+//            
+//        // 表示已在其他设备授权请重新授权 | 请求非法 | 账号已被禁用 | 其他未知错误
+//        case .logged_in_on_another_device, .request_invalid, .id_forbidden, .other:
+//            let msg = json["msg"].stringValue
+//            self.message.networkError = .serverError(ret:ret, msg:msg)
+//            self.failure()
+//        }
         
-        _ = NC_POST(self.target).send(params: param, url: API(service: API_USER_AUTOSIGN), successBlock: { (message) in
-            
-            // 保存用户信息
-            let appUser = AppUser(json: message.responseJson["data"]["responsedata"]["user_info"])
-            UserCenter.saveUser(appUser)
-            
-            // 重新发送之前的请求
-            #if DEBUG
-                ANT_LOG_NETWORK_REQUEST("重新发送之前的请求")
-            #endif
-            
-            _ = NC_POST(self.target).send(params:self.message.requestData as? [String : Any] , url: self.message.requestUrl!, successBlock: self.successBlock!, failBlock: self.failBlock!)
-            
-        }) { (message) in
-            #if DEBUG
-                ANT_LOG_NETWORK_ERROR("自动登录失败errorcode:\(message.networkError)")
-            #endif
-            // 删除用户信息
-            UserCenter.removeUser()
-            self.message = message
-            // 提示用户登录
-            self.message.networkError = .serverError(ret:.not_logged_in, msg:"登录失效,请重新登录。")
-            self.failure()
-        }
     }
     
     fileprivate func success()
@@ -375,12 +349,11 @@ extension NetworkClient
         // 是否有错误
         if dataResponse.result.isFailure
         {
-            let error = dataResponse.result.error as! NSError
-            self.message.networkError = .httpError(code:error.code, description:error.description)
+            self.message.networkError = .network(error: dataResponse.result.error)
             self.failure()
             
             #if DEBUG
-                ANT_LOG_NETWORK_ERROR("网络错误 \(self.message.requestUrl)\nresponse error is:\n\(error.description)")
+                ANT_LOG_NETWORK_ERROR("网络错误 \(self.message.requestUrl)\nresponse error is:\n\(SAFE_STRING(dataResponse.result.error?.localizedDescription))")
             #endif
         }
         else{
@@ -417,7 +390,7 @@ extension NetworkClient
                 if let htmlText = String(bytes: responseData, encoding: String.Encoding.utf8)
                 {
                     ANT_LOG_NETWORK_ERROR("返回服务器未知数据：\(htmlText)")
-                    self.message.networkError = .responseDataError(msg: "响应不合法")
+                    self.message.networkError = .operationError(code: -1, reason: "响应不合法")
                     self.failure()
                     return
                 }
@@ -438,7 +411,7 @@ extension NetworkClient
                 if isEncrypted()
                 {
                     // Encrypt 不合法
-                    self.message.networkError = .responseDataError(msg: "响应不合法")
+                    self.message.networkError = .operationError(code: -1, reason: "响应不合法")
                     self.failure()
                 }else{
                     self.doOperationData(responseData, dataResponse: dataResponse)
@@ -447,7 +420,7 @@ extension NetworkClient
         }
         else{
             // 响应体没有数据
-            self.message.networkError = .responseDataError(msg: "未知数据")
+            self.message.networkError = .operationError(code: -1, reason: "未知数据")
             self.failure()
         }
     }
@@ -491,13 +464,13 @@ extension NetworkClient
     // 使用RSA-2048解密并处理数据
     func doProcessRSAResponse(dataResponse: DataResponse<Data>)
     {
-        if let decodedData = FSOpenSSL.rsaDecode(dataResponse.data!)
+        if let decodedData = OpenSSLUtil.rsaDecode(dataResponse.data!)
         {
             self.doOperationData(decodedData, dataResponse: dataResponse)
         }
         else{
             // 数据揭秘失败
-            self.message.networkError = .decryptDataError(msg:"数据解密失败")
+            self.message.networkError = .operationError(code: -1, reason: "数据解密失败")
             self.failure()
             
             #if DEBUG
@@ -511,13 +484,13 @@ extension NetworkClient
     {
         if let key = NetworkCipher.shared.aes_key, let iv = NetworkCipher.shared.aes_iv
         {
-            if let decodedData = FSOpenSSL.aes_decrypt(dataResponse.data!, key:key, iv: iv)
+            if let decodedData = OpenSSLUtil.aes_256_decrypt(dataResponse.data!, key:key, iv: iv)
             {
                 self.doOperationData(decodedData, dataResponse: dataResponse)
             }
             else{
                 // 数据揭秘失败
-                self.message.networkError = .decryptDataError(msg:"数据解密失败")
+                self.message.networkError = .operationError(code: -1, reason: "数据解密失败")
                 self.failure()
                 
                 #if DEBUG
@@ -527,7 +500,7 @@ extension NetworkClient
         }
         else{
             // 数据揭秘失败
-            self.message.networkError = .decryptDataError(msg:"数据解密失败")
+            self.message.networkError = .operationError(code: -1, reason: "数据解密失败")
             self.failure()
             
             #if DEBUG

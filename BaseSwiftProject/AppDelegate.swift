@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         APPCONTROLLER.setupLogo()
         
-        NavRouter.setURLMapping(plistName: "BLY_NavigatorList")
+        NavRouter.setURLMapping(plistName: "NavigatorList")
         
         #if DEBUG
             ANT_LOG_INFO(Sandbox.documentPath)

@@ -51,7 +51,7 @@
 		FE60922A1E83A5F00042229D /* AntStringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091261E83A5F00042229D /* AntStringUtil.swift */; };
 		FE60922B1E83A5F00042229D /* APPUpdateInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091281E83A5F00042229D /* APPUpdateInfoModel.swift */; };
 		FE60922C1E83A5F00042229D /* APPVersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091291E83A5F00042229D /* APPVersionManager.swift */; };
-		FE60922D1E83A5F00042229D /* BLY_NavigatorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE60912B1E83A5F00042229D /* BLY_NavigatorList.plist */; };
+		FE60922D1E83A5F00042229D /* NavigatorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE60912B1E83A5F00042229D /* NavigatorList.plist */; };
 		FE60922E1E83A5F00042229D /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60912C1E83A5F00042229D /* Navigator.swift */; };
 		FE60922F1E83A5F00042229D /* NavigatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60912D1E83A5F00042229D /* NavigatorProtocol.swift */; };
 		FE6092301E83A5F00042229D /* RouterAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60912E1E83A5F00042229D /* RouterAction.swift */; };
@@ -63,7 +63,6 @@
 		FE6092361E83A5F00042229D /* NSDate+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60913A1E83A5F00042229D /* NSDate+Ext.swift */; };
 		FE6092371E83A5F00042229D /* FileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FE60913D1E83A5F00042229D /* FileUtils.m */; };
 		FE6092381E83A5F00042229D /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60913F1E83A5F00042229D /* Localizable.swift */; };
-		FE6092391E83A5F00042229D /* LogConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091411E83A5F00042229D /* LogConfig.swift */; };
 		FE6092481E83A5F00042229D /* String+Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091531E83A5F00042229D /* String+Business.swift */; };
 		FE6092491E83A5F00042229D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091541E83A5F00042229D /* String+Ext.swift */; };
 		FE60924B1E83A5F00042229D /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60915B1E83A5F00042229D /* AlertView.swift */; };
@@ -119,11 +118,6 @@
 		FE60927D1E83A5F10042229D /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091A61E83A5F00042229D /* UIViewController+Ext.swift */; };
 		FE60927E1E83A5F10042229D /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091A81E83A5F00042229D /* AppUser.swift */; };
 		FE60927F1E83A5F10042229D /* UserCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091A91E83A5F00042229D /* UserCenter.swift */; };
-		FE6092801E83A5F10042229D /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6091AC1E83A5F00042229D /* AMapFoundationKit.framework */; };
-		FE6092811E83A5F10042229D /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6091AD1E83A5F00042229D /* AMapLocationKit.framework */; };
-		FE6092821E83A5F10042229D /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6091AE1E83A5F00042229D /* AMapSearchKit.framework */; };
-		FE6092831E83A5F10042229D /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6091AF1E83A5F00042229D /* MAMapKit.framework */; };
-		FE6092841E83A5F10042229D /* FSOpenSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6091B41E83A5F00042229D /* FSOpenSSL.m */; };
 		FE6092851E83A5F10042229D /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6092031E83A5F00042229D /* libcrypto.a */; };
 		FE6092861E83A5F10042229D /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6092041E83A5F00042229D /* libssl.a */; };
 		FE6092871E83A5F10042229D /* LMAESCryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6092061E83A5F00042229D /* LMAESCryptor.m */; };
@@ -150,8 +144,6 @@
 		FE6092CE1E84EAB20042229D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6092BE1E84EAB20042229D /* NetworkError.swift */; };
 		FE6092CF1E84EAB20042229D /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6092BF1E84EAB20042229D /* NetworkHandler.swift */; };
 		FE6092D01E84EAB20042229D /* NetworkMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6092C01E84EAB20042229D /* NetworkMessage.swift */; };
-		FE6092D11E84EAB20042229D /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6092C11E84EAB20042229D /* NetworkProtocol.swift */; };
-		FE6092D31E84EAB20042229D /* NetworkRequestDataEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6092C31E84EAB20042229D /* NetworkRequestDataEncoding.swift */; };
 		FE6092D61E84EAB20042229D /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6092C61E84EAB20042229D /* NetworkUtils.swift */; };
 		FE6092D71E84EAB20042229D /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6092C71E84EAB20042229D /* SessionManager.swift */; };
 		FE6092D91E8514C80042229D /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE6092D81E8514C80042229D /* test.jpg */; };
@@ -207,7 +199,7 @@
 		FE6091261E83A5F00042229D /* AntStringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntStringUtil.swift; sourceTree = "<group>"; };
 		FE6091281E83A5F00042229D /* APPUpdateInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPUpdateInfoModel.swift; sourceTree = "<group>"; };
 		FE6091291E83A5F00042229D /* APPVersionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APPVersionManager.swift; sourceTree = "<group>"; };
-		FE60912B1E83A5F00042229D /* BLY_NavigatorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BLY_NavigatorList.plist; sourceTree = "<group>"; };
+		FE60912B1E83A5F00042229D /* NavigatorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NavigatorList.plist; sourceTree = "<group>"; };
 		FE60912C1E83A5F00042229D /* Navigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		FE60912D1E83A5F00042229D /* NavigatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatorProtocol.swift; sourceTree = "<group>"; };
 		FE60912E1E83A5F00042229D /* RouterAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterAction.swift; sourceTree = "<group>"; };
@@ -221,7 +213,6 @@
 		FE60913C1E83A5F00042229D /* FileUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtils.h; sourceTree = "<group>"; };
 		FE60913D1E83A5F00042229D /* FileUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtils.m; sourceTree = "<group>"; };
 		FE60913F1E83A5F00042229D /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
-		FE6091411E83A5F00042229D /* LogConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogConfig.swift; sourceTree = "<group>"; };
 		FE6091531E83A5F00042229D /* String+Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Business.swift"; sourceTree = "<group>"; };
 		FE6091541E83A5F00042229D /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		FE60915B1E83A5F00042229D /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
@@ -277,13 +268,7 @@
 		FE6091A61E83A5F00042229D /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		FE6091A81E83A5F00042229D /* AppUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		FE6091A91E83A5F00042229D /* UserCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenter.swift; sourceTree = "<group>"; };
-		FE6091AC1E83A5F00042229D /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapFoundationKit.framework; sourceTree = "<group>"; };
-		FE6091AD1E83A5F00042229D /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
-		FE6091AE1E83A5F00042229D /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
-		FE6091AF1E83A5F00042229D /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		FE6091B21E83A5F00042229D /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
-		FE6091B31E83A5F00042229D /* FSOpenSSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSOpenSSL.h; sourceTree = "<group>"; };
-		FE6091B41E83A5F00042229D /* FSOpenSSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSOpenSSL.m; sourceTree = "<group>"; };
 		FE6091B71E83A5F00042229D /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
 		FE6091B81E83A5F00042229D /* asn1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1.h; sourceTree = "<group>"; };
 		FE6091B91E83A5F00042229D /* asn1_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = asn1_mac.h; sourceTree = "<group>"; };
@@ -388,8 +373,6 @@
 		FE6092BE1E84EAB20042229D /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FE6092BF1E84EAB20042229D /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		FE6092C01E84EAB20042229D /* NetworkMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMessage.swift; sourceTree = "<group>"; };
-		FE6092C11E84EAB20042229D /* NetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
-		FE6092C31E84EAB20042229D /* NetworkRequestDataEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestDataEncoding.swift; sourceTree = "<group>"; };
 		FE6092C61E84EAB20042229D /* NetworkUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		FE6092C71E84EAB20042229D /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		FE6092D81E8514C80042229D /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
@@ -400,12 +383,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE6092801E83A5F10042229D /* AMapFoundationKit.framework in Frameworks */,
 				FE6092851E83A5F10042229D /* libcrypto.a in Frameworks */,
 				FE6092861E83A5F10042229D /* libssl.a in Frameworks */,
-				FE6092811E83A5F10042229D /* AMapLocationKit.framework in Frameworks */,
-				FE6092831E83A5F10042229D /* MAMapKit.framework in Frameworks */,
-				FE6092821E83A5F10042229D /* AMapSearchKit.framework in Frameworks */,
 				AE1A0859D749D1D186C5D439 /* Pods_BaseSwiftProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,7 +665,7 @@
 		FE60912A1E83A5F00042229D /* Navigator */ = {
 			isa = PBXGroup;
 			children = (
-				FE60912B1E83A5F00042229D /* BLY_NavigatorList.plist */,
+				FE60912B1E83A5F00042229D /* NavigatorList.plist */,
 				FE60912C1E83A5F00042229D /* Navigator.swift */,
 				FE60912D1E83A5F00042229D /* NavigatorProtocol.swift */,
 				FE60912E1E83A5F00042229D /* RouterAction.swift */,
@@ -709,22 +688,12 @@
 			isa = PBXGroup;
 			children = (
 				FE6092B61E84EAB20042229D /* Network */,
-				FE6091361E83A5F00042229D /* AliyunOSS */,
 				FE6091371E83A5F00042229D /* Date */,
 				FE60913B1E83A5F00042229D /* File */,
 				FE60913E1E83A5F00042229D /* localizable */,
-				FE6091401E83A5F00042229D /* Log */,
 				FE6091521E83A5F00042229D /* String */,
-				FE6091551E83A5F00042229D /* Video */,
 			);
 			path = System;
-			sourceTree = "<group>";
-		};
-		FE6091361E83A5F00042229D /* AliyunOSS */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AliyunOSS;
 			sourceTree = "<group>";
 		};
 		FE6091371E83A5F00042229D /* Date */ = {
@@ -754,14 +723,6 @@
 			path = localizable;
 			sourceTree = "<group>";
 		};
-		FE6091401E83A5F00042229D /* Log */ = {
-			isa = PBXGroup;
-			children = (
-				FE6091411E83A5F00042229D /* LogConfig.swift */,
-			);
-			path = Log;
-			sourceTree = "<group>";
-		};
 		FE6091521E83A5F00042229D /* String */ = {
 			isa = PBXGroup;
 			children = (
@@ -769,13 +730,6 @@
 				FE6091541E83A5F00042229D /* String+Ext.swift */,
 			);
 			path = String;
-			sourceTree = "<group>";
-		};
-		FE6091551E83A5F00042229D /* Video */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Video;
 			sourceTree = "<group>";
 		};
 		FE6091561E83A5F00042229D /* UI */ = {
@@ -1049,40 +1003,16 @@
 		FE6091AA1E83A5F00042229D /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				FE6091AB1E83A5F00042229D /* AMap */,
-				FE6091B01E83A5F00042229D /* JPush */,
 				FE6091B11E83A5F00042229D /* OpenSSL */,
 				FE6092091E83A5F00042229D /* Reachability */,
-				FE60920B1E83A5F00042229D /* ShareSDK */,
-				FE6092121E83A5F00042229D /* ZZPhotoKit */,
 			);
 			path = Vendors;
-			sourceTree = "<group>";
-		};
-		FE6091AB1E83A5F00042229D /* AMap */ = {
-			isa = PBXGroup;
-			children = (
-				FE6091AC1E83A5F00042229D /* AMapFoundationKit.framework */,
-				FE6091AD1E83A5F00042229D /* AMapLocationKit.framework */,
-				FE6091AE1E83A5F00042229D /* AMapSearchKit.framework */,
-				FE6091AF1E83A5F00042229D /* MAMapKit.framework */,
-			);
-			path = AMap;
-			sourceTree = "<group>";
-		};
-		FE6091B01E83A5F00042229D /* JPush */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = JPush;
 			sourceTree = "<group>";
 		};
 		FE6091B11E83A5F00042229D /* OpenSSL */ = {
 			isa = PBXGroup;
 			children = (
 				FE6091B21E83A5F00042229D /* base64.h */,
-				FE6091B31E83A5F00042229D /* FSOpenSSL.h */,
-				FE6091B41E83A5F00042229D /* FSOpenSSL.m */,
 				FE6091B51E83A5F00042229D /* include */,
 				FE6092021E83A5F00042229D /* lib */,
 				FE6092051E83A5F00042229D /* LMAESCryptor.h */,
@@ -1200,124 +1130,6 @@
 				FE60920A1E83A5F00042229D /* Reachability.swift */,
 			);
 			path = Reachability;
-			sourceTree = "<group>";
-		};
-		FE60920B1E83A5F00042229D /* ShareSDK */ = {
-			isa = PBXGroup;
-			children = (
-				FE60920C1E83A5F00042229D /* Support */,
-			);
-			path = ShareSDK;
-			sourceTree = "<group>";
-		};
-		FE60920C1E83A5F00042229D /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				FE60920D1E83A5F00042229D /* Optional */,
-				FE60920E1E83A5F00042229D /* PlatformConnector */,
-				FE60920F1E83A5F00042229D /* PlatformSDK */,
-				FE6092111E83A5F00042229D /* Required */,
-			);
-			path = Support;
-			sourceTree = "<group>";
-		};
-		FE60920D1E83A5F00042229D /* Optional */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Optional;
-			sourceTree = "<group>";
-		};
-		FE60920E1E83A5F00042229D /* PlatformConnector */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PlatformConnector;
-			sourceTree = "<group>";
-		};
-		FE60920F1E83A5F00042229D /* PlatformSDK */ = {
-			isa = PBXGroup;
-			children = (
-				FE6092101E83A5F00042229D /* WeChatSDK */,
-			);
-			path = PlatformSDK;
-			sourceTree = "<group>";
-		};
-		FE6092101E83A5F00042229D /* WeChatSDK */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = WeChatSDK;
-			sourceTree = "<group>";
-		};
-		FE6092111E83A5F00042229D /* Required */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Required;
-			sourceTree = "<group>";
-		};
-		FE6092121E83A5F00042229D /* ZZPhotoKit */ = {
-			isa = PBXGroup;
-			children = (
-				FE6092131E83A5F00042229D /* Public */,
-				FE6092161E83A5F00042229D /* ZZPhoto */,
-			);
-			path = ZZPhotoKit;
-			sourceTree = "<group>";
-		};
-		FE6092131E83A5F00042229D /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				FE6092141E83A5F00042229D /* Other */,
-				FE6092151E83A5F00042229D /* Resources */,
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		FE6092141E83A5F00042229D /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		FE6092151E83A5F00042229D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		FE6092161E83A5F00042229D /* ZZPhoto */ = {
-			isa = PBXGroup;
-			children = (
-				FE6092171E83A5F00042229D /* Controller */,
-				FE6092181E83A5F00042229D /* Model */,
-				FE6092191E83A5F00042229D /* View */,
-			);
-			path = ZZPhoto;
-			sourceTree = "<group>";
-		};
-		FE6092171E83A5F00042229D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		FE6092181E83A5F00042229D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		FE6092191E83A5F00042229D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		FE60928A1E83AD640042229D /* Classes */ = {
@@ -1444,8 +1256,6 @@
 				FE6092BE1E84EAB20042229D /* NetworkError.swift */,
 				FE6092BF1E84EAB20042229D /* NetworkHandler.swift */,
 				FE6092C01E84EAB20042229D /* NetworkMessage.swift */,
-				FE6092C11E84EAB20042229D /* NetworkProtocol.swift */,
-				FE6092C31E84EAB20042229D /* NetworkRequestDataEncoding.swift */,
 				FE6092C61E84EAB20042229D /* NetworkUtils.swift */,
 				FE6092C71E84EAB20042229D /* SessionManager.swift */,
 			);
@@ -1528,7 +1338,7 @@
 				FE6092611E83A5F00042229D /* tabbar_config.json in Resources */,
 				FE6090CF1E82867C0042229D /* LaunchScreen.storyboard in Resources */,
 				FE6090CC1E82867C0042229D /* Assets.xcassets in Resources */,
-				FE60922D1E83A5F00042229D /* BLY_NavigatorList.plist in Resources */,
+				FE60922D1E83A5F00042229D /* NavigatorList.plist in Resources */,
 				FE6092D91E8514C80042229D /* test.jpg in Resources */,
 				FE6090CA1E82867C0042229D /* Main.storyboard in Resources */,
 			);
@@ -1603,7 +1413,6 @@
 				FE6091061E83A4FD0042229D /* Thread.swift in Sources */,
 				FE6092891E83A5F10042229D /* Reachability.swift in Sources */,
 				FE6092881E83A5F10042229D /* LMRSACryptor.m in Sources */,
-				FE6092D31E84EAB20042229D /* NetworkRequestDataEncoding.swift in Sources */,
 				FE60922C1E83A5F00042229D /* APPVersionManager.swift in Sources */,
 				FE6092CD1E84EAB20042229D /* NetworkClientManager.swift in Sources */,
 				FE6092781E83A5F10042229D /* ScrollDefaultItemView.swift in Sources */,
@@ -1699,7 +1508,6 @@
 				FE60924B1E83A5F00042229D /* AlertView.swift in Sources */,
 				FE6092521E83A5F00042229D /* PlaceholderTextView.swift in Sources */,
 				FE6092711E83A5F00042229D /* UIImageView+Cache.swift in Sources */,
-				FE6092D11E84EAB20042229D /* NetworkProtocol.swift in Sources */,
 				FE6091021E83A4FD0042229D /* String+Format.swift in Sources */,
 				FE60910C1E83A4FD0042229D /* Image+Color.swift in Sources */,
 				FE60926A1E83A5F00042229D /* ThemeConfig.swift in Sources */,
@@ -1710,8 +1518,6 @@
 				FE501DB61E8A3057008938DA /* ActionSheet.swift in Sources */,
 				FE6092251E83A5F00042229D /* AntTestViewController.swift in Sources */,
 				FE6092A81E83C0540042229D /* GuideView.swift in Sources */,
-				FE6092391E83A5F00042229D /* LogConfig.swift in Sources */,
-				FE6092841E83A5F10042229D /* FSOpenSSL.m in Sources */,
 				FE6092751E83A5F00042229D /* CALayer+Ext.swift in Sources */,
 				FE60925F1E83A5F00042229D /* ToastView.swift in Sources */,
 				FE6092CA1E84EAB20042229D /* NetworkURLConfig.swift in Sources */,
