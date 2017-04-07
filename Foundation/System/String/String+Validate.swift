@@ -62,31 +62,35 @@ extension String
      
      - returns: true / false
      */
-//    static func isBlank(sourceS:String) -> Bool {
-//        let trimmed = String.trim(sourceS)
-//        return trimmed.isEmpty
-//    }
+    func isBlank() -> Bool {
+        return self.trim().isEmpty
+    }
     
     static func isBlankOrNil(sourceS:String?) -> Bool {
         guard let str = sourceS else {
             return true
         }
-        let trimmed = String.trim(str)
-        return trimmed.isEmpty
+        return str.isBlank()
     }
-    
     
     /// 是否是一个数字
     ///
     /// - parameter sourceS: 输入字符串
     ///
     /// - returns: true / false
-    static func isNumber(_ sourceS:String) -> Bool {
+    func isNumber() -> Bool {
         
         let PUREINT = "^(\\-|\\+)?\\d+(\\.\\d+)?$"
         
         let regextestmobile = NSPredicate(format: "SELF MATCHES %@",PUREINT)
         
-        return regextestmobile.evaluate(with: sourceS)
+        return regextestmobile.evaluate(with: self)
+    }
+    
+    static func isNumber(_ sourceS:String?) -> Bool {
+        guard let str = sourceS else {
+            return false
+        }
+        return str.isNumber()
     }
 }

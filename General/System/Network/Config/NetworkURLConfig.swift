@@ -8,8 +8,6 @@
 
 import UIKit
 
-//let API_ENCRYPTED = false
-
 // API接口
 func API(service action:String, notEncrypt notencrypt: Bool = false, isPrintSql printSql:Bool = false) -> String
 {

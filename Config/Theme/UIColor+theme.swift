@@ -41,8 +41,10 @@ let COLOR_BUTTON_BLUE = UIColor(hex6: 0x4A90E2)
 // 灰色
 let COLOR_BUTTON_GRAY = UIColor(hex6: 0xC1C1C1)
 
+
 /************ 导航栏颜色 ************/
-let NAVIGATION_COLOR = UIColor(hex6: 0x5B89D8)
+let COLOR_NAVIGATION = UIColor(hex6: 0x5B89D8)
+
 
 /************ 背景颜色 ************/
 // 黄色
@@ -60,12 +62,3 @@ let COLOR_BACKGROUND_PINK = UIColor(hex6: 0xFB6768)
 let COLOR_SEPARTE_LINE_GRAY = UIColor(hex6: 0xD8D8D8)
 
 
-/************ 控制台Log颜色 ************/
-// 红色
-let COLOR_CONSOLE_RED = UIColor(red: 1, green: 0, blue: 0, alpha: 1)
-// 绿色
-let COLOR_CONSOLE_GREEN = UIColor(red: 86/255, green: 220/255, blue: 85/255, alpha: 1)
-// 蓝色
-let COLOR_CONSOLE_BLUE = UIColor(red: 0, green: 0, blue: 1, alpha: 1)
-// 黄色
-let COLOR_CONSOLE_YELLOW = UIColor(red: 239/255, green: 180/255, blue: 22/255, alpha: 1)

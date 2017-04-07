@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension String
+extension String
 {
     // 字符串长度
     var length: Int { return self.characters.count }
@@ -25,8 +25,8 @@ public extension String
      
      - returns: eg. " 1 2 " -> "1 2"
      */
-    static func trim(_ sourceS:String) -> String {
-        return sourceS.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    func trim() -> String {
+        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
     
     /**
@@ -51,6 +51,7 @@ public extension String
         return range.location
         
     }
+    
     func lastIndexOf(target: String) -> Int? {
         
         let range = (self as NSString).range(of: target, options: NSString.CompareOptions.backwards)
@@ -74,15 +75,6 @@ public extension String
         let lowerIndex = index(startIndex, offsetBy: max(0,range.lowerBound), limitedBy: endIndex) ?? endIndex
         return substring(with: lowerIndex..<(index(lowerIndex, offsetBy: range.upperBound - range.lowerBound + 1, limitedBy: endIndex) ?? endIndex))
     }
-    
-    /**
-     手机号格式化
-     
-     - parameter sourceS: 手机号
-     
-     - returns: 格式化后的手机号
-     */
-    
     
     // 根据指定长度 生成随机字符串
     func randomStringWithLength (len : Int) -> NSString {

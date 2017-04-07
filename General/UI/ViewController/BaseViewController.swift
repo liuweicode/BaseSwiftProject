@@ -57,7 +57,7 @@ class BaseViewController: UIViewController {
         
         // 默认显示导航
         self.jz_isNavigationBarBackgroundHidden = false
-        self.jz_navigationBarTintColor = NAVIGATION_COLOR
+        self.jz_navigationBarTintColor = COLOR_NAVIGATION
         self.jz_navigationBarBackgroundAlpha = ShowBarBackgroundAlpha
         
         UIApplication.shared.isStatusBarHidden = false

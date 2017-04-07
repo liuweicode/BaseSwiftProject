@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIColor
+extension UIColor
 {
     
     /**
@@ -18,7 +18,7 @@ public extension UIColor
      
      - returns: UIColor
      */
-    public func alphaValue(_ alpha:CGFloat) -> UIColor {
+    func alphaValue(_ alpha:CGFloat) -> UIColor {
         return self.withAlphaComponent(alpha)
     }
     
@@ -27,7 +27,7 @@ public extension UIColor
      
      - returns: UIColor
      */
-    public class func randomColor() -> UIColor
+    class func randomColor() -> UIColor
     {
         let randomRed:CGFloat   = CGFloat(drand48())
 

@@ -8,9 +8,8 @@
 
 import UIKit
 
-open class TimerAgent: NSObject
+class TimerAgent: NSObject
 {
-
     var timers: [Timer]!
     
     override init()
@@ -25,7 +24,7 @@ open class TimerAgent: NSObject
      
      - returns: NSTimer
      */
-    open func timerForName(_ name:String?) -> Timer?
+    func timerForName(_ name:String?) -> Timer?
     {
         for timer in timers {
             if timer.timeName == name || (timer.timeName == nil && name == nil){

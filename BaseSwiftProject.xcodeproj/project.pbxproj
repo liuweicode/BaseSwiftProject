@@ -96,12 +96,6 @@
 		FE6092671E83A5F00042229D /* TabBarNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60918A1E83A5F00042229D /* TabBarNotification.swift */; };
 		FE6092681E83A5F00042229D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60918B1E83A5F00042229D /* TabBarView.swift */; };
 		FE6092691E83A5F00042229D /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60918D1E83A5F00042229D /* TableView+Extension.swift */; };
-		FE60926A1E83A5F00042229D /* ThemeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60918F1E83A5F00042229D /* ThemeConfig.swift */; };
-		FE60926B1E83A5F00042229D /* UIButton+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091901E83A5F00042229D /* UIButton+theme.swift */; };
-		FE60926C1E83A5F00042229D /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091911E83A5F00042229D /* UIColor+theme.swift */; };
-		FE60926D1E83A5F00042229D /* UIFont+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091921E83A5F00042229D /* UIFont+theme.swift */; };
-		FE60926E1E83A5F00042229D /* UILabel+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091931E83A5F00042229D /* UILabel+theme.swift */; };
-		FE60926F1E83A5F00042229D /* UIView+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091941E83A5F00042229D /* UIView+theme.swift */; };
 		FE6092701E83A5F00042229D /* UIButton+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091961E83A5F00042229D /* UIButton+Cache.swift */; };
 		FE6092711E83A5F00042229D /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091981E83A5F00042229D /* UIImageView+Cache.swift */; };
 		FE6092721E83A5F00042229D /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60919A1E83A5F00042229D /* BaseCollectionViewCell.swift */; };
@@ -147,6 +141,12 @@
 		FE6092D61E84EAB20042229D /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6092C61E84EAB20042229D /* NetworkUtils.swift */; };
 		FE6092D71E84EAB20042229D /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6092C71E84EAB20042229D /* SessionManager.swift */; };
 		FE6092D91E8514C80042229D /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE6092D81E8514C80042229D /* test.jpg */; };
+		FE95572F1E97367A00348E84 /* ThemeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9557291E97367A00348E84 /* ThemeConfig.swift */; };
+		FE9557301E97367A00348E84 /* UIButton+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572A1E97367A00348E84 /* UIButton+theme.swift */; };
+		FE9557311E97367A00348E84 /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572B1E97367A00348E84 /* UIColor+theme.swift */; };
+		FE9557321E97367A00348E84 /* UIFont+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572C1E97367A00348E84 /* UIFont+theme.swift */; };
+		FE9557331E97367A00348E84 /* UILabel+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572D1E97367A00348E84 /* UILabel+theme.swift */; };
+		FE9557341E97367A00348E84 /* UIView+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572E1E97367A00348E84 /* UIView+theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -246,12 +246,6 @@
 		FE60918A1E83A5F00042229D /* TabBarNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarNotification.swift; sourceTree = "<group>"; };
 		FE60918B1E83A5F00042229D /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		FE60918D1E83A5F00042229D /* TableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
-		FE60918F1E83A5F00042229D /* ThemeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeConfig.swift; sourceTree = "<group>"; };
-		FE6091901E83A5F00042229D /* UIButton+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+theme.swift"; sourceTree = "<group>"; };
-		FE6091911E83A5F00042229D /* UIColor+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
-		FE6091921E83A5F00042229D /* UIFont+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+theme.swift"; sourceTree = "<group>"; };
-		FE6091931E83A5F00042229D /* UILabel+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+theme.swift"; sourceTree = "<group>"; };
-		FE6091941E83A5F00042229D /* UIView+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+theme.swift"; sourceTree = "<group>"; };
 		FE6091961E83A5F00042229D /* UIButton+Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Cache.swift"; sourceTree = "<group>"; };
 		FE6091981E83A5F00042229D /* UIImageView+Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		FE60919A1E83A5F00042229D /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -376,6 +370,12 @@
 		FE6092C61E84EAB20042229D /* NetworkUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		FE6092C71E84EAB20042229D /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		FE6092D81E8514C80042229D /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		FE9557291E97367A00348E84 /* ThemeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeConfig.swift; sourceTree = "<group>"; };
+		FE95572A1E97367A00348E84 /* UIButton+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+theme.swift"; sourceTree = "<group>"; };
+		FE95572B1E97367A00348E84 /* UIColor+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
+		FE95572C1E97367A00348E84 /* UIFont+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+theme.swift"; sourceTree = "<group>"; };
+		FE95572D1E97367A00348E84 /* UILabel+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+theme.swift"; sourceTree = "<group>"; };
+		FE95572E1E97367A00348E84 /* UIView+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+theme.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				FE60928A1E83AD640042229D /* Classes */,
+				FE9557271E9735FD00348E84 /* Config */,
 				FE60910E1E83A5F00042229D /* General */,
 				FE6090D61E83A4FD0042229D /* Foundation */,
 				FE6090C31E82867C0042229D /* BaseSwiftProject */,
@@ -747,7 +748,6 @@
 				FE6091811E83A5F00042229D /* SplitLineView */,
 				FE6091831E83A5F00042229D /* TabBarController */,
 				FE60918C1E83A5F00042229D /* TableView */,
-				FE60918E1E83A5F00042229D /* Theme */,
 				FE6091951E83A5F00042229D /* UIButton */,
 				FE6091971E83A5F00042229D /* UIImageView */,
 				FE6091991E83A5F00042229D /* View */,
@@ -934,19 +934,6 @@
 				FE60918D1E83A5F00042229D /* TableView+Extension.swift */,
 			);
 			path = TableView;
-			sourceTree = "<group>";
-		};
-		FE60918E1E83A5F00042229D /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				FE60918F1E83A5F00042229D /* ThemeConfig.swift */,
-				FE6091901E83A5F00042229D /* UIButton+theme.swift */,
-				FE6091911E83A5F00042229D /* UIColor+theme.swift */,
-				FE6091921E83A5F00042229D /* UIFont+theme.swift */,
-				FE6091931E83A5F00042229D /* UILabel+theme.swift */,
-				FE6091941E83A5F00042229D /* UIView+theme.swift */,
-			);
-			path = Theme;
 			sourceTree = "<group>";
 		};
 		FE6091951E83A5F00042229D /* UIButton */ = {
@@ -1272,6 +1259,27 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		FE9557271E9735FD00348E84 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				FE9557281E97367A00348E84 /* Theme */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		FE9557281E97367A00348E84 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				FE9557291E97367A00348E84 /* ThemeConfig.swift */,
+				FE95572A1E97367A00348E84 /* UIButton+theme.swift */,
+				FE95572B1E97367A00348E84 /* UIColor+theme.swift */,
+				FE95572C1E97367A00348E84 /* UIFont+theme.swift */,
+				FE95572D1E97367A00348E84 /* UILabel+theme.swift */,
+				FE95572E1E97367A00348E84 /* UIView+theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1433,8 +1441,8 @@
 				FE6092D61E84EAB20042229D /* NetworkUtils.swift in Sources */,
 				FE6092AF1E83C0540042229D /* LogoViewController.swift in Sources */,
 				FE6092C91E84EAB20042229D /* NetworkServerCode.swift in Sources */,
+				FE9557331E97367A00348E84 /* UILabel+theme.swift in Sources */,
 				FE60910B1E83A4FD0042229D /* UIColorExtension.swift in Sources */,
-				FE60926E1E83A5F00042229D /* UILabel+theme.swift in Sources */,
 				FE6092561E83A5F00042229D /* Image+Ext.swift in Sources */,
 				FE6091041E83A4FD0042229D /* String+Utils.swift in Sources */,
 				FE6092601E83A5F00042229D /* SplitLineView.swift in Sources */,
@@ -1447,7 +1455,6 @@
 				FE60925E1E83A5F00042229D /* PhotoGridView.swift in Sources */,
 				FE6091051E83A4FD0042229D /* String+Validate.swift in Sources */,
 				FE6092731E83A5F00042229D /* BaseTableViewCell.swift in Sources */,
-				FE60926B1E83A5F00042229D /* UIButton+theme.swift in Sources */,
 				FE6092591E83A5F00042229D /* UILabel+attr.swift in Sources */,
 				FE60921E1E83A5F00042229D /* AntDebugRuler.swift in Sources */,
 				FE60910A1E83A4FD0042229D /* Color+Extension.swift in Sources */,
@@ -1474,6 +1481,7 @@
 				FE6092501E83A5F00042229D /* PhoneTextField.swift in Sources */,
 				FE6092671E83A5F00042229D /* TabBarNotification.swift in Sources */,
 				FE6092371E83A5F00042229D /* FileUtils.m in Sources */,
+				FE9557311E97367A00348E84 /* UIColor+theme.swift in Sources */,
 				FE60927B1E83A5F10042229D /* BaseTableViewController.swift in Sources */,
 				FE6092231E83A5F00042229D /* AntLogMoudle.swift in Sources */,
 				FE60922A1E83A5F00042229D /* AntStringUtil.swift in Sources */,
@@ -1483,26 +1491,27 @@
 				FE60927C1E83A5F10042229D /* BaseViewController.swift in Sources */,
 				FE6092AE1E83C0540042229D /* RegisterView.swift in Sources */,
 				FE6092271E83A5F00042229D /* AntDateUtil.swift in Sources */,
+				FE9557321E97367A00348E84 /* UIFont+theme.swift in Sources */,
 				FE6090FC1E83A4FD0042229D /* Object+Extension.swift in Sources */,
-				FE60926C1E83A5F00042229D /* UIColor+theme.swift in Sources */,
 				FE6092701E83A5F00042229D /* UIButton+Cache.swift in Sources */,
 				FE6092871E83A5F10042229D /* LMAESCryptor.m in Sources */,
-				FE60926F1E83A5F00042229D /* UIView+theme.swift in Sources */,
 				FE6092341E83A5F00042229D /* NotificationKeys.swift in Sources */,
 				FE6092AD1E83C0540042229D /* LoginView.swift in Sources */,
 				FE6092581E83A5F00042229D /* NSAttributedString+theme.swift in Sources */,
+				FE9557341E97367A00348E84 /* UIView+theme.swift in Sources */,
 				FE6092691E83A5F00042229D /* TableView+Extension.swift in Sources */,
 				FE6092721E83A5F00042229D /* BaseCollectionViewCell.swift in Sources */,
 				FE6092261E83A5F00042229D /* AntColorUtil.swift in Sources */,
 				FE6092551E83A5F00042229D /* UIFont+Ext.swift in Sources */,
 				FE6092331E83A5F00042229D /* URL+Ext.swift in Sources */,
+				FE9557301E97367A00348E84 /* UIButton+theme.swift in Sources */,
 				FE6092511E83A5F00042229D /* SMSCaptchaTextField.swift in Sources */,
 				FE6092631E83A5F00042229D /* TabBarController.swift in Sources */,
 				FE6092CC1E84EAB20042229D /* NetworkClient.swift in Sources */,
 				FE6092CE1E84EAB20042229D /* NetworkError.swift in Sources */,
-				FE60926D1E83A5F00042229D /* UIFont+theme.swift in Sources */,
 				FE60924C1E83A5F00042229D /* DQTapGestureRecognizer.swift in Sources */,
 				FE6092741E83A5F00042229D /* BaseView.swift in Sources */,
+				FE95572F1E97367A00348E84 /* ThemeConfig.swift in Sources */,
 				FE60925B1E83A5F00042229D /* PhotoPickerViewController.swift in Sources */,
 				FE60922E1E83A5F00042229D /* Navigator.swift in Sources */,
 				FE60924B1E83A5F00042229D /* AlertView.swift in Sources */,
@@ -1510,7 +1519,6 @@
 				FE6092711E83A5F00042229D /* UIImageView+Cache.swift in Sources */,
 				FE6091021E83A4FD0042229D /* String+Format.swift in Sources */,
 				FE60910C1E83A4FD0042229D /* Image+Color.swift in Sources */,
-				FE60926A1E83A5F00042229D /* ThemeConfig.swift in Sources */,
 				FE60922F1E83A5F00042229D /* NavigatorProtocol.swift in Sources */,
 				FE6090C71E82867C0042229D /* ViewController.swift in Sources */,
 				FE6092321E83A5F00042229D /* RouterPattern.swift in Sources */,
@@ -1652,10 +1660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6RRV39ZH3P;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/General/Vendors/AMap",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					/usr/local/opt/openssl/include,
 					/usr/local/include,
@@ -1680,10 +1685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6RRV39ZH3P;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/General/Vendors/AMap",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					/usr/local/opt/openssl/include,
 					/usr/local/include,

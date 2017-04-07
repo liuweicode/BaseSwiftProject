@@ -11,7 +11,7 @@ import Foundation
 
 var associated_object_handle_linkim_timer_agent: String = "linkim.NSObject.timerAgent"
 
-public extension NSObject
+extension NSObject
 {
     fileprivate func timerAgent() -> TimerAgent {
         var agent = objc_getAssociatedObject(self, &associated_object_handle_linkim_timer_agent) as? TimerAgent

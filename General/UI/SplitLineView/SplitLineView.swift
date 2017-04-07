@@ -21,7 +21,7 @@ class SplitLineView: BaseView {
         if let context = UIGraphicsGetCurrentContext()
         {
             context.setFillColor(UIColor.clear.cgColor)
-            context.setStrokeColor(UIColor(hex6: 0xbebebe).cgColor)
+            context.setStrokeColor(COLOR_SEPARTE_LINE_GRAY.cgColor)
             context.fill(rect);
             context.stroke(CGRect(x: 0, y: rect.size.height, width: rect.size.width, height: (1 / UIScreen.main.scale)))
         }

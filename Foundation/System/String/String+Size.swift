@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension String
+extension String
 {
     /**
      计算字符串大小

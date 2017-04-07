@@ -11,8 +11,8 @@ import ObjectiveC
 
 var associated_object_handle_linkim_timer_name: String = "linkim.NSTimer.name"
 
-public extension Timer{
-
+extension Timer
+{
     var timeName: String? {
         get {
             return objc_getAssociatedObject(self, &associated_object_handle_linkim_timer_name) as? String

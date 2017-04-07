@@ -97,7 +97,7 @@ extension LoginViewController
     func doSendVerificationCodeRequest()
     {
         let phone = rootView.phoneTextField.text ?? ""
-        if String.trim(phone).length == 0
+        if phone.trim().length == 0
         {
             ToastView.showError("手机号不能为空")
             return
@@ -213,7 +213,7 @@ extension LoginViewController
             "code": SAFE_STRING(captcha)
         ];
         
-        _ = NC_POST(self).send(params: param, url: API(service: API_USER_SIGN, notEncrypt: true, isPrintSql: false), successBlock: { (message) in
+        _ = NC_POST(self).send(params: param, url: API(service: API_USER_SIGN, notEncrypt: true, isPrintSql: true), successBlock: { (message) in
             
             ToastView.showSuccess("登录成功")
 
