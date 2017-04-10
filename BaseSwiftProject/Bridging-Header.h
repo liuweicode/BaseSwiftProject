@@ -20,5 +20,7 @@
 // Loading
 #import <SVProgressHUD/SVProgressHUD.h>
 
+// Crash report
+#import "IFACrashReportObject.h"
 
 #endif /* Bridging_Header_h */

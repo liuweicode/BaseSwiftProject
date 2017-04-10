@@ -12,4 +12,6 @@
 
 +(double)getCPUClick;
 
++ (NSDate *)getCurrentDate;
+
 @end

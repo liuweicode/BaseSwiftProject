@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AE1A0859D749D1D186C5D439 /* Pods_BaseSwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */; };
+		FE2A93891E9B30E0007F8F4F /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2A93841E9B30E0007F8F4F /* GTMStackTrace.m */; };
+		FE2A938A1E9B30E0007F8F4F /* IFACrashReportObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2A93861E9B30E0007F8F4F /* IFACrashReportObject.m */; };
+		FE2A938B1E9B30E0007F8F4F /* NVCrashManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2A93881E9B30E0007F8F4F /* NVCrashManager.m */; };
 		FE501DB61E8A3057008938DA /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB51E8A3057008938DA /* ActionSheet.swift */; };
 		FE501DB91E8A5BA3008938DA /* OpenSSLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB81E8A5BA3008938DA /* OpenSSLUtil.m */; };
 		FE6090C51E82867C0042229D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6090C41E82867C0042229D /* AppDelegate.swift */; };
@@ -147,13 +150,18 @@
 		FE9557321E97367A00348E84 /* UIFont+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572C1E97367A00348E84 /* UIFont+theme.swift */; };
 		FE9557331E97367A00348E84 /* UILabel+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572D1E97367A00348E84 /* UILabel+theme.swift */; };
 		FE9557341E97367A00348E84 /* UIView+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572E1E97367A00348E84 /* UIView+theme.swift */; };
-		FEE670131E9741BF005231EE /* MQAExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE670121E9741BF005231EE /* MQAExceptionHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseSwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E847BC3347EE2FEAC82D532C /* Pods-BaseSwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		F37B09E57C6C1EDF77E45A04 /* Pods-BaseSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
+		FE2A93831E9B30E0007F8F4F /* GTMStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMStackTrace.h; sourceTree = "<group>"; };
+		FE2A93841E9B30E0007F8F4F /* GTMStackTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMStackTrace.m; sourceTree = "<group>"; };
+		FE2A93851E9B30E0007F8F4F /* IFACrashReportObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFACrashReportObject.h; sourceTree = "<group>"; };
+		FE2A93861E9B30E0007F8F4F /* IFACrashReportObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFACrashReportObject.m; sourceTree = "<group>"; };
+		FE2A93871E9B30E0007F8F4F /* NVCrashManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVCrashManager.h; sourceTree = "<group>"; };
+		FE2A93881E9B30E0007F8F4F /* NVCrashManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVCrashManager.m; sourceTree = "<group>"; };
 		FE501DB51E8A3057008938DA /* ActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		FE501DB71E8A5BA3008938DA /* OpenSSLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSSLUtil.h; sourceTree = "<group>"; };
 		FE501DB81E8A5BA3008938DA /* OpenSSLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSSLUtil.m; sourceTree = "<group>"; };
@@ -377,8 +385,6 @@
 		FE95572C1E97367A00348E84 /* UIFont+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+theme.swift"; sourceTree = "<group>"; };
 		FE95572D1E97367A00348E84 /* UILabel+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+theme.swift"; sourceTree = "<group>"; };
 		FE95572E1E97367A00348E84 /* UIView+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+theme.swift"; sourceTree = "<group>"; };
-		FEE670111E97413E005231EE /* MQAExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MQAExceptionHandler.h; sourceTree = "<group>"; };
-		FEE670121E9741BF005231EE /* MQAExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQAExceptionHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +416,19 @@
 				E847BC3347EE2FEAC82D532C /* Pods-BaseSwiftProject.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE2A93821E9B30E0007F8F4F /* CrashManager */ = {
+			isa = PBXGroup;
+			children = (
+				FE2A93831E9B30E0007F8F4F /* GTMStackTrace.h */,
+				FE2A93841E9B30E0007F8F4F /* GTMStackTrace.m */,
+				FE2A93851E9B30E0007F8F4F /* IFACrashReportObject.h */,
+				FE2A93861E9B30E0007F8F4F /* IFACrashReportObject.m */,
+				FE2A93871E9B30E0007F8F4F /* NVCrashManager.h */,
+				FE2A93881E9B30E0007F8F4F /* NVCrashManager.m */,
+			);
+			path = CrashManager;
 			sourceTree = "<group>";
 		};
 		FE6090B81E82867C0042229D = {
@@ -446,8 +465,6 @@
 				FE6090CD1E82867C0042229D /* LaunchScreen.storyboard */,
 				FE6090D01E82867C0042229D /* Info.plist */,
 				FE60928B1E83BE060042229D /* Bridging-Header.h */,
-				FEE670111E97413E005231EE /* MQAExceptionHandler.h */,
-				FEE670121E9741BF005231EE /* MQAExceptionHandler.m */,
 			);
 			path = BaseSwiftProject;
 			sourceTree = "<group>";
@@ -602,6 +619,7 @@
 		FE60910E1E83A5F00042229D /* General */ = {
 			isa = PBXGroup;
 			children = (
+				FE2A93821E9B30E0007F8F4F /* CrashManager */,
 				FE6091151E83A5F00042229D /* AntDebug */,
 				FE6091271E83A5F00042229D /* AppUpdate */,
 				FE60912A1E83A5F00042229D /* Navigator */,
@@ -1417,6 +1435,7 @@
 				FE6092681E83A5F00042229D /* TabBarView.swift in Sources */,
 				FE6092531E83A5F00042229D /* CyclePageBaseView.swift in Sources */,
 				FE6092311E83A5F00042229D /* RouterParams.swift in Sources */,
+				FE2A938B1E9B30E0007F8F4F /* NVCrashManager.m in Sources */,
 				FE6092281E83A5F00042229D /* AntFileUtil.swift in Sources */,
 				FE6092221E83A5F00042229D /* AntConfigurationViewController.swift in Sources */,
 				FE6092651E83A5F00042229D /* TabBarItem.swift in Sources */,
@@ -1450,7 +1469,6 @@
 				FE60910B1E83A4FD0042229D /* UIColorExtension.swift in Sources */,
 				FE6092561E83A5F00042229D /* Image+Ext.swift in Sources */,
 				FE6091041E83A4FD0042229D /* String+Utils.swift in Sources */,
-				FEE670131E9741BF005231EE /* MQAExceptionHandler.m in Sources */,
 				FE6092601E83A5F00042229D /* SplitLineView.swift in Sources */,
 				FE60928D1E83BEE60042229D /* AppController.swift in Sources */,
 				FE6092661E83A5F00042229D /* TabBarItemView.swift in Sources */,
@@ -1507,6 +1525,7 @@
 				FE9557341E97367A00348E84 /* UIView+theme.swift in Sources */,
 				FE6092691E83A5F00042229D /* TableView+Extension.swift in Sources */,
 				FE6092721E83A5F00042229D /* BaseCollectionViewCell.swift in Sources */,
+				FE2A93891E9B30E0007F8F4F /* GTMStackTrace.m in Sources */,
 				FE6092261E83A5F00042229D /* AntColorUtil.swift in Sources */,
 				FE6092551E83A5F00042229D /* UIFont+Ext.swift in Sources */,
 				FE6092331E83A5F00042229D /* URL+Ext.swift in Sources */,
@@ -1534,6 +1553,7 @@
 				FE6092A81E83C0540042229D /* GuideView.swift in Sources */,
 				FE6092751E83A5F00042229D /* CALayer+Ext.swift in Sources */,
 				FE60925F1E83A5F00042229D /* ToastView.swift in Sources */,
+				FE2A938A1E9B30E0007F8F4F /* IFACrashReportObject.m in Sources */,
 				FE6092CA1E84EAB20042229D /* NetworkURLConfig.swift in Sources */,
 				FE60925D1E83A5F00042229D /* PhotoGridCollectionViewCell.swift in Sources */,
 				FE6092381E83A5F00042229D /* Localizable.swift in Sources */,

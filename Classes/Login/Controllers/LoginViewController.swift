@@ -56,7 +56,10 @@ class LoginViewController: BaseViewController {
     // 发送验证码
     func onSendVerificationCodeButtonClick(_ button:UIButton)
     {
-        self.doSendVerificationCodeRequest()
+        //self.doSendVerificationCodeRequest()
+        var d = Int("q3#")!
+        var e = 20 / d
+        print(e)
     }
     
     // 登录点击事件

@@ -20,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var navigationControllerInteractionController: CEBaseInteractionController?
     var navigationControllerAnimationController: CEReversibleAnimationController?
 
+    override init() {
+        IFACrashReportObject.begin()
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         /*
