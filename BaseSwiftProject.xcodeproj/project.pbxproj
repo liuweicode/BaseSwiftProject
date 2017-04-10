@@ -147,6 +147,7 @@
 		FE9557321E97367A00348E84 /* UIFont+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572C1E97367A00348E84 /* UIFont+theme.swift */; };
 		FE9557331E97367A00348E84 /* UILabel+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572D1E97367A00348E84 /* UILabel+theme.swift */; };
 		FE9557341E97367A00348E84 /* UIView+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95572E1E97367A00348E84 /* UIView+theme.swift */; };
+		FEE670131E9741BF005231EE /* MQAExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE670121E9741BF005231EE /* MQAExceptionHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -376,6 +377,8 @@
 		FE95572C1E97367A00348E84 /* UIFont+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+theme.swift"; sourceTree = "<group>"; };
 		FE95572D1E97367A00348E84 /* UILabel+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+theme.swift"; sourceTree = "<group>"; };
 		FE95572E1E97367A00348E84 /* UIView+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+theme.swift"; sourceTree = "<group>"; };
+		FEE670111E97413E005231EE /* MQAExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MQAExceptionHandler.h; sourceTree = "<group>"; };
+		FEE670121E9741BF005231EE /* MQAExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MQAExceptionHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +446,8 @@
 				FE6090CD1E82867C0042229D /* LaunchScreen.storyboard */,
 				FE6090D01E82867C0042229D /* Info.plist */,
 				FE60928B1E83BE060042229D /* Bridging-Header.h */,
+				FEE670111E97413E005231EE /* MQAExceptionHandler.h */,
+				FEE670121E9741BF005231EE /* MQAExceptionHandler.m */,
 			);
 			path = BaseSwiftProject;
 			sourceTree = "<group>";
@@ -1445,6 +1450,7 @@
 				FE60910B1E83A4FD0042229D /* UIColorExtension.swift in Sources */,
 				FE6092561E83A5F00042229D /* Image+Ext.swift in Sources */,
 				FE6091041E83A4FD0042229D /* String+Utils.swift in Sources */,
+				FEE670131E9741BF005231EE /* MQAExceptionHandler.m in Sources */,
 				FE6092601E83A5F00042229D /* SplitLineView.swift in Sources */,
 				FE60928D1E83BEE60042229D /* AppController.swift in Sources */,
 				FE6092661E83A5F00042229D /* TabBarItemView.swift in Sources */,

@@ -32,6 +32,7 @@ extension NSObject
      
      - returns: NSTimer
      */
+    @discardableResult
     public func timer(selector aSelector: Selector, timeInterval ti: TimeInterval, repeats yesOrNo: Bool = false, name:String? = nil) -> Timer
     {
         let agent = self.timerAgent()

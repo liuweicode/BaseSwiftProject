@@ -10,15 +10,31 @@ import UIKit
 import IQKeyboardManagerSwift
 import VCTransitionsLibrary
 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
 
     var navigationControllerInteractionController: CEBaseInteractionController?
     var navigationControllerAnimationController: CEReversibleAnimationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        /*
+        NSSetUncaughtExceptionHandler { (exception) in
+            NSLog("Name:" + exception.name.rawValue)
+            if exception.reason == nil
+            {
+                NSLog("Reason: nil")
+            }
+            else
+            {
+                NSLog("Reason:" + exception.reason!)
+            }
+        }
+        */
         
         ToastView.initialization()
         
@@ -36,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 AntDebugBar.sharedInstance.isHidden = false
             }
         #endif
+        
         return true
     }
 

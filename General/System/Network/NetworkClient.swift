@@ -143,7 +143,6 @@ class NetworkClient : NSObject {
     }
     
     fileprivate func POST() -> Request? {
-        
         let networkHandler = NetworkHandler()
         networkHandler.isEncrypt = isEncrypted()
         let manager = SessionManager.myDefaultSessionManager

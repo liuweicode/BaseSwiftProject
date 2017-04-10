@@ -96,6 +96,7 @@ extension LoginViewController
     // 发送验证码
     func doSendVerificationCodeRequest()
     {
+        
         let phone = rootView.phoneTextField.text ?? ""
         if phone.trim().length == 0
         {
