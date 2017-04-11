@@ -80,11 +80,6 @@
 		FE6092571E83A5F00042229D /* LJAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091711E83A5F00042229D /* LJAttributedLabel.swift */; };
 		FE6092581E83A5F00042229D /* NSAttributedString+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091721E83A5F00042229D /* NSAttributedString+theme.swift */; };
 		FE6092591E83A5F00042229D /* UILabel+attr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091731E83A5F00042229D /* UILabel+attr.swift */; };
-		FE60925A1E83A5F00042229D /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091761E83A5F00042229D /* PhotoGridViewController.swift */; };
-		FE60925B1E83A5F00042229D /* PhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091771E83A5F00042229D /* PhotoPickerViewController.swift */; };
-		FE60925C1E83A5F00042229D /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091791E83A5F00042229D /* PhotoModel.swift */; };
-		FE60925D1E83A5F00042229D /* PhotoGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60917D1E83A5F00042229D /* PhotoGridCollectionViewCell.swift */; };
-		FE60925E1E83A5F00042229D /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE60917E1E83A5F00042229D /* PhotoGridView.swift */; };
 		FE60925F1E83A5F00042229D /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091801E83A5F00042229D /* ToastView.swift */; };
 		FE6092601E83A5F00042229D /* SplitLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6091821E83A5F00042229D /* SplitLineView.swift */; };
 		FE6092611E83A5F00042229D /* tabbar_config.json in Resources */ = {isa = PBXBuildFile; fileRef = FE6091841E83A5F00042229D /* tabbar_config.json */; };
@@ -231,11 +226,6 @@
 		FE6091711E83A5F00042229D /* LJAttributedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LJAttributedLabel.swift; sourceTree = "<group>"; };
 		FE6091721E83A5F00042229D /* NSAttributedString+theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+theme.swift"; sourceTree = "<group>"; };
 		FE6091731E83A5F00042229D /* UILabel+attr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+attr.swift"; sourceTree = "<group>"; };
-		FE6091761E83A5F00042229D /* PhotoGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
-		FE6091771E83A5F00042229D /* PhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoPickerViewController.swift; sourceTree = "<group>"; };
-		FE6091791E83A5F00042229D /* PhotoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
-		FE60917D1E83A5F00042229D /* PhotoGridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridCollectionViewCell.swift; sourceTree = "<group>"; };
-		FE60917E1E83A5F00042229D /* PhotoGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
 		FE6091801E83A5F00042229D /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		FE6091821E83A5F00042229D /* SplitLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitLineView.swift; sourceTree = "<group>"; };
 		FE6091841E83A5F00042229D /* tabbar_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tabbar_config.json; sourceTree = "<group>"; };
@@ -855,7 +845,6 @@
 			children = (
 				FE6091751E83A5F00042229D /* Controllers */,
 				FE6091781E83A5F00042229D /* Models */,
-				FE60917A1E83A5F00042229D /* Others */,
 				FE60917B1E83A5F00042229D /* Resources */,
 				FE60917C1E83A5F00042229D /* Views */,
 			);
@@ -865,8 +854,6 @@
 		FE6091751E83A5F00042229D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FE6091761E83A5F00042229D /* PhotoGridViewController.swift */,
-				FE6091771E83A5F00042229D /* PhotoPickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -874,16 +861,8 @@
 		FE6091781E83A5F00042229D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FE6091791E83A5F00042229D /* PhotoModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		FE60917A1E83A5F00042229D /* Others */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Others;
 			sourceTree = "<group>";
 		};
 		FE60917B1E83A5F00042229D /* Resources */ = {
@@ -896,8 +875,6 @@
 		FE60917C1E83A5F00042229D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FE60917D1E83A5F00042229D /* PhotoGridCollectionViewCell.swift */,
-				FE60917E1E83A5F00042229D /* PhotoGridView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1457,14 +1434,11 @@
 				FE60927E1E83A5F10042229D /* AppUser.swift in Sources */,
 				FE6092A51E83C0540042229D /* GuideViewController.swift in Sources */,
 				FE60921F1E83A5F00042229D /* AntGALogWindow.swift in Sources */,
-				FE60925C1E83A5F00042229D /* PhotoModel.swift in Sources */,
-				FE60925E1E83A5F00042229D /* PhotoGridView.swift in Sources */,
 				FE6091051E83A4FD0042229D /* String+Validate.swift in Sources */,
 				FE6092731E83A5F00042229D /* BaseTableViewCell.swift in Sources */,
 				FE6092591E83A5F00042229D /* UILabel+attr.swift in Sources */,
 				FE60921E1E83A5F00042229D /* AntDebugRuler.swift in Sources */,
 				FE60910A1E83A4FD0042229D /* Color+Extension.swift in Sources */,
-				FE60925A1E83A5F00042229D /* PhotoGridViewController.swift in Sources */,
 				FE6092491E83A5F00042229D /* String+Ext.swift in Sources */,
 				FE6092791E83A5F10042229D /* View+Ext.swift in Sources */,
 				FE6092481E83A5F00042229D /* String+Business.swift in Sources */,
@@ -1518,7 +1492,6 @@
 				FE60924C1E83A5F00042229D /* DQTapGestureRecognizer.swift in Sources */,
 				FE6092741E83A5F00042229D /* BaseView.swift in Sources */,
 				FE95572F1E97367A00348E84 /* ThemeConfig.swift in Sources */,
-				FE60925B1E83A5F00042229D /* PhotoPickerViewController.swift in Sources */,
 				FE60922E1E83A5F00042229D /* Navigator.swift in Sources */,
 				FE60924B1E83A5F00042229D /* AlertView.swift in Sources */,
 				FE6092521E83A5F00042229D /* PlaceholderTextView.swift in Sources */,
@@ -1535,7 +1508,6 @@
 				FE6092751E83A5F00042229D /* CALayer+Ext.swift in Sources */,
 				FE60925F1E83A5F00042229D /* ToastView.swift in Sources */,
 				FE6092CA1E84EAB20042229D /* NetworkURLConfig.swift in Sources */,
-				FE60925D1E83A5F00042229D /* PhotoGridCollectionViewCell.swift in Sources */,
 				FE6092381E83A5F00042229D /* Localizable.swift in Sources */,
 				FE60924E1E83A5F00042229D /* BaseTextField.swift in Sources */,
 				FE6090C51E82867C0042229D /* AppDelegate.swift in Sources */,
