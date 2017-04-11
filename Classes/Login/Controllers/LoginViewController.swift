@@ -77,7 +77,7 @@ class LoginViewController: BaseViewController {
     // 登录点击事件
     func onUploadButtonClick(_ button:UIButton)
     {
-        self.doUploadRequest()
+        //self.doUploadRequest()
         
 //        let ok = AlertViewButtonItem(inLabel: "确定")
 //        
