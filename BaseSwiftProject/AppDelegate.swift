@@ -22,20 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        /*
-        NSSetUncaughtExceptionHandler { (exception) in
-            NSLog("Name:" + exception.name.rawValue)
-            if exception.reason == nil
-            {
-                NSLog("Reason: nil")
-            }
-            else
-            {
-                NSLog("Reason:" + exception.reason!)
-            }
-        }
-        */
-        
         ToastView.initialization()
         
         IQKeyboardManager.sharedManager().enable = true
