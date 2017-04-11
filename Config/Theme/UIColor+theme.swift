@@ -61,4 +61,11 @@ let COLOR_BACKGROUND_PINK = UIColor(hex6: 0xFB6768)
 // 灰色
 let COLOR_SEPARTE_LINE_GRAY = UIColor(hex6: 0xD8D8D8)
 
+/************ Tabbar颜色 ************/
+// 蓝色
+let COLOR_TABBAR_BLUE = UIColor(hex6: 0x2998FF)
+
+//灰色
+let COLOR_TABBAR_GRAY = UIColor(hex6: 0xA0A0A0)
+
 

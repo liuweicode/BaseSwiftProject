@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A9B31DF1E9CB781002AD465 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B31DE1E9CB781002AD465 /* MainViewController.swift */; };
+		8A9B31E11E9CB7DC002AD465 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B31E01E9CB7DC002AD465 /* ActivityViewController.swift */; };
+		8A9B31E31E9CB7F8002AD465 /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B31E21E9CB7F8002AD465 /* ItineraryViewController.swift */; };
+		8A9B31E51E9CB83D002AD465 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B31E41E9CB83D002AD465 /* MeViewController.swift */; };
 		AE1A0859D749D1D186C5D439 /* Pods_BaseSwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */; };
 		FE501DB61E8A3057008938DA /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB51E8A3057008938DA /* ActionSheet.swift */; };
 		FE501DB91E8A5BA3008938DA /* OpenSSLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB81E8A5BA3008938DA /* OpenSSLUtil.m */; };
@@ -146,6 +150,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A9B31DE1E9CB781002AD465 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8A9B31E01E9CB7DC002AD465 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		8A9B31E21E9CB7F8002AD465 /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
+		8A9B31E41E9CB83D002AD465 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseSwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E847BC3347EE2FEAC82D532C /* Pods-BaseSwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		F37B09E57C6C1EDF77E45A04 /* Pods-BaseSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -391,6 +399,134 @@
 				9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A9B31CE1E9CB6BE002AD465 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8A9B31CF1E9CB6BE002AD465 /* Controllers */,
+				8A9B31D01E9CB6BE002AD465 /* Models */,
+				8A9B31D11E9CB6BE002AD465 /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8A9B31CF1E9CB6BE002AD465 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A9B31DE1E9CB781002AD465 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8A9B31D01E9CB6BE002AD465 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A9B31D11E9CB6BE002AD465 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8A9B31D21E9CB6BE002AD465 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				8A9B31D31E9CB6BE002AD465 /* Controllers */,
+				8A9B31D41E9CB6BE002AD465 /* Models */,
+				8A9B31D51E9CB6BE002AD465 /* Views */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		8A9B31D31E9CB6BE002AD465 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A9B31E41E9CB83D002AD465 /* MeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8A9B31D41E9CB6BE002AD465 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A9B31D51E9CB6BE002AD465 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8A9B31D61E9CB6C8002AD465 /* itinerary */ = {
+			isa = PBXGroup;
+			children = (
+				8A9B31D71E9CB6C8002AD465 /* Controllers */,
+				8A9B31D81E9CB6C8002AD465 /* Models */,
+				8A9B31D91E9CB6C8002AD465 /* Views */,
+			);
+			path = itinerary;
+			sourceTree = "<group>";
+		};
+		8A9B31D71E9CB6C8002AD465 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A9B31E21E9CB7F8002AD465 /* ItineraryViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8A9B31D81E9CB6C8002AD465 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A9B31D91E9CB6C8002AD465 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8A9B31DA1E9CB6D3002AD465 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				8A9B31DB1E9CB6D3002AD465 /* Controllers */,
+				8A9B31DC1E9CB6D3002AD465 /* Models */,
+				8A9B31DD1E9CB6D3002AD465 /* Views */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		8A9B31DB1E9CB6D3002AD465 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8A9B31E01E9CB7DC002AD465 /* ActivityViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8A9B31DC1E9CB6D3002AD465 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A9B31DD1E9CB6D3002AD465 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E56D1E33D5E157BE346930F0 /* Pods */ = {
@@ -1107,6 +1243,10 @@
 				FE60928E1E83C0540042229D /* Guide */,
 				FE6092961E83C0540042229D /* Login */,
 				FE6092A01E83C0540042229D /* Logo */,
+				8A9B31CE1E9CB6BE002AD465 /* Main */,
+				8A9B31DA1E9CB6D3002AD465 /* Activity */,
+				8A9B31D61E9CB6C8002AD465 /* itinerary */,
+				8A9B31D21E9CB6BE002AD465 /* Me */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1297,7 +1437,7 @@
 				TargetAttributes = {
 					FE6090C01E82867C0042229D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 6RRV39ZH3P;
+						DevelopmentTeam = 4C3KAHKS95;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1392,6 +1532,7 @@
 				FE6092AC1E83C0540042229D /* FindPasswordView.swift in Sources */,
 				FE6090FE1E83A4FD0042229D /* LocationPermissions.swift in Sources */,
 				FE6092681E83A5F00042229D /* TabBarView.swift in Sources */,
+				8A9B31E51E9CB83D002AD465 /* MeViewController.swift in Sources */,
 				FE6092531E83A5F00042229D /* CyclePageBaseView.swift in Sources */,
 				FE6092311E83A5F00042229D /* RouterParams.swift in Sources */,
 				FE6092281E83A5F00042229D /* AntFileUtil.swift in Sources */,
@@ -1426,6 +1567,7 @@
 				FE9557331E97367A00348E84 /* UILabel+theme.swift in Sources */,
 				FE60910B1E83A4FD0042229D /* UIColorExtension.swift in Sources */,
 				FE6092561E83A5F00042229D /* Image+Ext.swift in Sources */,
+				8A9B31E11E9CB7DC002AD465 /* ActivityViewController.swift in Sources */,
 				FE6091041E83A4FD0042229D /* String+Utils.swift in Sources */,
 				FEE670131E9741BF005231EE /* MQAExceptionHandler.m in Sources */,
 				FE6092601E83A5F00042229D /* SplitLineView.swift in Sources */,
@@ -1444,6 +1586,7 @@
 				FE6092481E83A5F00042229D /* String+Business.swift in Sources */,
 				FE6092761E83A5F00042229D /* DemoView.swift in Sources */,
 				FE6092A61E83C0540042229D /* GuideCollectionViewCell.swift in Sources */,
+				8A9B31DF1E9CB781002AD465 /* MainViewController.swift in Sources */,
 				FE6092291E83A5F00042229D /* AntImageUtil.swift in Sources */,
 				FE6091011E83A4FD0042229D /* String+arithmetic.swift in Sources */,
 				FE6090FF1E83A4FD0042229D /* PermissionUtils.swift in Sources */,
@@ -1453,6 +1596,7 @@
 				FE6091001E83A4FD0042229D /* Sandbox.swift in Sources */,
 				FE6092C81E84EAB20042229D /* NetworkAPIKeys.swift in Sources */,
 				FE6092621E83A5F00042229D /* TabBarConfig.swift in Sources */,
+				8A9B31E31E9CB7F8002AD465 /* ItineraryViewController.swift in Sources */,
 				FE6090FB1E83A4FD0042229D /* NSNotification+Extension.swift in Sources */,
 				FE60927D1E83A5F10042229D /* UIViewController+Ext.swift in Sources */,
 				FE60921D1E83A5F00042229D /* AntDebugBar.swift in Sources */,
@@ -1637,7 +1781,7 @@
 			baseConfigurationReference = F37B09E57C6C1EDF77E45A04 /* Pods-BaseSwiftProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6RRV39ZH3P;
+				DEVELOPMENT_TEAM = 4C3KAHKS95;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					/usr/local/opt/openssl/include,
@@ -1662,7 +1806,7 @@
 			baseConfigurationReference = E847BC3347EE2FEAC82D532C /* Pods-BaseSwiftProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6RRV39ZH3P;
+				DEVELOPMENT_TEAM = 4C3KAHKS95;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				HEADER_SEARCH_PATHS = (
 					/usr/local/opt/openssl/include,

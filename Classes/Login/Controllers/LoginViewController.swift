@@ -88,6 +88,11 @@ class LoginViewController: BaseViewController {
 //        let s2 = OpenSSLUtil.sha256(from: "1")
 //        print("s1 = \(s1)")
 //        print("s2 = \(s2)")
+        
+        //MARK:- 测试代码写这
+        PermissionUtils.checkPhotoLibraryPermissions({ (canOpen) in
+            
+        })
     }
 }
 

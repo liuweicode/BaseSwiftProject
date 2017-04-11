@@ -4,6 +4,18 @@
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>访问相册权限</string>
+    <key>NSCameraUsageDescription</key>
+    <string>使用相机</string>
+    <key>NSLocationUsageDescription</key>
+    <string>使用位置服务</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>为了更好的用户体验，请允许应用获取用户当前位置</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>App需要您的同意,才能访问麦克风</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>使用相册</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>为了更好的用户体验，请允许应用使用日历</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

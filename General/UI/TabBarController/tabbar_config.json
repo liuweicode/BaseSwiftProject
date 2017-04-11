@@ -1,17 +1,35 @@
 {
     "backgroundColor": "#FFFFFF",
-    "shadowColor": "#CCCCCCDD",
+    "shadowColor": "#CCCCDD",
     "items": [
               {
-              "className": "MainMapViewController",
-              "normalImageName": "home_normal",
-              "highlightedImageName": "home_pressed",
+              "className": "MainViewController",
+              "normalImageName": "main",
+              "highlightedImageName": "main",
               "title":"首页"
               },
               {
-              "className": "MineMainViewController",
-              "normalImageName": "carshow_normal",
-              "highlightedImageName": "carshow_pressed",
+              "className": "ActivityViewController",
+              "normalImageName": "group",
+              "highlightedImageName": "group",
+              "title":"活动"
+              },
+              {
+              "className": "ActivityViewController",
+              "normalImageName": "ADD",
+              "highlightedImageName": "ADD",
+              "title":""
+              },
+              {
+              "className": "ItineraryViewController",
+              "normalImageName": "third",
+              "highlightedImageName": "third",
+              "title":"行程"
+              },
+              {
+              "className": "MeViewController",
+              "normalImageName": "me",
+              "highlightedImageName": "me",
               "title":"我的"
               }
               ]

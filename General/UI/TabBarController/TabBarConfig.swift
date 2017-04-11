@@ -27,8 +27,8 @@ class TabBarConfig: NSObject {
                 let dataSource = TabBarDataSource()
                 var dict:[String:AnyObject]?
                 let json = JSON(data: jsonData)
-                    dataSource.backgroundColor = json["backgroundColor"].string!
-                    dataSource.shadowColor = json["shadowColor"].string!
+//                    dataSource.backgroundColor = json["backgroundColor"].string!
+//                    dataSource.shadowColor = json["shadowColor"].string!
                 let items = json["items"]
                 for (_,subJson):(String, JSON) in items {
                     let tabBarItem = TabBarItem(title: subJson["title"].stringValue, className: subJson["className"].stringValue, normalImageName: subJson["normalImageName"].stringValue, highlightedImageName: subJson["highlightedImageName"].stringValue)
