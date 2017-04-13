@@ -11,6 +11,17 @@
 		8A9B31E11E9CB7DC002AD465 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B31E01E9CB7DC002AD465 /* ActivityViewController.swift */; };
 		8A9B31E31E9CB7F8002AD465 /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B31E21E9CB7F8002AD465 /* ItineraryViewController.swift */; };
 		8A9B31E51E9CB83D002AD465 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B31E41E9CB83D002AD465 /* MeViewController.swift */; };
+		8AD282801E9F92A500F1F401 /* ZZAssetGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD282731E9F92A500F1F401 /* ZZAssetGridViewController.swift */; };
+		8AD282811E9F92A500F1F401 /* ZZAssetPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD282741E9F92A500F1F401 /* ZZAssetPreviewVC.swift */; };
+		8AD282821E9F92A500F1F401 /* ZZPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD282751E9F92A500F1F401 /* ZZPhotoViewController.swift */; };
+		8AD282831E9F92A500F1F401 /* ZZImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AD282781E9F92A500F1F401 /* ZZImage.storyboard */; };
+		8AD282841E9F92A500F1F401 /* ZZImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AD282791E9F92A500F1F401 /* ZZImage.xcassets */; };
+		8AD282851E9F92A500F1F401 /* UICollectionView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2827B1E9F92A500F1F401 /* UICollectionView+Add.swift */; };
+		8AD282861E9F92A500F1F401 /* ZZGridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2827C1E9F92A500F1F401 /* ZZGridViewCell.swift */; };
+		8AD282871E9F92A500F1F401 /* ZZImageSelectedLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2827D1E9F92A500F1F401 /* ZZImageSelectedLayer.swift */; };
+		8AD282881E9F92A500F1F401 /* ZZPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2827E1E9F92A500F1F401 /* ZZPhotoCell.swift */; };
+		8AD282891E9F92A500F1F401 /* ZZPhotoPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2827F1E9F92A500F1F401 /* ZZPhotoPreviewCell.swift */; };
+		8AD2828B1E9F97F400F1F401 /* TestPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2828A1E9F97F400F1F401 /* TestPhotoViewController.swift */; };
 		AE1A0859D749D1D186C5D439 /* Pods_BaseSwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */; };
 		FE501DB61E8A3057008938DA /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB51E8A3057008938DA /* ActionSheet.swift */; };
 		FE501DB91E8A5BA3008938DA /* OpenSSLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB81E8A5BA3008938DA /* OpenSSLUtil.m */; };
@@ -154,6 +165,17 @@
 		8A9B31E01E9CB7DC002AD465 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		8A9B31E21E9CB7F8002AD465 /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
 		8A9B31E41E9CB83D002AD465 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		8AD282731E9F92A500F1F401 /* ZZAssetGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAssetGridViewController.swift; sourceTree = "<group>"; };
+		8AD282741E9F92A500F1F401 /* ZZAssetPreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZAssetPreviewVC.swift; sourceTree = "<group>"; };
+		8AD282751E9F92A500F1F401 /* ZZPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPhotoViewController.swift; sourceTree = "<group>"; };
+		8AD282781E9F92A500F1F401 /* ZZImage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ZZImage.storyboard; sourceTree = "<group>"; };
+		8AD282791E9F92A500F1F401 /* ZZImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ZZImage.xcassets; sourceTree = "<group>"; };
+		8AD2827B1E9F92A500F1F401 /* UICollectionView+Add.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Add.swift"; sourceTree = "<group>"; };
+		8AD2827C1E9F92A500F1F401 /* ZZGridViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZGridViewCell.swift; sourceTree = "<group>"; };
+		8AD2827D1E9F92A500F1F401 /* ZZImageSelectedLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZImageSelectedLayer.swift; sourceTree = "<group>"; };
+		8AD2827E1E9F92A500F1F401 /* ZZPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPhotoCell.swift; sourceTree = "<group>"; };
+		8AD2827F1E9F92A500F1F401 /* ZZPhotoPreviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZPhotoPreviewCell.swift; sourceTree = "<group>"; };
+		8AD2828A1E9F97F400F1F401 /* TestPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPhotoViewController.swift; sourceTree = "<group>"; };
 		9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaseSwiftProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E847BC3347EE2FEAC82D532C /* Pods-BaseSwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		F37B09E57C6C1EDF77E45A04 /* Pods-BaseSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -529,6 +551,56 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8AD282711E9F92A500F1F401 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				8AD282721E9F92A500F1F401 /* Controllers */,
+				8AD282761E9F92A500F1F401 /* Models */,
+				8AD282771E9F92A500F1F401 /* Resources */,
+				8AD2827A1E9F92A500F1F401 /* Views */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		8AD282721E9F92A500F1F401 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8AD2828A1E9F97F400F1F401 /* TestPhotoViewController.swift */,
+				8AD282731E9F92A500F1F401 /* ZZAssetGridViewController.swift */,
+				8AD282741E9F92A500F1F401 /* ZZAssetPreviewVC.swift */,
+				8AD282751E9F92A500F1F401 /* ZZPhotoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8AD282761E9F92A500F1F401 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8AD282771E9F92A500F1F401 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8AD282781E9F92A500F1F401 /* ZZImage.storyboard */,
+				8AD282791E9F92A500F1F401 /* ZZImage.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8AD2827A1E9F92A500F1F401 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8AD2827B1E9F92A500F1F401 /* UICollectionView+Add.swift */,
+				8AD2827C1E9F92A500F1F401 /* ZZGridViewCell.swift */,
+				8AD2827D1E9F92A500F1F401 /* ZZImageSelectedLayer.swift */,
+				8AD2827E1E9F92A500F1F401 /* ZZPhotoCell.swift */,
+				8AD2827F1E9F92A500F1F401 /* ZZPhotoPreviewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E56D1E33D5E157BE346930F0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,7 +946,7 @@
 				FE60916C1E83A5F00042229D /* Font */,
 				FE60916E1E83A5F00042229D /* Image */,
 				FE6091701E83A5F00042229D /* Label */,
-				FE6091741E83A5F00042229D /* Photo */,
+				8AD282711E9F92A500F1F401 /* Photo */,
 				FE60917F1E83A5F00042229D /* ProgressHUD */,
 				FE6091811E83A5F00042229D /* SplitLineView */,
 				FE6091831E83A5F00042229D /* TabBarController */,
@@ -974,45 +1046,6 @@
 				FE6091731E83A5F00042229D /* UILabel+attr.swift */,
 			);
 			path = Label;
-			sourceTree = "<group>";
-		};
-		FE6091741E83A5F00042229D /* Photo */ = {
-			isa = PBXGroup;
-			children = (
-				FE6091751E83A5F00042229D /* Controllers */,
-				FE6091781E83A5F00042229D /* Models */,
-				FE60917B1E83A5F00042229D /* Resources */,
-				FE60917C1E83A5F00042229D /* Views */,
-			);
-			path = Photo;
-			sourceTree = "<group>";
-		};
-		FE6091751E83A5F00042229D /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		FE6091781E83A5F00042229D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		FE60917B1E83A5F00042229D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		FE60917C1E83A5F00042229D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		FE60917F1E83A5F00042229D /* ProgressHUD */ = {
@@ -1468,6 +1501,8 @@
 				FE6092611E83A5F00042229D /* tabbar_config.json in Resources */,
 				FE6090CF1E82867C0042229D /* LaunchScreen.storyboard in Resources */,
 				FE6090CC1E82867C0042229D /* Assets.xcassets in Resources */,
+				8AD282841E9F92A500F1F401 /* ZZImage.xcassets in Resources */,
+				8AD282831E9F92A500F1F401 /* ZZImage.storyboard in Resources */,
 				FE60922D1E83A5F00042229D /* NavigatorList.plist in Resources */,
 				FE6092D91E8514C80042229D /* test.jpg in Resources */,
 				FE6090CA1E82867C0042229D /* Main.storyboard in Resources */,
@@ -1549,6 +1584,7 @@
 				FE6092781E83A5F10042229D /* ScrollDefaultItemView.swift in Sources */,
 				FE6092A71E83C0540042229D /* GuidePageView.swift in Sources */,
 				FE6091031E83A4FD0042229D /* String+Size.swift in Sources */,
+				8AD282861E9F92A500F1F401 /* ZZGridViewCell.swift in Sources */,
 				FE6092351E83A5F00042229D /* DateUtil.m in Sources */,
 				FE60910D1E83A4FD0042229D /* UIScreen+Extension.swift in Sources */,
 				FE6091091E83A4FD0042229D /* TimerAgent.swift in Sources */,
@@ -1572,6 +1608,7 @@
 				FEE670131E9741BF005231EE /* MQAExceptionHandler.m in Sources */,
 				FE6092601E83A5F00042229D /* SplitLineView.swift in Sources */,
 				FE60928D1E83BEE60042229D /* AppController.swift in Sources */,
+				8AD282801E9F92A500F1F401 /* ZZAssetGridViewController.swift in Sources */,
 				FE6092661E83A5F00042229D /* TabBarItemView.swift in Sources */,
 				FE60927E1E83A5F10042229D /* AppUser.swift in Sources */,
 				FE6092A51E83C0540042229D /* GuideViewController.swift in Sources */,
@@ -1590,9 +1627,11 @@
 				FE6092291E83A5F00042229D /* AntImageUtil.swift in Sources */,
 				FE6091011E83A4FD0042229D /* String+arithmetic.swift in Sources */,
 				FE6090FF1E83A4FD0042229D /* PermissionUtils.swift in Sources */,
+				8AD282851E9F92A500F1F401 /* UICollectionView+Add.swift in Sources */,
 				FE6092CF1E84EAB20042229D /* NetworkHandler.swift in Sources */,
 				FE6090FD1E83A4FD0042229D /* Optional+Extension.swift in Sources */,
 				FE6092AB1E83C0540042229D /* RegisterViewController.swift in Sources */,
+				8AD282871E9F92A500F1F401 /* ZZImageSelectedLayer.swift in Sources */,
 				FE6091001E83A4FD0042229D /* Sandbox.swift in Sources */,
 				FE6092C81E84EAB20042229D /* NetworkAPIKeys.swift in Sources */,
 				FE6092621E83A5F00042229D /* TabBarConfig.swift in Sources */,
@@ -1608,11 +1647,13 @@
 				FE9557311E97367A00348E84 /* UIColor+theme.swift in Sources */,
 				FE60927B1E83A5F10042229D /* BaseTableViewController.swift in Sources */,
 				FE6092231E83A5F00042229D /* AntLogMoudle.swift in Sources */,
+				8AD282891E9F92A500F1F401 /* ZZPhotoPreviewCell.swift in Sources */,
 				FE60922A1E83A5F00042229D /* AntStringUtil.swift in Sources */,
 				FE6092A91E83C0540042229D /* FindPasswordViewController.swift in Sources */,
 				FE6092541E83A5F00042229D /* CycleView.swift in Sources */,
 				FE6092211E83A5F00042229D /* AntRulerVerticalView.swift in Sources */,
 				FE60927C1E83A5F10042229D /* BaseViewController.swift in Sources */,
+				8AD2828B1E9F97F400F1F401 /* TestPhotoViewController.swift in Sources */,
 				FE6092AE1E83C0540042229D /* RegisterView.swift in Sources */,
 				FE6092271E83A5F00042229D /* AntDateUtil.swift in Sources */,
 				FE9557321E97367A00348E84 /* UIFont+theme.swift in Sources */,
@@ -1620,6 +1661,7 @@
 				FE6092701E83A5F00042229D /* UIButton+Cache.swift in Sources */,
 				FE6092871E83A5F10042229D /* LMAESCryptor.m in Sources */,
 				FE6092341E83A5F00042229D /* NotificationKeys.swift in Sources */,
+				8AD282811E9F92A500F1F401 /* ZZAssetPreviewVC.swift in Sources */,
 				FE6092AD1E83C0540042229D /* LoginView.swift in Sources */,
 				FE6092581E83A5F00042229D /* NSAttributedString+theme.swift in Sources */,
 				FE9557341E97367A00348E84 /* UIView+theme.swift in Sources */,
@@ -1640,6 +1682,7 @@
 				FE60924B1E83A5F00042229D /* AlertView.swift in Sources */,
 				FE6092521E83A5F00042229D /* PlaceholderTextView.swift in Sources */,
 				FE6092711E83A5F00042229D /* UIImageView+Cache.swift in Sources */,
+				8AD282881E9F92A500F1F401 /* ZZPhotoCell.swift in Sources */,
 				FE6091021E83A4FD0042229D /* String+Format.swift in Sources */,
 				FE60910C1E83A4FD0042229D /* Image+Color.swift in Sources */,
 				FE60922F1E83A5F00042229D /* NavigatorProtocol.swift in Sources */,
@@ -1656,6 +1699,7 @@
 				FE60924E1E83A5F00042229D /* BaseTextField.swift in Sources */,
 				FE6090C51E82867C0042229D /* AppDelegate.swift in Sources */,
 				FE6092571E83A5F00042229D /* LJAttributedLabel.swift in Sources */,
+				8AD282821E9F92A500F1F401 /* ZZPhotoViewController.swift in Sources */,
 				FE6092AA1E83C0540042229D /* LoginViewController.swift in Sources */,
 				FE60927F1E83A5F10042229D /* UserCenter.swift in Sources */,
 				FE6092D71E84EAB20042229D /* SessionManager.swift in Sources */,

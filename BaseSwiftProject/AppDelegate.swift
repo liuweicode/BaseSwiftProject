@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame:UIScreen.main.bounds)
         
-        APPCONTROLLER.setMain()
+        APPCONTROLLER.setupLogin()
         
         NavRouter.setURLMapping(plistName: "NavigatorList")
         

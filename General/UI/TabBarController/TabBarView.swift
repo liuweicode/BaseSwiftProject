@@ -55,8 +55,8 @@ class TabBarView: UIView {
                 let tabBarItemView = self.viewWithTag((index + 1)) as! TabBarItemView
                     
                 tabBarItemView.snp.makeConstraints( { (make) in
-                    make.top.equalTo(self.snp.top)
-                    make.bottom.equalTo(self.snp.bottom)
+                    make.top.equalTo(self.snp.top).offset(6)
+                    make.bottom.equalTo(self.snp.bottom).offset(-6)
                     make.width.equalTo(width)
                     if preTabBarItemView == nil
                     {

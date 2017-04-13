@@ -93,6 +93,7 @@ class LoginViewController: BaseViewController {
         PermissionUtils.checkPhotoLibraryPermissions({ (canOpen) in
             
         })
+        self.navigationController?.pushViewController(TestPhotoViewController(), animated: true)
     }
 }
 

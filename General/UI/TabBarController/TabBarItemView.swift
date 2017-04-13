@@ -89,7 +89,32 @@ class TabBarItemView: UIView {
     }
     
     override func updateConstraints() {
+        //图片自带文字
+        if !didSetupConstraints {
+            
+            imageView.snp.makeConstraints( { (make) in
+                make.top.equalTo(self.snp.top)
+                make.bottom.equalTo(self.snp.bottom)
+                make.width.equalTo(imageView.snp.height)
+                make.centerX.equalTo(self.snp.centerX)
+            })
+            
+            button.snp.makeConstraints( { (make) in
+                make.edges.equalTo(self)
+            })
+            
+            label.snp.makeConstraints( { (make) in
+                make.top.equalTo(self.snp.top)
+                make.width.height.greaterThanOrEqualTo(6)
+                make.left.equalTo(imageView.snp.right);
+                make.width.lessThanOrEqualTo(20)
+            })
+            
+            didSetupConstraints = true
+        }
+        super.updateConstraints()
         
+        /* //图片不自带文字的情况下
         if !didSetupConstraints {
             
             let size = UIImage(named: item.normalImageName)?.size
@@ -130,13 +155,15 @@ class TabBarItemView: UIView {
             didSetupConstraints = true
         }
         super.updateConstraints()
+         */
     }
     
     func buttonClicked(_ sender:UIButton)
     {
         if item.title.isEmpty {
-            //code here . show plus view (post activity & meetting)
-            UIApplication.shared.keyWindow?.addSubview(BaseView())
+            //Code Here . Show View Not Change Tabbar (post activity & meetting)
+
+            
             return
         }
         
