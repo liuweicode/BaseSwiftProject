@@ -9,7 +9,9 @@
 import UIKit
 import Photos
 
-class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate{
+typealias ImageSelected = (_ array:[PHAsset])->Void
+
+class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate, UIScrollViewDelegate{
     
     
     var assets:[PHAsset]
@@ -19,10 +21,27 @@ class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate{
     var imageManager:PHCachingImageManager
     var assetGridThumbnailSize:CGSize!
     
-    public var currentInde:NSIndexPath?
-    var isCollectionLoaded:Bool?
-    var isFirst:Bool!
     
+    /// 进入即显示的界面，在点击单页预览整个相册的时候才有
+    public var currentInde:NSIndexPath? = NSIndexPath(item: 0, section: 0)
+    var isCollectionLoaded:Bool? = false
+    var isFirst:Bool! = true
+    
+    
+    /// 已选中的照片数组
+    var selectedImg:[PHAsset]!
+    
+    
+    /// 右上角选中图标，可以直接在此处进行选中与否状态(利用block回调)
+    var rgBarBtnItem:UIButton!
+    
+    var imageSelected:ImageSelected?
+    func imageSelectedArray(array:ImageSelected?){
+        imageSelected = array
+    }
+    
+    
+    /// 初始化存储照片信息数组
     init(assets:[PHAsset]){
         self.assets = assets
         self.imageManager = PHCachingImageManager()
@@ -42,6 +61,8 @@ class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
+        //self.selectedImg = NSMutableArray(capacity: 10)
+        
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
@@ -58,7 +79,15 @@ class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate{
         
         collectionView.isPagingEnabled = true
         
-        isFirst = true
+        var img = UIImage(named: "zz_image_cell")
+        img=img?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        rgBarBtnItem = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 30))
+        rgBarBtnItem.addTarget(self, action: #selector(ZZAssetPreviewVC.setSelecte), for: .touchUpInside)
+        rgBarBtnItem.setImage(img, for: .normal)
+        let item = UIBarButtonItem(customView: rgBarBtnItem)
+        self.navigationItem.rightBarButtonItem = item
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
         // Do any additional setup after loading the view.
     }
     fileprivate var context = 0
@@ -70,14 +99,47 @@ class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate{
         let scale = UIScreen.main.scale
         let cellSize = (self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize
         assetGridThumbnailSize = CGSize(width: cellSize.width*scale , height: cellSize.height*scale)
-        UIApplication.shared.setStatusBarHidden(true, with: UIStatusBarAnimation.none)
+        UIApplication.shared.isStatusBarHidden = true
+        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = item
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        UIApplication.shared.setStatusBarHidden(false, with: UIStatusBarAnimation.none)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        UIApplication.shared.isStatusBarHidden = false
+
     }
+    
+    /// 点击左上角确定是否选择该图片
+    func setSelecte(){
+        //改变右上角对号状态，并且数组删除对应元素
+        let a = collectionView.indexPathsForVisibleItems.last?.row
+        if self.selectedImg.contains(self.assets[a!]) {
+            
+            self.selectedImg.remove(at:self.selectedImg.index(of: self.assets[a!])!)
+            rgBarBtnItem.setImage(UIImage(named:"zz_image_cell"), for: .normal)
+            if (imageSelected != nil){
+                self.imageSelected!(self.selectedImg)
+            }
+        }
+        
+        else if !self.selectedImg.contains(self.assets[a!]) {
+
+            if selectedImg.count == 9 {
+                return
+            }
+            
+            self.selectedImg.append(self.assets[a!])
+            rgBarBtnItem.setImage(UIImage(named:"zz_image_cell_selected"), for: .normal)
+            if (imageSelected != nil){
+                self.imageSelected!(self.selectedImg)
+            }
+
+        }
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -106,6 +168,12 @@ extension ZZAssetPreviewVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         if let cell = cell as? ZZPhotoPreviewCell{
+            self.navigationItem.title = "\((indexPath as NSIndexPath).row+1) / \(self.assets.count)"
+            
+            self.rgBarBtnItem.setImage(UIImage(named: self.selectedImg.contains(self.assets[indexPath.row]) ? "zz_image_cell_selected":"zz_image_cell"), for: .normal)
+            
+            //rgBarBtnItem.tintColor = self.selectedImg.contains(self.assets[indexPath.row]) ? UIColor.green:UIColor.gray
+            
             cell.calSize()
             
         }
@@ -118,6 +186,20 @@ extension ZZAssetPreviewVC:UICollectionViewDataSource{
         }
     }
     
+
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+       // UIApplication.shared.isStatusBarHidden = true
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        //停止滚动的时候修改当前页，以及是否被选中
+        self.navigationItem.title = "\((collectionView.indexPathsForVisibleItems.last?.row)! + 1) / \(self.assets.count)"
+        
+    }
+
     
 }
 

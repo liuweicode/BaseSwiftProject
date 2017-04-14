@@ -33,7 +33,7 @@ class ZZAssetGridViewController: UIViewController {
     var previousPreheatRect:CGRect!
     
     /// 最多可以选择的个数
-    var maxSelected:Int = 9
+    public var maxSelected:Int = 9
     
     /// 记录选中的数组
     var selectedArray:NSMutableArray!
@@ -69,7 +69,7 @@ class ZZAssetGridViewController: UIViewController {
         super.viewDidLoad()
         self.selectedArray = NSMutableArray(capacity: 10)
         self.collectionView.backgroundColor = UIColor.white
-        
+
         // 获取流布局对象并设置itemSize 设置允许多选
         let layout = (self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout)
         layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width/4-1,height: UIScreen.main.bounds.size.width/4-1)
@@ -86,7 +86,8 @@ class ZZAssetGridViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        UIApplication.shared.statusBarStyle = .default
+
         // 计算出小图大小 （ 为targetSize做准备 ）
         let scale = UIScreen.main.scale
         let cellSize = (self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize
@@ -98,6 +99,7 @@ class ZZAssetGridViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
         didLoad = true
     }
     
@@ -124,6 +126,7 @@ class ZZAssetGridViewController: UIViewController {
      取消
      */
     func cancel() {
+        UIApplication.shared.statusBarStyle = .lightContent
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
@@ -151,6 +154,20 @@ extension ZZAssetGridViewController{
         }
         
         let vc = ZZAssetPreviewVC(assets:assets)
+        vc.selectedImg = assets
+        
+        vc.imageSelectedArray { (array) in
+            let select:(NSMutableArray) = []
+            for asset:PHAsset in array {
+                select.add(NSIndexPath(item: self.assetsFetchResults.index(of: asset), section: 0))
+            }
+            self.selectedArray = select
+            self.checkSelect()
+            self.collectionView.reloadData()
+            
+            
+        }
+
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -183,8 +200,48 @@ extension ZZAssetGridViewController{
         }
         
         let vc = ZZAssetPreviewVC(assets:assets)
+        
+        
+        //去除被选中的图片(做预览右上角的勾勾)
+        var selected:[PHAsset] = []
+        if let indexPaths = self.selectedArray{
+            for indexPath in indexPaths{
+                selected.append(assetsFetchResults[(indexPath as! NSIndexPath).row] )
+            }
+        }
+
         vc.currentInde = index
+        vc.selectedImg = selected
+        
+        vc.imageSelectedArray { (array) in
+            let select:(NSMutableArray) = []
+            for asset:PHAsset in array {
+                select.add(NSIndexPath(item: self.assetsFetchResults.index(of: asset), section: 0))
+            }
+            self.selectedArray = select
+            self.checkSelect()
+            self.collectionView.reloadData()
+        }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func checkSelect(){
+
+        if self.selectedArray.count == 0{
+            self.disableItems()
+        }
+        
+        if self.selectedArray.count > 0 && self.selectedArray.count < self.maxSelected{
+            self.enableItems()
+        }
+        
+        if self.selectedArray.count > maxSelected{
+            
+        }
+        
+        self.selectedLayer.num = self.selectedArray.count
+        
     }
     
 }
@@ -204,6 +261,8 @@ extension ZZAssetGridViewController:UICollectionViewDataSource,UICollectionViewD
         self.imageManager.requestImage(for: asset, targetSize: assetGridThumbnailSize, contentMode: PHImageContentMode.aspectFill, options: nil) { (image, nfo) in
             cell.imageView.image = image
         }
+        //设置进入状态(右上角是否被点击)
+        cell.isSelected = self.selectedArray.contains(indexPath) ? true:false
         
         //点击右上角
         cell.selectRightBtn(closure: { 
@@ -222,7 +281,7 @@ extension ZZAssetGridViewController:UICollectionViewDataSource,UICollectionViewD
                         self.enableItems()
                     }
                     cell.showAnim()
-                    
+                    //self.navigationItem.title = "\(sc) / \(self.maxSelected)"
                     cell.isSelected = cell.isSelected ? false:true
                 }
             }
@@ -234,7 +293,7 @@ extension ZZAssetGridViewController:UICollectionViewDataSource,UICollectionViewD
                     self.disableItems()
                 }
                 cell.showAnim()
-                
+                //self.navigationItem.title = "\(sc) / \(self.maxSelected)"
                 cell.isSelected = cell.isSelected ? false:true
             }
             
@@ -249,63 +308,7 @@ extension ZZAssetGridViewController:UICollectionViewDataSource,UICollectionViewD
         
         return cell
     }
-   /*
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? ZZGridViewCell{
-
-            cell.selectedImageView.isUserInteractionEnabled = false
-            let tap = UITapGestureRecognizer()
-            tap.addTarget(self, action: #selector(ZZAssetGridViewController.seleteImage))
-
-            cell.selectedImageView.addGestureRecognizer(tap)
-            
-            self.previewAllImage(indexPath as NSIndexPath)
-        
-
-            
-        }
-    }
-    
-    func seleteImage(_ cell:ZZGridViewCell,isseleted:Bool){
-        let sc = self.selectedCount()
-        selectedLayer.num = sc
-        if sc == 0{
-            self.disableItems()
-        }
-        cell.showAnim()
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if let cell = collectionView.cellForItem(at: indexPath) as? ZZGridViewCell{
-
-            if cell.SelectedButton.responds(to: #selector(ZZGridViewCell.touch)){
-                let sc = self.selectedCount()
-                if sc > self.maxSelected {
-                    // 如果选择的个数大于最大选择数 设置为不选中状态
-                    collectionView.deselectItem(at: indexPath, animated: false)
-                    selectedLayer.tooMoreAnimate()
-                }else{
-                    selectedLayer.num = sc
-                    if sc > 0 && !self.sendItem.isEnabled{
-                        self.enableItems()
-                    }
-                    cell.showAnim()
-                }
-                return
-            }
-            
-            if !cell.SelectedButton.isFirstResponder{
-            self.previewAllImage(indexPath as NSIndexPath)
-                if !cell.isSelected{
-                    collectionView.deselectItem(at: indexPath, animated: false)
-                }
-
-            }
-        }
-    }
-    */
+  
     /**
      在滚动中不断更新缓存
      */

@@ -71,7 +71,7 @@ class ZZPhotoPreviewCell: UICollectionViewCell {
     
     func doubleTapImg(_ ges:UITapGestureRecognizer){
         if let nav = self.responderViewController().navigationController{
-            UIApplication.shared.setStatusBarHidden(true, with: UIStatusBarAnimation.none)
+            UIApplication.shared.isStatusBarHidden = true
             nav.setNavigationBarHidden(true, animated: true)
         }
         if scrollView.zoomScale == 1.0 {
@@ -88,7 +88,7 @@ class ZZPhotoPreviewCell: UICollectionViewCell {
     
     func tap(_ ges:UITapGestureRecognizer){
         if let nav = self.responderViewController().navigationController{
-            UIApplication.shared.setStatusBarHidden(!UIApplication.shared.isStatusBarHidden, with: UIStatusBarAnimation.none)
+            UIApplication.shared.isStatusBarHidden = !nav.isNavigationBarHidden
             nav.setNavigationBarHidden(!nav.isNavigationBarHidden, animated: true)
         }
     }

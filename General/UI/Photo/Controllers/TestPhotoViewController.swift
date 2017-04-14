@@ -43,7 +43,7 @@ class TestPhotoViewController: UIViewController ,UICollectionViewDelegate,UIColl
             collection.tag = 10
             collection.delegate = self
             collection.dataSource = self
-
+            collection.backgroundColor = .white
             collection.register(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "call")
             self.view.addSubview(collection)
             collection.reloadData()
