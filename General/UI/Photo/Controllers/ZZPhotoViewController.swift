@@ -67,9 +67,7 @@ class ZZPhotoViewController: UIViewController {
                 items.append(ZZImageItem(title: c.localizedTitle, fetchResult: assetsFetchResult))
             }
         }
-        
     }
-    
     
     deinit{
         PHPhotoLibrary.shared().unregisterChangeObserver(self)
@@ -129,6 +127,7 @@ class ZZPhotoViewController: UIViewController {
     }
     
     override func didReceiveMemoryWarning() {
+
         super.didReceiveMemoryWarning()
     }
     

@@ -57,8 +57,6 @@ class ZZAssetGridViewController: UIViewController {
             
         }
         
-       
-        
         // 初始化和重置缓存
         self.imageManager = PHCachingImageManager()
         self.resetCachedAssets()
@@ -82,16 +80,28 @@ class ZZAssetGridViewController: UIViewController {
         self.sendItem.action = #selector(ZZAssetGridViewController.finishSelect)
         
         self.disableItems()
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .default
-
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         // 计算出小图大小 （ 为targetSize做准备 ）
         let scale = UIScreen.main.scale
         let cellSize = (self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize
         assetGridThumbnailSize = CGSize( width: cellSize.width*scale , height: cellSize.height*scale)
+        if self.maxSelected == 1 {
+            self.toolBar.isHidden = true
+            //self.toolBar.superview?.isHidden = true
+            self.collectionView.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: UIScreen.main.bounds.size.height)
+            self.collectionView.reloadData()
+            
+        }
+
     }
     
     // 是否页面加载完毕 ， 加载完毕后再做缓存 否则数值可能有误
@@ -99,6 +109,7 @@ class ZZAssetGridViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
 
         didLoad = true
     }
@@ -142,7 +153,6 @@ class ZZAssetGridViewController: UIViewController {
 
 extension ZZAssetGridViewController{
 
-
     // TODO - 预览
     func previewImage() {
         // 预览
@@ -153,7 +163,7 @@ extension ZZAssetGridViewController{
             }
         }
         
-        let vc = ZZAssetPreviewVC(assets:assets)
+        let vc = ZZAssetPreviewVC(assets:assets , maxSelected:self.maxSelected)
         vc.selectedImg = assets
         
         vc.imageSelectedArray { (array) in
@@ -164,7 +174,6 @@ extension ZZAssetGridViewController{
             self.selectedArray = select
             self.checkSelect()
             self.collectionView.reloadData()
-            
             
         }
 
@@ -199,7 +208,7 @@ extension ZZAssetGridViewController{
                 assets.append(assetsFetchResults[(indexPath as NSIndexPath).row] )
         }
         
-        let vc = ZZAssetPreviewVC(assets:assets)
+        let vc = ZZAssetPreviewVC(assets:assets , maxSelected:self.maxSelected)
         
         
         //去除被选中的图片(做预览右上角的勾勾)
@@ -261,6 +270,9 @@ extension ZZAssetGridViewController:UICollectionViewDataSource,UICollectionViewD
         self.imageManager.requestImage(for: asset, targetSize: assetGridThumbnailSize, contentMode: PHImageContentMode.aspectFill, options: nil) { (image, nfo) in
             cell.imageView.image = image
         }
+        
+        
+        
         //设置进入状态(右上角是否被点击)
         cell.isSelected = self.selectedArray.contains(indexPath) ? true:false
         
@@ -281,7 +293,6 @@ extension ZZAssetGridViewController:UICollectionViewDataSource,UICollectionViewD
                         self.enableItems()
                     }
                     cell.showAnim()
-                    //self.navigationItem.title = "\(sc) / \(self.maxSelected)"
                     cell.isSelected = cell.isSelected ? false:true
                 }
             }
@@ -293,7 +304,6 @@ extension ZZAssetGridViewController:UICollectionViewDataSource,UICollectionViewD
                     self.disableItems()
                 }
                 cell.showAnim()
-                //self.navigationItem.title = "\(sc) / \(self.maxSelected)"
                 cell.isSelected = cell.isSelected ? false:true
             }
             
@@ -301,9 +311,26 @@ extension ZZAssetGridViewController:UICollectionViewDataSource,UICollectionViewD
         
         //点击整个图片预览
         cell.selectImgBtn {
-            NSLog("1122")
+            
+            if self.maxSelected == 1{
+                let asset = self.assetsFetchResults[(indexPath as NSIndexPath).row]
+                
+                let chooseC = ZZChooseClipViewController(asset: asset)
+                chooseC.completeHandler = self.completeHandler
+                self.modalPresentationStyle = UIModalPresentationStyle.custom
+                self.navigationController?.pushViewController(chooseC, animated: true)
+                
+                
+                return
+            }
+            
             self.previewAllImage(indexPath as NSIndexPath)
 
+        }
+        
+        if self.maxSelected == 1 {
+            cell.selectedImageView.isHidden = true
+            cell.SelectedButton.isHidden = true
         }
         
         return cell

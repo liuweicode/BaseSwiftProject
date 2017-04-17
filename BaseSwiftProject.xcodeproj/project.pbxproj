@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A6200E81EA4A473003D645A /* ZZChooseClipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6200E71EA4A473003D645A /* ZZChooseClipViewController.swift */; };
+		8A6200EC1EA4AB45003D645A /* ZZChooseClipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6200EB1EA4AB45003D645A /* ZZChooseClipCollectionViewCell.swift */; };
 		8A9B31DF1E9CB781002AD465 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B31DE1E9CB781002AD465 /* MainViewController.swift */; };
 		8A9B31E11E9CB7DC002AD465 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B31E01E9CB7DC002AD465 /* ActivityViewController.swift */; };
 		8A9B31E31E9CB7F8002AD465 /* ItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B31E21E9CB7F8002AD465 /* ItineraryViewController.swift */; };
@@ -161,6 +163,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A6200E71EA4A473003D645A /* ZZChooseClipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZChooseClipViewController.swift; sourceTree = "<group>"; };
+		8A6200EB1EA4AB45003D645A /* ZZChooseClipCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZZChooseClipCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A9B31DE1E9CB781002AD465 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8A9B31E01E9CB7DC002AD465 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		8A9B31E21E9CB7F8002AD465 /* ItineraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItineraryViewController.swift; sourceTree = "<group>"; };
@@ -569,6 +573,7 @@
 				8AD282731E9F92A500F1F401 /* ZZAssetGridViewController.swift */,
 				8AD282741E9F92A500F1F401 /* ZZAssetPreviewVC.swift */,
 				8AD282751E9F92A500F1F401 /* ZZPhotoViewController.swift */,
+				8A6200E71EA4A473003D645A /* ZZChooseClipViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -597,6 +602,7 @@
 				8AD2827D1E9F92A500F1F401 /* ZZImageSelectedLayer.swift */,
 				8AD2827E1E9F92A500F1F401 /* ZZPhotoCell.swift */,
 				8AD2827F1E9F92A500F1F401 /* ZZPhotoPreviewCell.swift */,
+				8A6200EB1EA4AB45003D645A /* ZZChooseClipCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1674,10 +1680,12 @@
 				FE6092511E83A5F00042229D /* SMSCaptchaTextField.swift in Sources */,
 				FE6092631E83A5F00042229D /* TabBarController.swift in Sources */,
 				FE6092CC1E84EAB20042229D /* NetworkClient.swift in Sources */,
+				8A6200E81EA4A473003D645A /* ZZChooseClipViewController.swift in Sources */,
 				FE6092CE1E84EAB20042229D /* NetworkError.swift in Sources */,
 				FE60924C1E83A5F00042229D /* DQTapGestureRecognizer.swift in Sources */,
 				FE6092741E83A5F00042229D /* BaseView.swift in Sources */,
 				FE95572F1E97367A00348E84 /* ThemeConfig.swift in Sources */,
+				8A6200EC1EA4AB45003D645A /* ZZChooseClipCollectionViewCell.swift in Sources */,
 				FE60922E1E83A5F00042229D /* Navigator.swift in Sources */,
 				FE60924B1E83A5F00042229D /* AlertView.swift in Sources */,
 				FE6092521E83A5F00042229D /* PlaceholderTextView.swift in Sources */,

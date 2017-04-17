@@ -33,7 +33,7 @@ class TestPhotoViewController: UIViewController ,UICollectionViewDelegate,UIColl
     
     func goPhoto(_ sender: AnyObject) {
         
-        _ = self.zz_presentPhotoVC(9) { (assets:([PHAsset])) in
+        _ = self.zz_presentPhotoVC(1) { (assets:([PHAsset])) in
             assetss = assets
             
             let layer = UICollectionViewFlowLayout()

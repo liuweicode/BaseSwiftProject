@@ -31,7 +31,9 @@ class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate, UIScrollView
     /// 已选中的照片数组
     var selectedImg:[PHAsset]!
     
-    
+    /// 最多可以选择的个数
+    var maxSelected:Int = 9
+
     /// 右上角选中图标，可以直接在此处进行选中与否状态(利用block回调)
     var rgBarBtnItem:UIButton!
     
@@ -42,9 +44,10 @@ class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate, UIScrollView
     
     
     /// 初始化存储照片信息数组
-    init(assets:[PHAsset]){
+    init(assets:[PHAsset],maxSelected:Int){
         self.assets = assets
         self.imageManager = PHCachingImageManager()
+        self.maxSelected = maxSelected
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -86,7 +89,6 @@ class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate, UIScrollView
         rgBarBtnItem.setImage(img, for: .normal)
         let item = UIBarButtonItem(customView: rgBarBtnItem)
         self.navigationItem.rightBarButtonItem = item
-        self.navigationController?.navigationBar.tintColor = UIColor.black
         
         // Do any additional setup after loading the view.
     }
@@ -94,14 +96,13 @@ class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate, UIScrollView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
         // 计算出小图大小 （ 为targetSize做准备 ）
         let scale = UIScreen.main.scale
         let cellSize = (self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize
         assetGridThumbnailSize = CGSize(width: cellSize.width*scale , height: cellSize.height*scale)
         UIApplication.shared.isStatusBarHidden = true
-        let item = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        self.navigationItem.backBarButtonItem = item
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -126,7 +127,11 @@ class ZZAssetPreviewVC: UIViewController ,UICollectionViewDelegate, UIScrollView
         
         else if !self.selectedImg.contains(self.assets[a!]) {
 
-            if selectedImg.count == 9 {
+            if selectedImg.count >= self.maxSelected {
+                let alter = UIAlertController(title: "提示", message: "最多可选\(self.maxSelected)张", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.default, handler: nil)
+                alter.addAction(okAction)
+                self.present(alter, animated: true, completion: nil)
                 return
             }
             
@@ -190,7 +195,7 @@ extension ZZAssetPreviewVC:UICollectionViewDataSource{
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-       // UIApplication.shared.isStatusBarHidden = true
+
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
