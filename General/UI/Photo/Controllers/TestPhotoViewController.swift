@@ -37,9 +37,9 @@ class TestPhotoViewController: UIViewController ,UICollectionViewDelegate,UIColl
             assetss = assets
             
             let layer = UICollectionViewFlowLayout()
-            layer.itemSize = CGSize(width: UIScreen.main.bounds.size.width / CGFloat(4), height: UIScreen.main.bounds.size.width / CGFloat(4))
+            layer.itemSize = CGSize(width: UIScreen.main.bounds.size.width / CGFloat(4.1), height: UIScreen.main.bounds.size.width / CGFloat(4.1))
             
-            collection = UICollectionView(frame: CGRect(x: 0, y: 64, width: 375, height: 603), collectionViewLayout: layer)
+            collection = UICollectionView(frame: CGRect(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height), collectionViewLayout: layer)
             collection.tag = 10
             collection.delegate = self
             collection.dataSource = self
