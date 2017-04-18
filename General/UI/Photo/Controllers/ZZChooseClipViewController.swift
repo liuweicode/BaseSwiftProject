@@ -9,6 +9,11 @@
 import UIKit
 import Photos
 
+protocol SwiftyPhotoClipperDelegate {
+    
+    func didFinishClippingPhoto(image:UIImage)
+}
+
 class ZZChooseClipViewController: UIViewController {
 
     let asset:PHAsset
@@ -19,7 +24,8 @@ class ZZChooseClipViewController: UIViewController {
     var sure = UIButton()
     
     /// 点击完成时的回调
-    var completeHandler:((_ assets:[PHAsset])->())?
+    // 代理
+    var delegate:SwiftyPhotoClipperDelegate?
 
     init(asset:PHAsset){
         self.asset = asset
@@ -60,6 +66,9 @@ class ZZChooseClipViewController: UIViewController {
         sure.addTarget(self, action: #selector(goToSure), for: .touchUpInside)
         self.view.addSubview(sure)
         
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        
     }
     
     func backToChoose(){
@@ -67,23 +76,43 @@ class ZZChooseClipViewController: UIViewController {
     }
     
     func goToSure(){
+        let cell = collection.visibleCells.first as! ZZChooseClipCollectionViewCell
+        let result = cell.clipImage() ?? UIImage()
+        
+        let image = UIImageView(frame: UIScreen.main.bounds)
+        self.view.addSubview(image)
+        image.contentMode = .scaleAspectFit
+        image.image = result
+
+        
+       // let ass = PHAsset(
+        
         self.navigationController?.dismiss(animated: true, completion: {
             var assets:[PHAsset] = []
             assets.append(self.asset)
-            self.completeHandler?([self.asset])
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ZZCollectionCell"), object: nil, userInfo: ["image":result])
+
         })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated) 
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         UIApplication.shared.isStatusBarHidden = false
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -109,13 +138,8 @@ extension ZZChooseClipViewController:UICollectionViewDataSource,UICollectionView
             cell.imageSize = result!.size
         })
 
-        
         return cell
     }
-    
-    
-    
-    
 }
 
 

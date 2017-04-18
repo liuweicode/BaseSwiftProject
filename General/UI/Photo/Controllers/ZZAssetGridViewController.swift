@@ -73,6 +73,12 @@ class ZZAssetGridViewController: UIViewController {
         layout.itemSize = CGSize(width: UIScreen.main.bounds.size.width/4-1,height: UIScreen.main.bounds.size.width/4-1)
         self.collectionView.allowsMultipleSelection = true
         
+        if self.maxSelected == 1 {
+            self.collectionView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(self.view)
+            }
+        }
+        
         let rightBarItem = UIBarButtonItem(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ZZAssetGridViewController.cancel))
         self.navigationItem.rightBarButtonItem = rightBarItem
         
@@ -96,7 +102,6 @@ class ZZAssetGridViewController: UIViewController {
         assetGridThumbnailSize = CGSize( width: cellSize.width*scale , height: cellSize.height*scale)
         if self.maxSelected == 1 {
             self.toolBar.isHidden = true
-            //self.toolBar.superview?.isHidden = true
             self.collectionView.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: UIScreen.main.bounds.size.height)
             self.collectionView.reloadData()
             
@@ -316,7 +321,7 @@ extension ZZAssetGridViewController:UICollectionViewDataSource,UICollectionViewD
                 let asset = self.assetsFetchResults[(indexPath as NSIndexPath).row]
                 
                 let chooseC = ZZChooseClipViewController(asset: asset)
-                chooseC.completeHandler = self.completeHandler
+                chooseC.delegate = self as? SwiftyPhotoClipperDelegate
                 self.modalPresentationStyle = UIModalPresentationStyle.custom
                 self.navigationController?.pushViewController(chooseC, animated: true)
                 
