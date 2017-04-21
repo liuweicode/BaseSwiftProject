@@ -10,8 +10,6 @@ import UIKit
 import IQKeyboardManagerSwift
 import VCTransitionsLibrary
 
-
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -28,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame:UIScreen.main.bounds)
         
-        APPCONTROLLER.setupLogin()
+        APPCONTROLLER.setupTest()
         
         NavRouter.setURLMapping(plistName: "NavigatorList")
         

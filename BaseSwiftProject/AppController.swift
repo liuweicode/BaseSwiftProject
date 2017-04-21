@@ -30,6 +30,33 @@ class AppController: NSObject {
     }
     
     /**
+     测试
+     */
+    func setupTest()
+    {
+        let rootVC = ApiTestViewController()
+        let navi = BaseNavigationController(rootViewController: rootVC)
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        if let snapShot = delegate.window?.snapshotView(afterScreenUpdates: true)
+        {
+            navi.view.addSubview(snapShot)
+            delegate.window!.rootViewController = navi
+            UIView.animate(withDuration: 0.8, animations: {
+                snapShot.layer.opacity = 0
+                //snapShot.layer.transform = CAtransfor//CATransform3DMakeScale(1.5, 1.5, 1.5)
+            }, completion: { (finished) in
+                snapShot.removeFromSuperview()
+            })
+        }else{
+            delegate.window!.rootViewController = navi
+        }
+        NavRouter.navigationController = navi
+        
+        delegate.window?.makeKeyAndVisible()
+    }
+    
+    
+    /**
      设置引导页
      */
     func setupGuide()

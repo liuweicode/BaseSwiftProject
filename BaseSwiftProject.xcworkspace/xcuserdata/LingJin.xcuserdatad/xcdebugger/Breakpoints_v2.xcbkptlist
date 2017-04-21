@@ -10,44 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkClient.swift"
-            timestampString = "512300883.993509"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
-            landmarkName = "doOperationData(_:dataResponse:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "General/System/Network/NetworkClient.swift"
             timestampString = "512633257.888361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "350"
             endingLineNumber = "350"
             landmarkName = "doCommonResponse(dataResponse:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512634300.9954"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "refreshTokens(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,54 +89,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512634300.9954"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
-            landmarkName = "logRequestJsonInfo(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BaseSwiftProject.NetworkHandler.(logRequestJsonInfo in _ADE024B3EA138D82B5F5109AB087ED93) (Foundation.URLRequest) -&gt; ()"
-                  moduleName = "BaseSwiftProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/General/System/Network/NetworkHandler.swift"
-                  timestampString = "513253108.775009"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "312"
-                  endingLineNumber = "312"
-                  offsetFromSymbolStart = "852">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BaseSwiftProject.NetworkHandler.(logRequestJsonInfo in _ADE024B3EA138D82B5F5109AB087ED93) (Foundation.URLRequest) -&gt; ()"
-                  moduleName = "BaseSwiftProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/General/System/Network/NetworkHandler.swift"
-                  timestampString = "513253108.776223"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "312"
-                  endingLineNumber = "312"
-                  offsetFromSymbolStart = "884">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "General/UI/ActionSheet/ActionSheet.swift"
             timestampString = "512381341.829904"
             startingColumnNumber = "9223372036854775807"
@@ -186,12 +106,12 @@
                   moduleName = "BaseSwiftProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/General/UI/ActionSheet/ActionSheet.swift"
-                  timestampString = "513253108.779152"
+                  timestampString = "514432096.890352"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "236"
                   endingLineNumber = "236"
-                  offsetFromSymbolStart = "2064">
+                  offsetFromSymbolStart = "2574">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -201,12 +121,12 @@
                   moduleName = "BaseSwiftProject"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/General/UI/ActionSheet/ActionSheet.swift"
-                  timestampString = "513253108.780354"
+                  timestampString = "514432096.891593"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "237"
                   endingLineNumber = "237"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -265,38 +185,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "General/System/Network/NetworkClient.swift"
-            timestampString = "512626410.961599"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "POST()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "General/System/Network/NetworkHandler.swift"
-            timestampString = "512634300.9954"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "adapt(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "General/System/Network/NetworkHandler.swift"
             timestampString = "512634300.9954"
             startingColumnNumber = "9223372036854775807"
@@ -305,54 +193,6 @@
             endingLineNumber = "96"
             landmarkName = "should(_:retry:with:completion:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Classes/Login/Controllers/LoginViewController.swift"
-            timestampString = "513572913.898317"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "doSendVerificationCodeRequest()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BaseSwiftProject.LoginViewController.doSendVerificationCodeRequest () -&gt; ()"
-                  moduleName = "BaseSwiftProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/Classes/Login/Controllers/LoginViewController.swift"
-                  timestampString = "513253108.796507"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BaseSwiftProject.LoginViewController.(doSendVerificationCodeRequest () -&gt; ()).(implicit closure #1)"
-                  moduleName = "BaseSwiftProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/LingJin/Desktop/BaseSwiftProject/Classes/Login/Controllers/LoginViewController.swift"
-                  timestampString = "513253108.797705"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

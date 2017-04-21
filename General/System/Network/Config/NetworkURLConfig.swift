@@ -96,7 +96,7 @@ class NetworkURLConfig: NSObject {
         // 主机地址
         API_HOST = "192.168.199.228"
         // 接口地址
-        API_METHOD_PATH = "/jichongchong/Public/v1/index.php"
+        API_METHOD_PATH = "/qunli/Public/v1/index.php"
         
         // 帮助与支持
         html_help_doc = "http://192.168.199.228/jichongchong/Public/v1/help.php"

@@ -89,11 +89,8 @@ class LoginViewController: BaseViewController {
 //        print("s1 = \(s1)")
 //        print("s2 = \(s2)")
         
-        //MARK:- 测试代码写这
-        PermissionUtils.checkPhotoLibraryPermissions({ (canOpen) in
-            
-        })
-        self.navigationController?.pushViewController(TestPhotoViewController(), animated: true)
+        
+        //self.navigationController?.pushViewController(TestPhotoViewController(), animated: true)
     }
 }
 
@@ -256,4 +253,5 @@ extension LoginViewController
             ToastView.showError(message.networkError!)
         })
     }
+    
 }
