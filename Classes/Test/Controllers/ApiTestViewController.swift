@@ -78,7 +78,8 @@ extension ApiTestViewController: UITableViewDataSource, UITableViewDelegate
         
         if indexPath.row == 1
         {
-           viewActivity()
+            let controller = CreateActivityViewController()
+            self.navigationController?.pushViewController(controller, animated: true)
         }
         
         if indexPath.row == 2
@@ -119,20 +120,5 @@ extension ApiTestViewController
         }
     }
     
-    func viewActivity()
-    {
-        ToastView.showProgressLoading()
-        
-        let param: [String : Any] = [
-            "id": 1
-        ];
-        
-        _ = NC_POST(self).send(params: param, url: API(service: "Activity.view", notEncrypt: true, isPrintSql: true), successBlock: { (message) in
-            
-            ToastView.showSuccess("成功")
-            
-        }) { (message) in
-            ToastView.showError(message.networkError!)
-        }
-    }
+    
 }

@@ -26,6 +26,9 @@
 		8AD2828B1E9F97F400F1F401 /* TestPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2828A1E9F97F400F1F401 /* TestPhotoViewController.swift */; };
 		AE1A0859D749D1D186C5D439 /* Pods_BaseSwiftProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9455378B3FEE2A55FAC051C5 /* Pods_BaseSwiftProject.framework */; };
 		FE3B8FC71EA9A0B300288DD2 /* ApiTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3B8FC61EA9A0B300288DD2 /* ApiTestViewController.swift */; };
+		FE3B8FC91EA9A4EE00288DD2 /* CreateActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3B8FC81EA9A4EE00288DD2 /* CreateActivityViewController.swift */; };
+		FE3B8FCB1EA9A5FF00288DD2 /* TemplateDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3B8FCA1EA9A5FF00288DD2 /* TemplateDetailModel.swift */; };
+		FE3B8FCD1EA9ADC800288DD2 /* TextViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3B8FCC1EA9ADC800288DD2 /* TextViewViewController.swift */; };
 		FE501DB61E8A3057008938DA /* ActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB51E8A3057008938DA /* ActionSheet.swift */; };
 		FE501DB91E8A5BA3008938DA /* OpenSSLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FE501DB81E8A5BA3008938DA /* OpenSSLUtil.m */; };
 		FE6090C51E82867C0042229D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6090C41E82867C0042229D /* AppDelegate.swift */; };
@@ -185,6 +188,9 @@
 		E847BC3347EE2FEAC82D532C /* Pods-BaseSwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		F37B09E57C6C1EDF77E45A04 /* Pods-BaseSwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseSwiftProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaseSwiftProject/Pods-BaseSwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FE3B8FC61EA9A0B300288DD2 /* ApiTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiTestViewController.swift; sourceTree = "<group>"; };
+		FE3B8FC81EA9A4EE00288DD2 /* CreateActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateActivityViewController.swift; sourceTree = "<group>"; };
+		FE3B8FCA1EA9A5FF00288DD2 /* TemplateDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateDetailModel.swift; sourceTree = "<group>"; };
+		FE3B8FCC1EA9ADC800288DD2 /* TextViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewViewController.swift; sourceTree = "<group>"; };
 		FE501DB51E8A3057008938DA /* ActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheet.swift; sourceTree = "<group>"; };
 		FE501DB71E8A5BA3008938DA /* OpenSSLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSSLUtil.h; sourceTree = "<group>"; };
 		FE501DB81E8A5BA3008938DA /* OpenSSLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSSLUtil.m; sourceTree = "<group>"; };
@@ -632,6 +638,8 @@
 			isa = PBXGroup;
 			children = (
 				FE3B8FC61EA9A0B300288DD2 /* ApiTestViewController.swift */,
+				FE3B8FC81EA9A4EE00288DD2 /* CreateActivityViewController.swift */,
+				FE3B8FCC1EA9ADC800288DD2 /* TextViewViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -639,6 +647,7 @@
 		FE3B8FC41EA9A07C00288DD2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE3B8FCA1EA9A5FF00288DD2 /* TemplateDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1606,6 +1615,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE6092AC1E83C0540042229D /* FindPasswordView.swift in Sources */,
+				FE3B8FC91EA9A4EE00288DD2 /* CreateActivityViewController.swift in Sources */,
 				FE6090FE1E83A4FD0042229D /* LocationPermissions.swift in Sources */,
 				FE6092681E83A5F00042229D /* TabBarView.swift in Sources */,
 				8A9B31E51E9CB83D002AD465 /* MeViewController.swift in Sources */,
@@ -1686,6 +1696,7 @@
 				FE6092671E83A5F00042229D /* TabBarNotification.swift in Sources */,
 				FE6092371E83A5F00042229D /* FileUtils.m in Sources */,
 				FE9557311E97367A00348E84 /* UIColor+theme.swift in Sources */,
+				FE3B8FCD1EA9ADC800288DD2 /* TextViewViewController.swift in Sources */,
 				FE60927B1E83A5F10042229D /* BaseTableViewController.swift in Sources */,
 				FE6092231E83A5F00042229D /* AntLogMoudle.swift in Sources */,
 				8AD282891E9F92A500F1F401 /* ZZPhotoPreviewCell.swift in Sources */,
@@ -1743,6 +1754,7 @@
 				FE6090C51E82867C0042229D /* AppDelegate.swift in Sources */,
 				FE6092571E83A5F00042229D /* LJAttributedLabel.swift in Sources */,
 				FE3B8FC71EA9A0B300288DD2 /* ApiTestViewController.swift in Sources */,
+				FE3B8FCB1EA9A5FF00288DD2 /* TemplateDetailModel.swift in Sources */,
 				8AD282821E9F92A500F1F401 /* ZZPhotoViewController.swift in Sources */,
 				FE6092AA1E83C0540042229D /* LoginViewController.swift in Sources */,
 				FE60927F1E83A5F10042229D /* UserCenter.swift in Sources */,
