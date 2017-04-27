@@ -14,6 +14,12 @@ enum EncryptionKeyIsNull: Error {case null}
 
 class NetworkHandler: RequestAdapter, RequestRetrier
 {
+    // 单例类
+    static let shared = NetworkHandler()
+    
+    // 私有化init方法
+    fileprivate init() {}
+    
     var isEncrypt: Bool = true // 是否需要加密请求体数据
     
     private typealias RefreshCompletion = (_ succeeded: Bool, _ aes_key: String?, _ aes_iv: String?, _ token: String?) -> Void

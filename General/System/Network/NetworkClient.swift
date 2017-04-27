@@ -143,7 +143,7 @@ class NetworkClient : NSObject {
     }
     
     fileprivate func POST() -> Request? {
-        let networkHandler = NetworkHandler()
+        let networkHandler = NetworkHandler.shared
         networkHandler.isEncrypt = isEncrypted()
         let manager = SessionManager.myDefaultSessionManager
         manager.adapter = networkHandler
@@ -185,7 +185,7 @@ class NetworkClient : NSObject {
     
     fileprivate func GET() -> Request? {
         
-        let networkHandler = NetworkHandler()
+        let networkHandler = NetworkHandler.shared
         networkHandler.isEncrypt = isEncrypted()
         let manager = SessionManager.myDefaultSessionManager
         manager.adapter = networkHandler
@@ -262,32 +262,6 @@ class NetworkClient : NSObject {
             self.message.networkError = .operationError(code: ret, reason: msg)
             self.failure()
         }
-        
-//        switch ret
-//        {
-//        // 操作成功
-//        case .operation_success:
-//            
-//        // 未签名 | 签名错误 | 服务器加解密key失效
-//        case .unsigned, .signature_error, .encryption_key_invalid:
-//            
-//            
-//        
-//        // 未登录 | 登录过期
-//        case .not_logged_in, .login_state_expired:
-//            
-//            let msg = json["msg"].stringValue
-//            ANT_LOG_NETWORK_ERROR("\(msg)")
-//            self.message.networkError = .serverError(ret:ret, msg:msg)
-//            self.failure()
-//            
-//        // 表示已在其他设备授权请重新授权 | 请求非法 | 账号已被禁用 | 其他未知错误
-//        case .logged_in_on_another_device, .request_invalid, .id_forbidden, .other:
-//            let msg = json["msg"].stringValue
-//            self.message.networkError = .serverError(ret:ret, msg:msg)
-//            self.failure()
-//        }
-        
     }
     
     fileprivate func success()
@@ -352,7 +326,7 @@ extension NetworkClient
             self.failure()
             
             #if DEBUG
-                ANT_LOG_NETWORK_ERROR("网络错误 \(self.message.requestUrl)\nresponse error is:\n\(SAFE_STRING(dataResponse.result.error?.localizedDescription))")
+                ANT_LOG_NETWORK_ERROR("网络错误 \(String(describing: self.message.requestUrl))\nresponse error is:\n\(SAFE_STRING(dataResponse.result.error?.localizedDescription))")
             #endif
         }
         else{
