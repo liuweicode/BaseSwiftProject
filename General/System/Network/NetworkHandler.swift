@@ -81,6 +81,7 @@ class NetworkHandler: RequestAdapter, RequestRetrier
             doRefreshTokens(completion)
             return
         }
+        
         // 401 表示加密 key 不合法 需要重新获取，需要与服务器一致
         if let response = request.task?.response as? HTTPURLResponse
         {
@@ -199,6 +200,11 @@ class NetworkHandler: RequestAdapter, RequestRetrier
             "auto_login_secret":auto_login_secret
         ];
         
+        let networkHandler = NetworkHandler.shared
+        networkHandler.isEncrypt = true
+        sessionManager.adapter = networkHandler
+        sessionManager.retrier = networkHandler
+        
         sessionManager.request(API(service: API_USER_AUTOSIGN), method: .post, parameters: param, encoding: JSONEncoding.default)
             .responseData{[weak self] (dataResponse) in
                 
@@ -263,12 +269,16 @@ class NetworkHandler: RequestAdapter, RequestRetrier
                 strongSelf.loginLock.lock() ; defer { strongSelf.loginLock.unlock() }
                 
                 if let user = appUser {
-                    
+                    user.postNotification(NOTIFI_KEY_UPLOAD_JPUSH_ID)
                     UserCenter.saveUser(user)
                     
                     #if DEBUG
                         ANT_LOG_INFO("\n❤️❤️❤️自动登录成功")
                     #endif
+                }else{
+                    // 自动登录失败 删除本地用户
+                    UserCenter.removeUser()
+                    strongSelf.loginLock.postNotification(NOTIFI_KEY_AUTO_SIN_ERROR)
                 }
                 
                 strongSelf.loginRequestsToRetry.forEach { $0(succeeded, 0.0) }
