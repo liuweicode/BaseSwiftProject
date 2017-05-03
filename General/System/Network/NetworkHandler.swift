@@ -20,8 +20,6 @@ class NetworkHandler: RequestAdapter, RequestRetrier
     // 私有化init方法
     fileprivate init() {}
     
-    var isEncrypt: Bool = true // 是否需要加密请求体数据
-    
     private typealias RefreshCompletion = (_ succeeded: Bool, _ aes_key: String?, _ aes_iv: String?, _ token: String?) -> Void
     private typealias AutoLoginCompletion = (_ succeeded: Bool, _ user:AppUser?) -> Void
     
@@ -41,6 +39,21 @@ class NetworkHandler: RequestAdapter, RequestRetrier
     private var isAutoLogining = false
     private var loginRequestsToRetry: [RequestRetryCompletion] = []
     
+    func isEncrypted(_ requestUrl:URL?) -> Bool
+    {
+        if  let url = requestUrl, let query = url.parseQuery()
+        {
+            if let encrypt = query["encrypt"] as? String
+            {
+                if encrypt == "no"
+                {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest
     {
         guard let key = NetworkCipher.shared.aes_key, let iv = NetworkCipher.shared.aes_iv else
@@ -56,7 +69,7 @@ class NetworkHandler: RequestAdapter, RequestRetrier
         // 设置请求头
         setRequestHTTPHeaders(&urlRequest)
         
-        if isEncrypt {
+        if isEncrypted(urlRequest.url) {
             // 请求体加密
             setRequestDataBody(&urlRequest, key, iv)
         }
@@ -109,7 +122,7 @@ class NetworkHandler: RequestAdapter, RequestRetrier
             }
             else
             {
-                completion(false, 0.0)
+                completion(true, 0.0)
             }
         }
         else
@@ -201,7 +214,6 @@ class NetworkHandler: RequestAdapter, RequestRetrier
         ];
         
         let networkHandler = NetworkHandler.shared
-        networkHandler.isEncrypt = true
         sessionManager.adapter = networkHandler
         sessionManager.retrier = networkHandler
         
@@ -327,7 +339,7 @@ class NetworkHandler: RequestAdapter, RequestRetrier
             
             if let bodyData = urlRequest.httpBody
             {
-                if isEncrypt
+                if isEncrypted(urlRequest.url)
                 {
                     if let key = NetworkCipher.shared.aes_key, let iv = NetworkCipher.shared.aes_iv
                     {

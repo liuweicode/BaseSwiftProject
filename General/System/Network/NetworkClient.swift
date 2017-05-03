@@ -144,7 +144,6 @@ class NetworkClient : NSObject {
     
     fileprivate func POST() -> Request? {
         let networkHandler = NetworkHandler.shared
-        networkHandler.isEncrypt = isEncrypted()
         let manager = SessionManager.myDefaultSessionManager
         manager.adapter = networkHandler
         manager.retrier = networkHandler
@@ -168,7 +167,7 @@ class NetworkClient : NSObject {
             urlRequest.httpBody = dataParam
         }
         
-        let request = manager.request(urlRequest).responseData
+        let request = manager.request(urlRequest).validate().responseData
             {[weak self] (dataResponse) in
                 
                 //debugPrint(dataResponse)
@@ -186,7 +185,6 @@ class NetworkClient : NSObject {
     fileprivate func GET() -> Request? {
         
         let networkHandler = NetworkHandler.shared
-        networkHandler.isEncrypt = isEncrypted()
         let manager = SessionManager.myDefaultSessionManager
         manager.adapter = networkHandler
         manager.retrier = networkHandler
@@ -212,7 +210,7 @@ class NetworkClient : NSObject {
         urlRequest.httpMethod = "GET"
         self.message.requestUrl = urlRequest.url?.absoluteString
         
-        let request = manager.request(urlRequest).responseData
+        let request = manager.request(urlRequest).validate().responseData
             {[weak self] (dataResponse) in
                 
                 //debugPrint(dataResponse)
@@ -252,7 +250,7 @@ class NetworkClient : NSObject {
             else{
                 // 操作失败
                 let code = json["data"]["code"].intValue
-                let msg = json["msg"].stringValue
+                let msg = json["data"]["msg"].stringValue
                 self.message.networkError = .operationError(code: code, reason: msg)
                 self.failure()
             }
