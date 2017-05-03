@@ -70,7 +70,7 @@ class LoginViewController: BaseViewController {
 //        }
 //        let alertView = ActionSheet(title: "标题", message: "消息", cancelButtonItem: cancel, otherButtonItems: confirm)
 //        alertView.show()
-//        
+//
         self.doLoginRequest()
     }
     
